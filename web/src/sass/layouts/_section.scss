@@ -70,8 +70,10 @@
 
 .section {
   &__promo {
-    @include defaultSection();
-    background: $blue-light;
+    & {
+      background: $blue-light;
+      @include defaultSection();
+    }
 
     p {
       font-size: $base-text;
@@ -130,11 +132,14 @@
   }
 
   &__fruit-box {
-    @include defaultSection();
-    background-image: linear-gradient(
-      rgba($green-dark, 0.9),
-      rgba($green-dark, 0.9)
-    );
+    & {
+      background-image: linear-gradient(
+        rgba($green-dark, 0.9),
+        rgba($green-dark, 0.9)
+      );
+      @include defaultSection();
+    }
+
     .top {
       max-width: 60rem;
     }

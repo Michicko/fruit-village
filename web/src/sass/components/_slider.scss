@@ -86,6 +86,7 @@
     }
 
     @include breakpoints(mq-sm) {
+      grid-template-columns: 40% 60%;
       &-body {
         padding: 4rem 2rem;
       }
@@ -93,8 +94,6 @@
       h2 {
         font-size: $xl-text;
       }
-
-      grid-template-columns: 40% 60%;
     }
 
     @include breakpoints(mq-md) {
@@ -249,8 +248,8 @@
 .product-slider {
   padding: 0.5rem;
   overflow: hidden;
-  @include multiplier("padding-right", .5rem, $genQs);
-  @include multiplier("padding-left", .5rem, $genQs);
+  @include multiplier("padding-right", 0.5rem, $genQs);
+  @include multiplier("padding-left", 0.5rem, $genQs);
 
   &__box {
     width: 100%;

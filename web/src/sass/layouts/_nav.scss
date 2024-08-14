@@ -62,9 +62,9 @@
   }
 
   &__icon {
-    @include inconStyle();
     transition: transform 0.2s linear;
     margin-right: 1rem;
+    @include inconStyle();
     @include multiplier("margin-right", 1rem, $genQs);
   }
 

@@ -21,10 +21,12 @@
   }
 
   @include breakpoints(mq-xl) {
-    &__slider {
-      height: 35rem;
+    & {
+      padding: 4rem 12rem;
+      &__slider {
+        height: 35rem;
+      }
     }
-    padding: 4rem 12rem;
   }
 
   @include breakpoints(mq-2xl) {
