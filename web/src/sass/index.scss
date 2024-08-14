@@ -1,0 +1,26 @@
+// abstract
+@use "./abstract/variables";
+@use "./abstract/mixins";
+
+// base
+@use "./base/base";
+@use "./base/typography";
+
+// components
+@use "./components/logo";
+@use "./components/button";
+@use "./components/form";
+@use "./components/catalog-menu";
+@use "./components/slider";
+@use "./components/category";
+@use "./components/product";
+
+// layouts
+@use "./layouts/nav";
+@use "./layouts/header";
+@use "./layouts/main";
+@use "./layouts/section";
+@use "./layouts/footer";
+
+// utils
+@use './utils/utils';

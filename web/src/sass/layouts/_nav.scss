@@ -1,0 +1,282 @@
+@use "../abstract/variables" as *;
+@use "../abstract/mixins" as *;
+
+@mixin inconStyle {
+  height: 2.5rem;
+  width: 2.5rem;
+  path {
+    fill: $light;
+  }
+  @include multiplier("height", 2.5rem, $genQs);
+  @include multiplier("width", 2.5rem, $genQs);
+}
+
+.nav {
+  width: 100%;
+  position: relative;
+
+  &__catalog-menu {
+    position: absolute;
+    width: 100%;
+    height: 100vh;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: 0;
+    z-index: 500;
+    background: rgba($dark, 0.4);
+    padding: 0 2rem;
+
+    @include multiplier("padding-right", 2rem, $genQs);
+    @include multiplier("padding-left", 2rem, $genQs);
+  }
+
+  &__small {
+    height: 4rem;
+    width: 100%;
+    background: darken($green-dark, 5%);
+    display: none;
+
+    @include breakpoints(mq-lg) {
+      display: flex;
+    }
+    @include multiplier("height", 4rem, $genQs);
+  }
+
+  &__tel {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+
+    span {
+      font-size: $base-text;
+      font-weight: 400;
+      color: $light;
+      font-family: $font;
+      @include multiplier("font-size", $base-text, $genQs);
+    }
+  }
+
+  &__tel:hover &__icon {
+    transform: rotate(35deg);
+  }
+
+  &__icon {
+    @include inconStyle();
+    transition: transform 0.2s linear;
+    margin-right: 1rem;
+    @include multiplier("margin-right", 1rem, $genQs);
+  }
+
+  &__main {
+    height: 6rem;
+    width: 100%;
+    background: $green-dark;
+    padding: 0.6rem 0;
+    padding-right: 2rem;
+    display: flex;
+    align-items: center;
+    position: relative;
+
+    & > *:nth-child(2),
+    & > *:nth-child(3),
+    & > *:nth-child(4) {
+      display: none;
+    }
+
+    & > *:not(:last-child) {
+      margin-right: 2rem;
+    }
+
+    & > *:nth-child(3) {
+      max-width: 25rem;
+    }
+
+    @include breakpoints(mq-xs) {
+      & > *:nth-child(2) {
+        display: flex;
+      }
+    }
+
+    @include breakpoints(mq-md) {
+      padding: 0.8rem 0;
+      padding-right: 4rem;
+
+      & > *:nth-child(3) {
+        display: flex;
+      }
+    }
+
+    @include breakpoints(mq-lg) {
+      height: 8rem;
+      & > *:nth-child(4) {
+        display: flex;
+      }
+    }
+
+    @include breakpoints(mq-xl) {
+      padding-right: 12rem;
+
+      & > *:nth-child(3) {
+        max-width: 30rem;
+      }
+
+      & > *:not(:last-child) {
+        margin-right: 3rem;
+      }
+
+      & > *:nth-child(4) {
+        margin-right: 0;
+      }
+    }
+
+    @include breakpoints(mq-2xl) {
+      padding-right: 14rem;
+      & > *:nth-child(3) {
+        max-width: 35rem;
+      }
+    }
+
+    & > *:not(:last-child) {
+      margin-right: 3rem;
+      @include multiplier("margin-right", 3rem, $genQs);
+    }
+
+    & > *:nth-child(3) {
+      max-width: 30rem;
+      @include multiplier("max-width", 30rem, $genQs);
+    }
+
+    & > *:nth-child(4) {
+      margin-right: 0;
+    }
+
+    @include multiplier("height", 8rem, $genQs);
+    @include multiplier("padding-right", 14rem, $genQs);
+  }
+
+  &__logo-box {
+    background: $light;
+    height: 100%;
+    border-top-right-radius: 5rem;
+    border-bottom-right-radius: 5rem;
+    display: flex;
+    align-items: center;
+    padding: 0 2rem;
+    padding-right: 1.5rem;
+
+    @include breakpoints(mq-md) {
+      padding-left: 4rem;
+      padding-right: 2rem;
+    }
+
+    @include breakpoints(mq-xl) {
+      padding-left: 12rem;
+      padding-right: 3rem;
+    }
+
+    @include breakpoints(mq-2xl) {
+      padding-left: 14rem;
+    }
+
+    @include multiplier("padding-left", 14rem, $genQs);
+  }
+
+  &__search {
+    &-btn {
+      background: transparent;
+      outline: none;
+      border: none;
+    }
+
+    &-box {
+      background: $green-dark;
+      z-index: 20;
+    }
+  }
+
+  &__btn {
+    background: transparent;
+    outline: none;
+    border: none;
+    margin-right: 1rem;
+
+    @include breakpoints(mq-lg) {
+      display: none;
+    }
+
+    &-icon {
+      height: 3.5rem;
+      width: 3.5rem;
+
+      path {
+        fill: $green-dark;
+        stroke: $green-dark;
+      }
+    }
+  }
+
+  &__end {
+    margin-left: auto;
+    display: flex;
+    align-items: center;
+    margin-right: 0.8rem;
+
+    & > *:first-child {
+      display: none;
+
+      @include breakpoints(mq-xs) {
+        display: flex;
+        margin-right: 2.5rem;
+      }
+
+      @include multiplier("margin-right", 2.5rem, $genQs);
+    }
+
+    &-btn {
+      background: transparent;
+      border: none;
+      outline: none;
+      position: relative;
+    }
+
+    &-total {
+      position: absolute;
+      background: $red-dark;
+      padding: 0.4rem 0.6rem;
+      border-radius: 50%;
+      top: -0.5rem;
+      right: -0.8rem;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+
+      span {
+        font-size: $xs-text;
+        font-weight: 400;
+        color: $light;
+        line-height: $lh-xxs;
+        font-family: $font;
+        @include multiplier("font-size", $xs-text, $genQs);
+      }
+
+      @include multiplier("padding-right", 0.4rem, $genQs);
+      @include multiplier("padding-bottom", 0.4rem, $genQs);
+      @include multiplier("padding-right", 0.6rem, $genQs);
+      @include multiplier("padding-left", 0.6rem, $genQs);
+      @include multiplier("top", -0.5rem, $genQs);
+      @include multiplier("right", -0.8rem, $genQs);
+    }
+
+    &-icon {
+      @include inconStyle();
+
+      path {
+        fill: $light;
+      }
+    }
+
+    @include multiplier("margin-right", 0.8rem, $genQs);
+  }
+}

@@ -1,0 +1,33 @@
+@use "../abstract/variables" as *;
+@use "../abstract/mixins" as *;
+
+.logo {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+
+  &__img {
+    height: auto;
+    width: 3rem;
+    @include multiplier("width", 3rem, $genQs);
+  }
+
+  span {
+    font-size: $base-text;
+    font-weight: 600;
+    color: $green-dark;
+    font-family: $font;
+    margin-left: 0.8rem;
+    margin-top: 0.5rem;
+    line-height: 1;
+    display: none;
+
+    @include breakpoints(mq-lg) {
+      display: block;
+    }
+
+    @include multiplier("font-size", $base-text, $genQs);
+    @include multiplier("margin-left", 0.8rem, $genQs);
+    @include multiplier("margin-top", 0.5rem, $genQs);
+  }
+}

@@ -1,0 +1,56 @@
+@use "../abstract/variables" as *;
+@use "../abstract/mixins" as *;
+
+.form {
+  &__group {
+    width: 100%;
+    height: 4rem;
+    min-width: 20rem;
+    display: flex;
+    align-items: center;
+    background: transparent;
+    border: 1px solid $light;
+    border-radius: $xxs-gutter;
+    padding: 0 1rem;
+    @include multiplier("height", 4rem, $genQs);
+    @include multiplier("padding-left", 1rem, $genQs);
+    @include multiplier("padding-right", 1rem, $genQs);
+  }
+
+  &__input-text {
+    height: 100%;
+    width: 100%;
+    padding: 0 1rem 0 2rem;
+    background: transparent;
+    outline: none;
+    border: none;
+    @include multiplier("padding-right", 1rem, $genQs);
+    @include multiplier("padding-left", 2rem, $genQs);
+
+    &,
+    &::placeholder {
+      color: $light;
+      font-size: $base-text;
+      font-weight: 400;
+      font-family: $font;
+
+      @include multiplier("font-size", $base-text, $genQs);
+    }
+  }
+
+  &__group:hover &__icon {
+    transform: rotate(90deg);
+  }
+
+  &__icon {
+    height: 2.5rem;
+    width: 2.5rem;
+    transition: transform 0.2s linear;
+    path {
+      fill: $light;
+    }
+
+    @include multiplier("height", 2.5rem, $genQs);
+    @include multiplier("width", 2.5rem, $genQs);
+  }
+}

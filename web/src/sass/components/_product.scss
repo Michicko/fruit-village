@@ -1,0 +1,167 @@
+@use "../abstract/variables" as *;
+@use "../abstract/mixins" as *;
+
+.product {
+  display: grid;
+  box-shadow: $shadow-3;
+  border-radius: $xxs-gutter;
+  min-width: 22.1rem;
+  width: 100%;
+  position: relative;
+
+  @include multiplier("min-wdith", 22.1rem, $genQs);
+
+  &__discount{
+    position: absolute;
+    top: 2rem;
+    right: 2rem;
+    border-radius: 1rem;
+    padding: .35rem .8rem;
+    background: $red-dark;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    z-index: 20;
+
+    span{
+      font-size: $xs-text;
+      font-weight: 400;
+      color: $light;
+    }
+  }
+
+  &__img {
+    width: 100%;
+    height: 15rem;
+    object-fit: contain;
+    object-position: center;
+
+    &-box {
+      padding: 2rem 3rem;
+      position: relative;
+      @include multiplier("padding-top", 2rem, $genQs);
+      @include multiplier("padding-bottom", 2rem, $genQs);
+      @include multiplier("padding-left", 3rem, $genQs);
+      @include multiplier("padding-right", 3rem, $genQs);
+    }
+
+    @include multiplier("height", 15rem, $genQs);
+  }
+
+  &__body {
+    padding: 1rem;
+    @include multiplier("padding", 1rem, $genQs);
+    & > *:nth-child(1),
+    & > *:nth-child(2) {
+      margin-bottom: 0.25rem;
+      @include multiplier("margin-bottom", 0.25rem, $genQs);
+    }
+  }
+
+  &__name {
+    font-size: $base-text;
+    font-weight: 700;
+    text-decoration: none;
+    text-transform: capitalize;
+    color: $dark;
+    line-height: 1;
+    display: block;
+    @include multiplier("font-size", $base-text, $genQs);
+    @include multiplier("line-height", 1, $genQs);
+  }
+
+  &__quantity,
+  &__status {
+    font-size: $sm-text;
+    font-weight: 400;
+    color: $dark;
+    @include multiplier("font-size", $sm-text, $genQs);
+  }
+
+  &__status {
+    font-weight: 500;
+  }
+
+  &__status.green {
+    color: $green-dark;
+  }
+
+  &__status.red {
+    color: $red-dark;
+  }
+
+  &__box {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 1rem 0;
+    @include multiplier("margin-top", 1rem, $genQs);
+    @include multiplier("margin-bottom", 1rem, $genQs);
+  }
+
+  &__price {
+    font-size: $md-text;
+    font-weight: 700;
+    color: $dark;
+    @include multiplier("font-size", $md-text, $genQs);
+  }
+
+  &__like-btn {
+    border: none;
+    outline: none;
+    background: transparent;
+
+    & > * {
+      display: none;
+    }
+  }
+
+  &__icon {
+    height: 2rem;
+    width: 2rem;
+    path {
+      fill: $red-dark;
+    }
+    @include multiplier("height", 2rem, $genQs);
+    @include multiplier("width", 2rem, $genQs);
+  }
+
+  &__like-btn.liked,
+  &__like-btn:hover {
+    & > *:first-child {
+      display: none;
+    }
+
+    & > *:last-child {
+      display: block;
+    }
+  }
+
+  &__like-btn {
+    & > *:first-child {
+      display: block;
+    }
+  }
+
+  &__cart-btn {
+    height: 3.5rem;
+    width: 100%;
+    background: $green-light;
+    border-radius: 0.6rem;
+    outline: none;
+    border: none;
+    color: $light;
+    font-weight: 500;
+    font-size: $base-text;
+    cursor: pointer;
+
+    @include multiplier("height", 3.5rem, $genQs);
+    @include multiplier("border-radius", 0.6rem, $genQs);
+    @include multiplier("font-size", $base-text, $genQs);
+
+    &:hover {
+      background: $blue-light;
+    }
+  }
+}

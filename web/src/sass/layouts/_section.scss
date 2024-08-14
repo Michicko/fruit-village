@@ -1,0 +1,240 @@
+@use "../abstract/variables" as *;
+@use "../abstract/mixins" as *;
+
+@mixin mgBottom {
+  margin-bottom: 4rem;
+
+  @include breakpoints(mq-xl) {
+    margin-bottom: 8rem;
+  }
+
+  @include multiplier("margin-bottom", 8rem, $genQs);
+}
+
+@mixin defaultSection {
+  min-height: 30rem;
+  margin-left: -2rem;
+  margin-right: -2rem;
+  margin-top: 4rem;
+  padding: 4rem 2rem;
+  @include mgBottom();
+
+  @include breakpoints(mq-lg) {
+    margin-left: -4rem;
+    margin-right: -4rem;
+    padding: 4rem;
+  }
+
+  @include breakpoints(mq-xl) {
+    margin-top: 8rem;
+    margin-left: -12rem;
+    margin-right: -12rem;
+    padding: 10rem 12rem;
+  }
+
+  @include breakpoints(mq-2xl) {
+    margin-left: -14rem;
+    margin-right: -14rem;
+    padding: 10rem 14rem;
+  }
+
+  @include multiplier("padding-top", 10rem, $genQs);
+  @include multiplier("padding-bottom", 10rem, $genQs);
+  @include multiplier("padding-left", 14rem, $genQs);
+  @include multiplier("padding-right", 14rem, $genQs);
+  @include multiplier("margin-top", 8rem, $genQs);
+  @include multiplier("margin-left", -14rem, $genQs);
+  @include multiplier("margin-right", -14rem, $genQs);
+}
+
+@mixin topStyles {
+  padding: 0 0.5rem;
+  margin-bottom: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  @include multiplier("margin-bottom", 2rem, $genQs);
+  @include multiplier("padding-right", 0.5rem, $genQs);
+  @include multiplier("padding-left", 0.5rem, $genQs);
+
+  & > *:last-child {
+    visibility: hidden;
+  }
+
+  @include breakpoints(mq-md) {
+    & > *:last-child {
+      visibility: visible;
+    }
+  }
+}
+
+.section {
+  &__promo {
+    @include defaultSection();
+    background: $blue-light;
+
+    p {
+      font-size: $base-text;
+      font-weight: 400;
+      color: $light;
+    }
+
+    .box {
+      display: flex;
+      align-items: center;
+      margin-bottom: 1rem;
+    }
+
+    .icon {
+      height: 1.5rem;
+      width: 1.5rem;
+      margin-left: 1rem;
+      path {
+        fill: $light;
+      }
+    }
+
+    @include breakpoints(mq-lg) {
+      .icon {
+        height: 1.8rem;
+        width: 1.8rem;
+      }
+
+      p {
+        font-size: $md-text;
+      }
+    }
+
+    @include breakpoints(mq-xl) {
+      p {
+        font-size: $lg-text;
+      }
+    }
+
+    .icon {
+      @include multiplier("height", 1.8rem, $genQs);
+      @include multiplier("width", 1.8rem, $genQs);
+    }
+
+    p {
+      @include multiplier("font-size", $lg-text, $genQs);
+    }
+  }
+
+  &__products {
+    width: 100%;
+
+    .top {
+      @include topStyles();
+    }
+  }
+
+  &__fruit-box {
+    @include defaultSection();
+    background-image: linear-gradient(
+      rgba($green-dark, 0.9),
+      rgba($green-dark, 0.9)
+    );
+    .top {
+      max-width: 60rem;
+    }
+
+    .fruit-box {
+      margin-top: 2rem;
+
+      &__img {
+        max-width: 100%;
+        height: auto;
+        margin-bottom: 2rem;
+      }
+
+      &__name {
+        font-size: $md-text;
+        font-weight: 600;
+        color: $light;
+        text-transform: capitalize;
+        line-height: $lh-sm;
+      }
+
+      &__size {
+        font-size: $sm-text;
+        font-weight: 300;
+        color: $light;
+        margin-bottom: 2rem;
+      }
+
+      &__description {
+        font-size: $base-text;
+        font-weight: 300;
+        color: $light;
+        margin-bottom: 2rem;
+      }
+
+      &__price {
+        font-size: $xl-text;
+        font-weight: 600;
+        color: $light;
+        margin-bottom: 2rem;
+      }
+
+      .box {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        & > *:first-child {
+          width: 100%;
+          margin-bottom: 2rem;
+        }
+      }
+
+      @include breakpoints(mq-md) {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 3rem;
+        margin-top: 4rem;
+
+        .box {
+          flex-direction: row;
+          justify-content: space-between;
+
+          & > *:first-child {
+            max-width: 15rem;
+            margin-bottom: 0;
+          }
+        }
+      }
+
+      @include breakpoints(mq-lg) {
+        margin-top: 6rem;
+      }
+    }
+  }
+
+  &__discounts {
+    @include mgBottom();
+    .top {
+      @include topStyles();
+    }
+  }
+
+  &__infos {
+    width: 100%;
+    min-height: 20rem;
+    background-image: linear-gradient(
+        rgba($success-300, 0.92),
+        rgba($success-300, 0.92)
+      ),
+      url("/assets/images/infos-bg.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+
+    padding: 5rem 2rem;
+    display: grid;
+    grid-template-columns: repeat(2, 2fr);
+    grid-column-gap: 2rem;
+    grid-row-gap: 4rem;
+  }
+}

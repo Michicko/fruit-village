@@ -1,0 +1,43 @@
+@use "../abstract/variables" as *;
+@use "../abstract/mixins" as *;
+
+.link {
+  display: inline-flex;
+  align-items: center;
+  text-decoration: none;
+
+  span {
+    font-size: $base-text;
+    font-weight: 400;
+    color: $dark;
+    @include multiplier("font-size", $base-text, $genQs);
+  }
+
+  &__icon {
+    height: 1.4rem;
+    width: 1.4rem;
+    margin-left: 0.6rem;
+    margin-bottom: -0.2rem;
+
+    path {
+      fill: $dark;
+    }
+
+    @include multiplier("height", 1.4rem, $genQs);
+    @include multiplier("width", 1.4rem, $genQs);
+    @include multiplier("margin-left", 0.6rem, $genQs);
+    @include multiplier("margin-bottom", -0.2rem, $genQs);
+  }
+
+  &--light {
+    span {
+      color: $light;
+    }
+  }
+
+  &--light &__icon {
+    path {
+      fill: $light;
+    }
+  }
+}

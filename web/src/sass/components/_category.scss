@@ -1,0 +1,108 @@
+@use "../abstract/variables" as *;
+@use "../abstract/mixins" as *;
+
+.category {
+  width: 100%;
+  height: 8rem;
+  position: relative;
+  overflow: hidden;
+
+  &__list {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: $xxs-gutter;
+  }
+
+  &__img {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    object-fit: cover;
+    object-position: center;
+    filter: brightness(0.7);
+  }
+
+  &__name {
+    position: absolute;
+    top: 1rem;
+    left: 1rem;
+    color: $light;
+    font-size: $base-text;
+    font-weight: 500;
+    z-index: 200;
+  }
+
+  &__link {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    padding: 1rem;
+    z-index: 100;
+    background: rgba($dark, 0.5);
+    color: $light;
+    text-decoration: none;
+    font-size: $sm-text;
+    font-weight: 400;
+    transform: translateY(100%);
+    transition: transform 0.3s linear;
+  }
+
+  &:hover &__link,
+  &__link--fixed {
+    transform: translateY(0);
+  }
+
+  @include breakpoints(mq-sm) {
+    height: 12rem;
+
+    &__link {
+      font-size: $base-text;
+    }
+  }
+
+  @include breakpoints(mq-md) {
+    height: 15rem;
+  }
+
+  @include breakpoints(mq-lg) {
+    height: 15rem;
+
+    &__list {
+      grid-template-columns: repeat(3, 1fr);
+      gap: 3rem;
+    }
+
+    &__link {
+      padding: 2rem;
+    }
+
+    &__name {
+      font-size: $md-text;
+      top: 2rem;
+      left: 2rem;
+    }
+  }
+
+  &__list {
+    @include multiplier("padding-top", 3rem, $genQs);
+    @include multiplier("gap", 3rem, $genQs);
+  }
+
+  &__name {
+    @include multiplier("font-size", $md-text, $genQs);
+    @include multiplier("top", 2rem, $genQs);
+    @include multiplier("left", 2rem, $genQs);
+  }
+
+  &__link {
+    @include multiplier("font-size", $base-text, $genQs);
+    @include multiplier("padding", 2rem, $genQs);
+  }
+  @include multiplier("height", 15rem, $genQs);
+}

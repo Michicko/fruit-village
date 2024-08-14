@@ -1,0 +1,40 @@
+@use "../abstract/variables" as *;
+@use "../abstract/mixins" as *;
+
+.catalog-menu {
+  min-height: 20rem;
+  max-width: 62rem;
+  width: 100%;
+  margin: 0 auto;
+  background: $light;
+  position: relative;
+  z-index: 550;
+
+  &--show {
+    animation: slideDown 0.2s linear;
+    margin-top: 6rem;
+
+    @include breakpoints(mq-md) {
+      margin-top: 8rem;
+    }
+
+    @include breakpoints(mq-lg) {
+      margin-top: 12rem;
+    }
+
+    @include multiplier("margin-top", 12rem, $genQs);
+  }
+
+  @include multiplier("max-width", 62rem, $genQs);
+  @include multiplier("min-height", 20rem, $genQs);
+}
+
+@keyframes slideDown {
+  0% {
+    transform: translateY(-100%);
+  }
+
+  100% {
+    transform: translateY(0);
+  }
+}

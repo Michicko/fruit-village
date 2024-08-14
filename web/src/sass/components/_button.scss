@@ -1,0 +1,100 @@
+@use "../abstract/variables" as *;
+@use "../abstract/mixins" as *;
+
+.btn {
+  height: 4rem;
+  background: transparent;
+  outline: none;
+  border: none;
+  background: transparent;
+  text-decoration: none;
+  padding: 0 1.5rem;
+  border-radius: .6rem;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s linear;
+
+  &,
+  span {
+    color: $green-dark;
+    font-family: $font;
+    font-size: $sm-text;
+    font-weight: 600;
+  }
+
+  @include breakpoints(mq-xs) {
+    padding: 0 2rem;
+
+    &,
+    span {
+      font-size: $base-text;
+    }
+  }
+
+  @include breakpoints(mq-sm) {
+    height: 4rem;
+    padding: 0 3rem;
+  }
+
+  &,
+  span {
+    @include multiplier("font-size", $base-text, $genQs);
+  }
+
+  @include multiplier("border-radius", .6rem, $genQs);
+  @include multiplier("height", 4rem, $genQs);
+  @include multiplier("padding-left", 3rem, $genQs);
+  @include multiplier("padding-right", 3rem, $genQs);
+
+  &__icon {
+    height: 2rem;
+    width: 2rem;
+    margin-right: 1rem;
+    transition: transform 0.2s linear;
+
+    @include multiplier("height", 2rem, $genQs);
+    @include multiplier("width", 2rem, $genQs);
+
+    path {
+      fill: $green-dark;
+      stroke: $green-dark;
+    }
+  }
+
+  &:hover &__icon {
+    transform: rotate(90deg);
+  }
+
+  &--light {
+    background: $light;
+    color: $green-dark;
+  }
+
+  &--hovered-green {
+    &:hover {
+      background: #ddfbce;
+    }
+  }
+  &--hovered-red {
+    &:hover {
+      background: #fcebe3;
+    }
+  }
+  &--hovered-blue {
+    &:hover {
+      background: #e0e8f8;
+    }
+  }
+
+  &--sm {
+    height: 3.5rem;
+    @include multiplier("height", 3.5rem, $genQs);
+  }
+
+  // &--flex {
+  //   display: flex;
+  //   align-items: center;
+  // }
+}

@@ -1,0 +1,41 @@
+@use "../abstract/variables" as *;
+@use "../abstract/mixins" as *;
+
+.heading {
+  &--secondary {
+    font-size: $lg-text;
+    font-weight: 700;
+    color: $dark;
+
+    @include breakpoints(mq-lg) {
+      font-size: $xl-text;
+    }
+
+    @include multiplier("font-size", $xl-text, $genQs);
+  }
+
+  &--section {
+    font-size: $xl-text;
+    color: $light;
+    font-weight: 400;
+    margin-bottom: 1rem;
+
+    @include breakpoints(mq-sm) {
+      font-size: $xxl-text;
+    }
+
+    @include breakpoints(mq-md) {
+      font-size: $xxxl-text;
+    }
+
+    @include breakpoints(mq-lg) {
+      font-size: $iv-text;
+    }
+
+    @include breakpoints(mq-xl) {
+      font-size: $v-text;
+    }
+
+    @include multiplier("font-size", $v-text, $genQs);
+  }
+}

@@ -1,0 +1,277 @@
+@use "../abstract/variables" as *;
+@use "../abstract/mixins" as *;
+
+.slider {
+  height: 100%;
+  width: 100%;
+  position: relative;
+
+  &__slides {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    position: relative;
+  }
+
+  &__slide {
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-columns: 45% 55%;
+    height: 100%;
+    width: 100%;
+    flex: 0;
+    opacity: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    transition: opacity 0.3s linear;
+
+    &--current {
+      opacity: 1;
+      z-index: 200;
+    }
+
+    &-body {
+      padding: 3rem 2rem;
+      height: 100%;
+      width: 100%;
+    }
+
+    h2 {
+      font-size: $base-text;
+      margin-bottom: 2rem;
+      color: $light;
+      font-weight: 600;
+      line-height: $lh-xs;
+      display: flex;
+      flex-direction: column;
+
+      .yell {
+        color: $warning-200;
+      }
+    }
+
+    &-img-box {
+      height: 100%;
+      width: 100%;
+      position: relative;
+    }
+
+    &-img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      height: 100%;
+      width: 100%;
+      object-fit: cover;
+      object-position: center;
+    }
+
+    @include breakpoints(mq-xxs) {
+      h2 {
+        font-size: $lg-text;
+      }
+    }
+
+    @include breakpoints(mq-xs) {
+      h2 {
+        font-size: $lg-text * 1.1;
+      }
+    }
+
+    @include breakpoints(mq-sm) {
+      &-body {
+        padding: 4rem 2rem;
+      }
+
+      h2 {
+        font-size: $xl-text;
+      }
+
+      grid-template-columns: 40% 60%;
+    }
+
+    @include breakpoints(mq-md) {
+      grid-template-columns: 40% 60%;
+
+      h2 {
+        font-size: $xl-text * 1.1;
+      }
+
+      &-body {
+        padding: 4rem 6rem;
+      }
+    }
+
+    @include breakpoints(mq-lg) {
+      h2 {
+        font-size: $xxxl-text;
+      }
+    }
+
+    @include breakpoints(mq-xl) {
+      h2 {
+        font-size: $xxxl-text * 1.1;
+      }
+    }
+
+    h2 {
+      @include multiplier("font-size", $iv-text, $genQs);
+    }
+  }
+
+  &__controls {
+    &-desk {
+      display: none;
+
+      @include breakpoints(mq-sm) {
+        display: flex;
+        position: absolute;
+        bottom: 2rem;
+        left: 0;
+        right: 0;
+        z-index: 300;
+        max-width: 40%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0 4rem;
+      }
+
+      @include breakpoints(mq-md) {
+        bottom: 3rem;
+        padding: 0 6rem;
+      }
+
+      @include multiplier("bottom", 3rem, $genQs);
+      @include multiplier("padding-right", 6rem, $genQs);
+      @include multiplier("padding-left", 6rem, $genQs);
+
+      &-btn {
+        border: none;
+        outline: none;
+        text-decoration: none;
+        background: transparent;
+        cursor: pointer;
+      }
+
+      &-dots {
+        margin-bottom: 0.4rem;
+        display: flex;
+        align-items: center;
+        @include multiplier("margin-bottom", 0.4rem, $genQs);
+
+        & > *:not(:last-child) {
+          margin-right: 1rem;
+
+          @include breakpoints(mq-md) {
+            margin-right: 1.5rem;
+          }
+          @include multiplier("margin-right", 1.5rem, $genQs);
+        }
+      }
+
+      &-dot {
+        height: 0.6rem;
+        width: 0.6rem;
+        border-radius: 50%;
+        background: $light;
+        border: none;
+        outline: none;
+        text-decoration: none;
+        cursor: pointer;
+        transform: scale(0.95);
+        transition: transform 0.2s linear;
+
+        @include multiplier("width", 0.6rem, $genQs);
+        @include multiplier("height", 0.6rem, $genQs);
+
+        &--current {
+          transform: scale(1.3);
+        }
+      }
+
+      &-icon {
+        height: 2rem;
+        width: 2rem;
+        @include multiplier("height", 2rem, $genQs);
+        @include multiplier("width", 2rem, $genQs);
+        path {
+          fill: $light;
+        }
+      }
+    }
+
+    &-mobile {
+      position: absolute;
+      bottom: -2rem;
+      width: 100%;
+      left: 0;
+      right: 0;
+      z-index: 200;
+      height: 2rem;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      & > *:not(:last-child) {
+        margin-right: 1rem;
+      }
+
+      &-btn {
+        border: none;
+        outline: none;
+        text-decoration: none;
+        height: 0.5rem;
+        width: 3.5rem;
+        background: $dark;
+        display: block;
+        cursor: pointer;
+
+        &:hover,
+        &--current {
+          background: $green-dark;
+        }
+      }
+
+      @include breakpoints(mq-sm) {
+        display: none;
+      }
+    }
+  }
+}
+
+.product-slider {
+  padding: 0.5rem;
+  overflow: hidden;
+  @include multiplier("padding-right", .5rem, $genQs);
+  @include multiplier("padding-left", .5rem, $genQs);
+
+  &__box {
+    width: 100%;
+    min-height: 35rem;
+    position: relative;
+    @include multiplier("min-height", 35rem, $genQs);
+  }
+
+  &__slides {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1rem;
+    position: absolute;
+    left: 0;
+    grid-auto-rows: 1fr;
+
+    @include breakpoints(mq-lg) {
+      gap: 3rem;
+    }
+
+    @include multiplier("gap", 3rem, $genQs);
+  }
+}

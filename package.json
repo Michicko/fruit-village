@@ -1,0 +1,14 @@
+{
+  "name": "fruit-village",
+  "version": "1.0.0",
+  "description": "A fruit e-commerce web app",
+  "main": "index.js",
+  "scripts": {
+    "dev:server": "nodemon server.js",
+    "dev:web": "cd web && vite",
+    "start-prod:server": "nodemon NODE_ENV=production server.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}

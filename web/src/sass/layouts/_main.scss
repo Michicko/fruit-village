@@ -1,0 +1,30 @@
+@use "../abstract/variables" as *;
+@use "../abstract/mixins" as *;
+
+.main {
+  padding: 2rem;
+  width: 100%;
+  min-height: 100vh;
+  background: $light;
+
+  @include breakpoints(mq-md) {
+    padding: 2rem;
+  }
+
+  @include breakpoints(mq-lg) {
+    padding: 2rem 4rem;
+  }
+
+  @include breakpoints(mq-xl) {
+    padding: 2rem 12rem;
+  }
+
+  @include breakpoints(mq-2xl) {
+    padding: 2rem 14rem;
+  }
+
+  @include multiplier("padding-top", 2rem, $genQs);
+  @include multiplier("padding-bottom", 2rem, $genQs);
+  @include multiplier("padding-left", 14rem, $genQs);
+  @include multiplier("padding-right", 14rem, $genQs);
+}
