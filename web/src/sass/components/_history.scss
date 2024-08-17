@@ -1,0 +1,47 @@
+@use "../abstract/variables" as *;
+@use "../abstract/mixins" as *;
+
+.history {
+  display: flex;
+  align-items: center;
+
+  & > *:not(:last-child) {
+    margin-right: 1rem;
+  }
+
+  &__icon {
+    height: 2rem;
+    width: 2rem;
+
+    &.small {
+      height: 1.4rem;
+      width: 1.4rem;
+      @include multiplier("height", 1.4rem, $genQs);
+      @include multiplier("width", 1.4rem, $genQs);
+    }
+
+    path {
+      // fill: $dark;
+      stroke: $dark;
+    }
+
+    @include multiplier("height", 2rem, $genQs);
+    @include multiplier("width", 2rem, $genQs);
+  }
+
+  &__link {
+    text-decoration: none;
+    font-size: $sm-text;
+    font-weight: 500;
+    color: $dark;
+
+    &:hover {
+      color: $green-dark;
+    }
+
+    @include breakpoints(mq-xs) {
+      font-size: $base-text;
+    }
+    @include multiplier("font-size", $base-text, $genQs);
+  }
+}

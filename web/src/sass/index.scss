@@ -14,6 +14,16 @@
 @use "./components/slider";
 @use "./components/category";
 @use "./components/product";
+@use "./components/info";
+@use "./components/socials";
+@use "./components/filter";
+@use "./components/history";
+@use "./components/pagination";
+@use "./components/newsletter";
+
+// pages
+@use './pages/error';
+@use './pages/sale';
 
 // layouts
 @use "./layouts/nav";

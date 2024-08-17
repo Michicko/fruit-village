@@ -1,5 +1,5 @@
 import Logo from "../Logo";
-import { useEffect, useRef, useState } from "react";
+import {  useRef, useState } from "react";
 import MobileNavButton from "./MobileNavButton";
 import Grid from "../../../assets/icons/grid-4.svg?react";
 import Like from "../../../assets/icons/like-filled.svg?react";
@@ -39,7 +39,7 @@ export default function MainNav({
           isMobileNavOpened={isMobileNavOpened}
           setIsMobileNavOpened={setIsMobileNavOpened}
         />
-        <Logo />
+        <Logo hideSm={true} />
       </div>
       <button
         className="btn btn--light btn--flex"
@@ -48,13 +48,13 @@ export default function MainNav({
         <Grid className="btn__icon" />
         <span>Catalog</span>
       </button>
-      <div className="form__group">
+      <div className="form__group form__group--light">
         <Search className="form__icon" />
         <input
           type="search"
           name="search"
           id="search"
-          className="form__input-text"
+          className="form__input-text form__input-text--light"
           placeholder="Search"
           onBlur={hideSearchBar}
           ref={searchRef}

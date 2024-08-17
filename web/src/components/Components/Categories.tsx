@@ -14,9 +14,19 @@ type CategoriesProps = {
 };
 
 export default function Categories({ categories }: CategoriesProps) {
+  const cate = [
+    ...categories,
+    {
+      id: 6,
+      category: "all",
+      link: "/sale",
+      image: "all-category.jpg",
+    },
+  ];
+  
   return (
     <div className="category__list">
-      {categories.map((category) => {
+      {cate.map((category) => {
         return (
           <div className="category" key={uuid()}>
             {category.id < 6 && (

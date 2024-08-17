@@ -1,0 +1,32 @@
+@use "../abstract/variables" as *;
+@use "../abstract/mixins" as *;
+
+.social {
+  text-decoration: none;
+  height: 2.5rem;
+  width: 2.5rem;
+  border-radius: 50%;
+  background: $light;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  @include multiplier("height", 2.5rem, $genQs);
+  @include multiplier("width", 2.5rem, $genQs);
+
+  &__icon {
+    height: 1.5rem;
+    width: 1.5rem;
+    @include multiplier("height", 1.5rem, $genQs);
+    @include multiplier("width", 1.5rem, $genQs);
+
+    path {
+      fill: $dark;
+    }
+  }
+
+  &:hover &__icon {
+    path {
+      fill: $green-dark;
+    }
+  }
+}

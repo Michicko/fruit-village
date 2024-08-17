@@ -38,4 +38,8 @@
 
     @include multiplier("font-size", $v-text, $genQs);
   }
+
+  &--dark{
+    color: $dark;
+  }
 }

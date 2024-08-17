@@ -41,3 +41,28 @@
     }
   }
 }
+
+.icon {
+  height: 2rem;
+  width: 2rem;
+
+  path {
+    fill: $dark;
+    stroke: $dark;
+  }
+
+  &--light {
+    path {
+      fill: $light;
+      stroke: $light;
+    }
+  }
+
+  @include multiplier("height", 2rem, $genQs);
+  @include multiplier("width", 2rem, $genQs);
+}
+
+
+.light{
+  color: $light;
+}

@@ -1,8 +1,10 @@
 import { Link } from "react-router-dom";
-
-export default function Logo() {
+type LogoProps = {
+  hideSm: boolean;
+};
+export default function Logo({ hideSm }: LogoProps) {
   return (
-    <Link to={"/"} className="logo">
+    <Link to={"/"} className={hideSm ? "logo hide-sm" : "logo"}>
       <img src="/logo.png" alt="fruit village icon" className="logo__img" />
       <span>FruitVillage</span>
     </Link>

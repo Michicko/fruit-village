@@ -1,0 +1,33 @@
+@use "../abstract/variables" as *;
+@use "../abstract/mixins" as *;
+
+.newsletter {
+  width: 100%;
+  &__form {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+
+    @include breakpoints(mq-md) {
+      flex-direction: row;
+      justify-content: center;
+    }
+
+    & > *:first-child {
+      margin-bottom: 2rem;
+
+      @include breakpoints(mq-md) {
+        max-width: 35rem;
+        margin-bottom: 0;
+        margin-right: 2rem;
+      }
+      @include multiplier("margin-right", 2, $genQs);
+      @include multiplier("max-width", 35rem, $genQs);
+    }
+
+    & > *:last-child {
+      min-width: 15rem;
+      @include multiplier("min-width", 15rem, $genQs);
+    }
+  }
+}

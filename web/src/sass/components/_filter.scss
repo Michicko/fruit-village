@@ -1,0 +1,189 @@
+@use "../abstract/variables" as *;
+@use "../abstract/mixins" as *;
+
+@mixin defaultFilterText {
+  font-size: $sm-text;
+  font-weight: 600;
+  color: $dark;
+  text-transform: capitalize;
+  font-family: $font;
+}
+
+.filter {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  z-index: 600;
+  transform: translateX(-100%);
+  transition: transform 0.4s linear;
+  height: 100vh;
+  min-width: 25rem;
+  box-shadow: $shadow-3;
+  background: $light;
+
+  &--show {
+    transform: translateX(0);
+  }
+
+  h5,
+  h3 {
+    font-size: $md-text;
+    font-weight: 600;
+    color: $dark;
+    text-transform: capitalize;
+  }
+
+  h5 {
+    font-size: $base-text;
+  }
+
+  &__ctrls,
+  &__btn,
+  &__check-label,
+  &__header,
+  &__header div {
+    display: flex;
+    align-items: center;
+  }
+
+  &__ctrls {
+    justify-content: space-between;
+    padding: 1.5rem 0;
+    .icon {
+      margin-top: 0.5rem;
+    }
+  }
+
+  &__btn {
+    border: none;
+    outline: non;
+    background: transparent;
+    margin-top: 1.5rem;
+
+    span {
+      margin-right: 1rem;
+      @include defaultFilterText();
+    }
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+
+    & > *:not(:last-child) {
+      margin-bottom: 1rem;
+    }
+  }
+
+  &__check-label {
+    span {
+      @include defaultFilterText();
+    }
+  }
+
+  &__check {
+    margin-right: 0.8rem;
+  }
+
+  &__box {
+    padding: 1rem;
+    width: 100%;
+    background: $light;
+  }
+
+  &__header {
+    height: 6rem;
+    background: $green-dark;
+    justify-content: space-between;
+    padding: 0 1rem;
+
+    div {
+      .icon {
+        margin-right: 1rem;
+      }
+    }
+
+    .cancel {
+      background: transparent;
+      border: none;
+
+      .icon {
+        height: 3rem;
+        width: 3rem;
+      }
+    }
+
+    h3 {
+      color: $light;
+    }
+  }
+
+  &__main {
+    height: calc(100vh - 11rem);
+    overflow-y: scroll;
+    padding: 1rem 0;
+  }
+
+  &__footer {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    align-items: center;
+    padding: 0.5rem 1rem;
+    background: $green-dark;
+    height: 5rem;
+  }
+
+  @include breakpoints(mq-lg) {
+    position: relative;
+    height: auto;
+    transform: translateX(0);
+    padding: 0 0.5rem;
+    box-shadow: none;
+
+    &__footer,
+    &__header {
+      display: none;
+    }
+
+    &__main {
+      overflow-y: unset;
+    }
+
+    &__box {
+      margin-bottom: 1rem;
+      box-shadow: $shadow-3;
+    }
+  }
+}
+
+.category-filter {
+  display: inline-flex;
+  align-items: center;
+  text-align: center;
+  cursor: pointer;
+  background: transparent;
+  outline: none;
+  border: none;
+  @include defaultFilterText();
+
+  .icon {
+    margin-right: 1rem;
+  }
+
+  &:hover {
+    color: $green-dark;
+
+    .icon {
+      fill: $green-dark;
+      path {
+        fill: $green-dark;
+        stroke: $green-dark;
+      }
+    }
+  }
+}
+
+.price-filter {
+}

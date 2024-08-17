@@ -12,6 +12,14 @@
     @include multiplier("width", 3rem, $genQs);
   }
 
+  &.hide-sm {
+    display: none;
+
+    @include breakpoints(mq-lg) {
+      display: flex;
+    }
+  }
+
   span {
     font-size: $base-text;
     font-weight: 600;
@@ -20,11 +28,6 @@
     margin-left: 0.8rem;
     margin-top: 0.5rem;
     line-height: 1;
-    display: none;
-
-    @include breakpoints(mq-lg) {
-      display: block;
-    }
 
     @include multiplier("font-size", $base-text, $genQs);
     @include multiplier("margin-left", 0.8rem, $genQs);

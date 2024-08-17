@@ -1,0 +1,42 @@
+@use "../abstract/variables" as *;
+@use "../abstract/mixins" as *;
+
+.error {
+  &__page {
+    width: 100%;
+    margin-bottom: 4rem;
+    @include multiplier("margin-bottom", 4rem, $genQs);
+
+    &-img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+      min-height: 21rem;
+
+      @include breakpoints(mq-sm) {
+        min-height: 40rem;
+      }
+
+      @include breakpoints(mq-lg) {
+        min-height: 60rem;
+      }
+    }
+
+    &-container {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 4rem 0;
+      margin-bottom: 4rem;
+      @include multiplier("margin-bottom", 4rem, $genQs);
+      @include multiplier("padding-top", 4rem, $genQs);
+      @include multiplier("padding-bottom", 4rem, $genQs);
+
+      & > *:not(:last-child) {
+        margin-bottom: 2rem;
+        @include multiplier("margin-bottom", 2rem, $genQs);
+      }
+    }
+  }
+}

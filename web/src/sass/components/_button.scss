@@ -9,19 +9,20 @@
   background: transparent;
   text-decoration: none;
   padding: 0 1.5rem;
-  border-radius: .6rem;
+  border-radius: 0.6rem;
   cursor: pointer;
   display: inline-flex;
   align-items: center;
   justify-content: center;
   transition: all 0.3s linear;
+  box-shadow: $shadow-3;
 
   &,
   span {
     color: $green-dark;
     font-family: $font;
     font-size: $sm-text;
-    font-weight: 600;
+    font-weight: 500;
   }
 
   @include breakpoints(mq-xs) {
@@ -43,7 +44,7 @@
     @include multiplier("font-size", $base-text, $genQs);
   }
 
-  @include multiplier("border-radius", .6rem, $genQs);
+  @include multiplier("border-radius", 0.6rem, $genQs);
   @include multiplier("height", 4rem, $genQs);
   @include multiplier("padding-left", 3rem, $genQs);
   @include multiplier("padding-right", 3rem, $genQs);
@@ -72,6 +73,31 @@
     color: $green-dark;
   }
 
+  &--text-dark &__icon {
+    path {
+      fill: $green-dark;
+    }
+  }
+
+  &--text-dark span {
+    color: $dark;
+  }
+
+  &--primary {
+    background: $green-light;
+    color: $light;
+
+    &:hover {
+      background: $green-dark;
+    }
+  }
+
+  &--trans{
+    background: transparent;
+    color: $light;
+    box-shadow: none;
+  }
+
   &--hovered-green {
     &:hover {
       background: #ddfbce;
@@ -91,6 +117,11 @@
   &--sm {
     height: 3.5rem;
     @include multiplier("height", 3.5rem, $genQs);
+  }
+
+  &--xs {
+    height: 3rem;
+    @include multiplier("height", 3rem, $genQs);
   }
 
   // &--flex {

@@ -11,6 +11,9 @@
   @include multiplier("margin-bottom", 8rem, $genQs);
 }
 
+@mixin padded {
+}
+
 @mixin defaultSection {
   min-height: 30rem;
   margin-left: -2rem;
@@ -58,12 +61,12 @@
   @include multiplier("padding-left", 0.5rem, $genQs);
 
   & > *:last-child {
-    visibility: hidden;
+    display: none;
   }
 
   @include breakpoints(mq-md) {
     & > *:last-child {
-      visibility: visible;
+      display: flex;
     }
   }
 }
@@ -72,7 +75,26 @@
   &__promo {
     & {
       background: $blue-light;
+      padding-bottom: 0 !important;
       @include defaultSection();
+      position: relative;
+    }
+
+    .text-box {
+      width: 100%;
+      max-width: 60rem;
+    }
+
+    .link-box {
+      position: absolute;
+      bottom: 2rem;
+      width: 100%;
+      left: 0;
+      padding: 0 2rem;
+
+      .btn {
+        width: 100%;
+      }
     }
 
     p {
@@ -81,10 +103,17 @@
       color: $light;
     }
 
+    .promo-img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+    }
+
     .box {
       display: flex;
       align-items: center;
-      margin-bottom: 1rem;
+      margin-top: 1rem;
+      margin-bottom: 4rem;
     }
 
     .icon {
@@ -93,6 +122,31 @@
       margin-left: 1rem;
       path {
         fill: $light;
+      }
+    }
+
+    @include breakpoints(mq-md) {
+      & {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        align-items: center;
+        padding-top: 0 !important;
+      }
+
+      .link-box {
+        position: relative;
+        bottom: 0;
+        width: auto;
+        left: 0;
+        padding: 0;
+
+        .btn {
+          width: auto;
+        }
+      }
+
+      .promo-img {
+        margin-top: -1rem;
       }
     }
 
@@ -116,6 +170,17 @@
     .icon {
       @include multiplier("height", 1.8rem, $genQs);
       @include multiplier("width", 1.8rem, $genQs);
+    }
+
+    .text-box {
+      width: 100%;
+      max-width: 60rem;
+      @include multiplier("max-width", 60rem, $genQs);
+    }
+
+    .promo-img {
+      margin-top: -1rem;
+      @include multiplier("margin-top", -1rem, $genQs);
     }
 
     p {
@@ -225,8 +290,8 @@
   }
 
   &__infos {
-    width: 100%;
     min-height: 20rem;
+    align-items: center;
     background-image: linear-gradient(
         rgba($success-300, 0.92),
         rgba($success-300, 0.92)
@@ -235,11 +300,35 @@
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
-
-    padding: 5rem 2rem;
     display: grid;
     grid-template-columns: repeat(2, 2fr);
     grid-column-gap: 2rem;
     grid-row-gap: 4rem;
+    @include defaultSection();
+
+    @include breakpoints(mq-md) {
+      grid-template-columns: repeat(4, 1fr);
+      grid-row-gap: 0;
+    }
+  }
+
+  &__newsletter {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    @include mgBottom();
+
+    & > *:not(:last-child) {
+      margin-bottom: 2rem;
+      @include multiplier("margin-bottom", 2rem, $genQs);
+    }
+
+    p {
+      font-size: $sm-text;
+      font-weight: 400;
+      color: $dark;
+      @include multiplier("font-size", $sm-text, $genQs);
+    }
   }
 }

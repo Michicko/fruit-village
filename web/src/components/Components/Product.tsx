@@ -13,6 +13,12 @@ export default function Product({ product }: ProductProper) {
     wishList: ["2cdy57h72782u289uj9"],
   };
 
+  const getDiscountPrice = (price: number, discount: number) => {
+    const pricePercent = (discount / 100) * price;
+    const currentPrice = (price - pricePercent).toFixed(2);
+    return currentPrice;
+  };
+
   return (
     <div className="product">
       {product.discount && (
@@ -40,7 +46,16 @@ export default function Product({ product }: ProductProper) {
           {product.stock ? "in stock" : "by order"}
         </span>
         <div className="product__box">
-          <p className="product__price">${product.price}</p>
+          {!product.discount ? (
+            <p className="product__price">${product.price}</p>
+          ) : (
+            <div className="product__price-box">
+              <p className="product__price current">
+                ${getDiscountPrice(product.price, product.discount)}
+              </p>
+              <p className="product__price-original">${product.price}</p>
+            </div>
+          )}
           <button
             className={
               user.wishList.includes(product.id)

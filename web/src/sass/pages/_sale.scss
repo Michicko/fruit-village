@@ -1,0 +1,103 @@
+@use "../abstract/variables" as *;
+@use "../abstract/mixins" as *;
+
+.sale {
+  display: grid;
+  grid-template-columns: 100%;
+  margin-top: 4rem;
+  margin-bottom: 6rem;
+
+  @include breakpoints(mq-lg) {
+    grid-template-columns: 25rem calc(100% - 28rem);
+    grid-column-gap: 3rem;
+  }
+}
+
+.products {
+  
+  &__top {
+    width: 100%;
+    h3 {
+      font-size: $md-text;
+      font-weight: 600;
+      color: $dark;
+    }
+
+    &-sort-box {
+      display: flex;
+      align-items: center;
+
+      .sort-box-dsc {
+        margin-right: 1rem;
+        display: flex;
+        align-items: center;
+        margin-right: 1.5rem;
+      }
+
+      span {
+        font-size: $sm-text;
+        font-weight: 400;
+        color: $dark;
+        margin-left: 0.8rem;
+      }
+    }
+
+    &.desktop {
+      display: none;
+      margin-bottom: 3rem;
+      padding: .5rem 0;
+
+      @include breakpoints(mq-lg) {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+    }
+
+    &.mobile {
+      margin-bottom: 2rem;
+      @include breakpoints(mq-lg) {
+        display: none;
+      }
+    }
+
+    &-btns {
+      width: 100%;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      grid-column-gap: 1rem;
+      margin-top: 2rem;
+    }
+
+    &-filters {
+      margin-top: 2rem;
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      display: none;
+
+      & > *:not(:last-child) {
+        margin-bottom: 1rem;
+        margin-right: 1rem;
+      }
+    }
+  }
+
+  &__list {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-gap: 1rem;
+
+    @include breakpoints(mq-xs) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @include breakpoints(mq-lg) {
+      grid-gap: 3rem;
+    }
+    @include breakpoints(mq-xl) {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+}

@@ -9,12 +9,20 @@
     display: flex;
     align-items: center;
     background: transparent;
-    border: 1px solid $light;
+    border: 1px solid $green-light;
     border-radius: $xxs-gutter;
     padding: 0 1rem;
     @include multiplier("height", 4rem, $genQs);
     @include multiplier("padding-left", 1rem, $genQs);
     @include multiplier("padding-right", 1rem, $genQs);
+
+    &--light {
+      border-color: $light;
+    }
+
+    &--sm{
+      height: 3.5rem;
+    }
   }
 
   &__input-text {
@@ -29,12 +37,17 @@
 
     &,
     &::placeholder {
-      color: $light;
+      color: $dark;
       font-size: $base-text;
       font-weight: 400;
       font-family: $font;
 
       @include multiplier("font-size", $base-text, $genQs);
+    }
+
+    &--light,
+    &--light::placeholder {
+      color: $light;
     }
   }
 
@@ -47,10 +60,16 @@
     width: 2.5rem;
     transition: transform 0.2s linear;
     path {
-      fill: $light;
+      fill: $dark;
     }
 
     @include multiplier("height", 2.5rem, $genQs);
     @include multiplier("width", 2.5rem, $genQs);
+  }
+
+  &__group--light &__icon {
+    path {
+      fill: $light;
+    }
   }
 }

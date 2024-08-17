@@ -267,6 +267,10 @@
     left: 0;
     grid-auto-rows: 1fr;
 
+    & > * {
+      min-width: 22.1rem;
+    }
+
     @include breakpoints(mq-lg) {
       gap: 3rem;
     }
