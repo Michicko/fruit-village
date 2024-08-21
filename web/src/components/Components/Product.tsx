@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import Like from "../../assets/icons/like.svg?react";
 import Liked from "../../assets/icons/like-filled.svg?react";
 import { ProductProps } from "../../constants";
+import LikeButton from "./LikeButton";
 
 type ProductProper = {
   product: ProductProps;
@@ -34,7 +35,7 @@ export default function Product({ product }: ProductProper) {
         />
       </div>
       <div className="product__body">
-        <Link to={`/shop/${product.slug}`} className="product__name">
+        <Link to={`/sale/${product.slug}`} className="product__name">
           {product.name}
         </Link>
         <p className="product__quantity">price for {product.quantity}</p>
@@ -56,18 +57,9 @@ export default function Product({ product }: ProductProper) {
               <p className="product__price-original">${product.price}</p>
             </div>
           )}
-          <button
-            className={
-              user.wishList.includes(product.id)
-                ? "product__like-btn liked"
-                : "product__like-btn"
-            }
-          >
-            <Like className="product__icon" />
-            <Liked className="product__icon" />
-          </button>
+          <LikeButton product={product} />
         </div>
-        <button className="product__cart-btn">Add to Cart</button>
+        <button className="btn btn--sm btn--primary">Add to Cart</button>
       </div>
     </div>
   );

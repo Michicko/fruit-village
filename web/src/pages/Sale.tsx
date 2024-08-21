@@ -15,6 +15,7 @@ export default function Sale() {
       link: "/sale",
     },
   ]);
+  
   const [isFilterOpened, setIsFilterOpened] = useState(false);
   return (
     <>

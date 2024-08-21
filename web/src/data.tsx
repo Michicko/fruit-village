@@ -1,4 +1,4 @@
-export   const products = [
+export const products = [
   {
     id: "2bdy77h72782u289uj9",
     name: "pineapple premium",
@@ -108,4 +108,41 @@ export const categories = [
     link: "/sale?category=citrus",
     image: "citrus-category.jpg",
   },
+];
+
+export const reviews = [
+  {
+    id: "1jduey388",
+    author: "John Doe",
+    date: "2021-09-27",
+    rating: 4.2,
+    text: "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Accusantium cumque itaque maiores sunt quia sint cum soluta dicta provident possimus.",
+    likes: 5,
+    dislikes: 0,
+  },
+  {
+    id: "1jduey311",
+    author: "Amanda Smith",
+    date: "2021-08-15",
+    rating: 4.5,
+    text: "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Accusantium cumque itaque maiores sunt quia sint cum soluta dicta provident possimus.",
+    likes: 3,
+    dislikes: 1,
+  },
+  {
+    id: "1jduey3c2",
+    author: "Jane Doe",
+    date: "2022-09-27",
+    rating: 5,
+    text: "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Accusantium cumque itaque maiores sunt quia sint cum soluta dicta provident possimus.",
+    likes: 4,
+    dislikes: 1,
+  },
+];
+
+export const ratings = [
+  0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1, 1.1, 1.2, 1.3, 1.4, 1.5, 1.6,
+  1.7, 1.8, 1.9, 2, 2.1, 2.2, 2.3, 2.4, 2.5, 2.6, 2.7, 2.8, 2.9, 3, 3.1,
+  3.2, 3.3, 3.4, 3.5, 3.6, 3.7, 3.8, 3.9, 4, 4.1, 4.2, 4.3, 4.4, 4.5, 4.6, 4.7,
+  4.8, 4.9, 5,
 ];

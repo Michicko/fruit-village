@@ -1,0 +1,401 @@
+@use "../abstract/variables" as *;
+@use "../abstract/mixins" as *;
+
+@mixin text {
+  font-size: $sm-text;
+  font-weight: 500;
+  color: $dark;
+}
+
+.single-product {
+  &__main {
+    & > *:not(:last-child) {
+      margin-bottom: 4rem;
+
+      @include breakpoints(mq-lg) {
+        margin-bottom: 6rem;
+      }
+    }
+
+    & > *:first-child {
+      margin-bottom: 0;
+    }
+  }
+
+  &__container {
+    margin: 2rem 0;
+
+    @include breakpoints(mq-md) {
+      box-shadow: $shadow-3;
+      padding: 2rem;
+    }
+  }
+
+  &__content {
+    display: grid;
+    grid-template-columns: repeat(100%);
+    grid-gap: 2rem;
+
+    @include breakpoints(mq-md) {
+      grid-template-columns: repeat(2, 1fr);
+      grid-template-rows: 6.5rem auto;
+      margin-bottom: 2rem;
+      grid-template-areas:
+        "img name"
+        "img text";
+
+      & > *:first-child {
+        grid-area: name;
+      }
+
+      & > *:nth-child(2) {
+        grid-area: img;
+      }
+
+      & > *:last-child {
+        grid-area: text;
+      }
+    }
+    @include breakpoints(mq-xl) {
+      margin-bottom: 4rem;
+    }
+  }
+
+  &__info {
+    h2 {
+      font-size: $md-text;
+      font-weight: 600;
+      color: $dark;
+      text-transform: capitalize;
+      margin-bottom: 1rem;
+    }
+  }
+
+  &__text-box {
+    & > * {
+      margin-bottom: 2.5rem;
+    }
+  }
+
+  &__price {
+    font-size: $xl-text;
+    font-weight: 700;
+    color: $dark;
+
+    &-box {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 2rem;
+
+      grid-template-areas:
+        "price like"
+        "btn btn";
+
+      & > *:first-child {
+        grid-area: price;
+      }
+
+      & > *:nth-child(2) {
+        grid-area: like;
+        justify-self: flex-end;
+      }
+      & > *:nth-child(3) {
+        grid-area: btn;
+      }
+    }
+
+    @include breakpoints(mq-md) {
+      &-box {
+        grid-template-columns: repeat(2, auto);
+        grid-template-areas:
+          "price price"
+          "btn like";
+      }
+
+      & {
+        font-size: $xxl-text;
+      }
+    }
+  }
+
+  &__rating-box {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    & > *:last-child {
+      text-align: end;
+    }
+
+    p {
+      @include text();
+    }
+  }
+
+  &__review-btn{
+    border: none;
+    outline: none;
+    background: transparent;
+    display: flex;
+    align-items: center;
+    font-size: $sm-text;
+    font-weight: 500;
+    color: $dark;
+    cursor: pointer;
+
+    .icon{
+      margin-left: 1rem;
+      height: 1.1rem;
+      width: 1.1rem;
+      margin-top: .2rem;
+    }
+  }
+
+  &__code {
+    padding: 0.25rem 0.6rem;
+    background: $green-dark;
+    color: $light;
+    border-radius: 0.5rem;
+    margin-left: 1rem;
+  }
+
+  &__img {
+    height: auto;
+    max-width: 100%;
+    display: block;
+  }
+
+  &__img-view {
+    margin-bottom: 1rem;
+    user-select: none;
+  }
+
+  &__img-slider {
+    width: 100%;
+    overflow-x: hidden;
+  }
+
+  &__img-slides {
+    display: flex;
+    align-items: center;
+
+    & > *:not(:last-child) {
+      margin-right: 2rem;
+    }
+  }
+
+  &__img-slide {
+    width: 6rem;
+    height: 6rem;
+    object-fit: contain;
+    border: 2px solid transparent;
+    border-radius: 0.5rem;
+
+    &.current,
+    &:hover {
+      border-color: $green-light;
+    }
+  }
+
+  &__instruction-box {
+    div {
+      display: flex;
+      align-items: center;
+      margin-bottom: 0.5rem;
+    }
+
+    h4 {
+      @include text();
+      color: $green-dark;
+      margin-left: 0.5rem;
+    }
+
+    li {
+      @include text();
+    }
+
+    ul {
+      padding-left: 1.5rem;
+    }
+
+    & > *:nth-child(2) {
+      margin-bottom: 2rem;
+    }
+  }
+
+  &__taste-box {
+    h3 {
+      @include text();
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+    }
+    .content {
+      display: flex;
+      align-items: center;
+      justify-content: stretch;
+    }
+
+    .taste {
+      min-width: 6rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 0 2rem;
+
+      p {
+        @include text();
+      }
+
+      &:nth-child(1) {
+        padding-left: 0;
+      }
+
+      &:nth-child(1),
+      &:nth-child(2) {
+        border-right: 1px solid $dark;
+      }
+
+      .icon {
+        margin-bottom: 0.5rem;
+      }
+    }
+  }
+
+  &__switches {
+    margin-bottom: 1rem;
+    & > *:first-child {
+      margin-right: 2rem;
+    }
+
+    .switch {
+      background: transparent;
+      border: none;
+      outline: none;
+      cursor: pointer;
+      @include text();
+      text-transform: capitalize;
+      font-weight: 600;
+      padding: 1rem;
+      position: relative;
+
+      span {
+        font-weight: 300;
+        color: $gray-200;
+      }
+
+      &::after {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        z-index: 5;
+        width: 100%;
+        height: 100%;
+        content: "";
+        background: transparent;
+      }
+
+      &::before {
+        height: 2px;
+        width: 100%;
+        position: absolute;
+        bottom: 0.5rem;
+        left: 0;
+        right: 0;
+        content: "";
+        background: transparent;
+      }
+
+      &:hover &::before,
+      &--current::before {
+        background: $green-dark;
+      }
+    }
+
+    @include breakpoints(mq-md) {
+      margin-bottom: 2.5rem;
+    }
+  }
+
+  &__switch-views {
+    position: relative;
+    width: 100%;
+  }
+
+  &__switch-view {
+    display: none;
+
+    &.about {
+      h5 {
+        margin-bottom: 1rem;
+      }
+
+      p:not(:last-child) {
+        margin-bottom: 2.5rem;
+      }
+    }
+
+    &--current {
+      display: block;
+    }
+
+    h5 {
+      font-size: $base-text;
+      font-weight: 600;
+      color: $dark;
+    }
+  }
+
+  &__rating-box {
+    .ratings {
+      display: flex;
+      align-items: center;
+    }
+  }
+
+  &__review-intro {
+    display: flex;
+    align-items: center;
+
+    h5 {
+      font-size: $md-text;
+      font-weight: 600;
+      color: $dark;
+    }
+
+    & > *:not(:last-child) {
+      margin-right: 1rem;
+    }
+  }
+
+  &__btn-box {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 2.5rem;
+
+    & > *:first-child {
+      margin-bottom: 1rem;
+    }
+
+    @include breakpoints(mq-md) {
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+
+      & > *:first-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  &__reviews {
+    & > *:not(:last-child) {
+      margin-bottom: 2.5rem;
+    }
+
+    @include breakpoints(mq-md) {
+      margin-bottom: 3rem;
+    }
+  }
+}

@@ -8,6 +8,7 @@ import Login from "./pages/Login";
 import Blog from "./pages/Blog";
 import Error404 from "./pages/Error404";
 import ScrollToTop from "./components/Components/ScrollToTop";
+import Product from "./pages/Product";
 
 function App() {
   const { pathname } = useLocation();
@@ -20,6 +21,7 @@ function App() {
           <Route path="about" element={<About />} />
           <Route path="shipping-and-payment" element={<ShippingPayment />} />
           <Route path="sale" element={<Sale />} />
+          <Route path="sale/:slug" element={<Product />} />
           <Route path="blog" element={<Blog />} />
           <Route path="login" element={<Login />} />
           <Route path="*" element={<Error404 />} />

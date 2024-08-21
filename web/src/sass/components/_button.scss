@@ -86,9 +86,10 @@
   &--primary {
     background: $green-light;
     color: $light;
+    font-size: $base-text;
 
     &:hover {
-      background: $green-dark;
+      background: $blue-light;
     }
   }
 

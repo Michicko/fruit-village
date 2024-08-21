@@ -1,0 +1,9 @@
+@use "../abstract/variables" as *;
+@use "../abstract/mixins" as *;
+
+.ratings{
+  display: flex;
+  &>*:first-child{
+    margin-right: 1rem;
+  }
+}

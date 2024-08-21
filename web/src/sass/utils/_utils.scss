@@ -46,6 +46,11 @@
   height: 2rem;
   width: 2rem;
 
+  &--sm {
+    height: 1.5rem;
+    width: 1.5rem;
+  }
+
   path {
     fill: $dark;
     stroke: $dark;
@@ -58,11 +63,48 @@
     }
   }
 
+  &--primary {
+    path {
+      fill: $green-dark;
+      stroke: $green-dark;
+    }
+  }
+  &--secondary {
+    path {
+      fill: $red-dark;
+      stroke: $red-dark;
+    }
+  }
+
   @include multiplier("height", 2rem, $genQs);
   @include multiplier("width", 2rem, $genQs);
 }
 
-
-.light{
+.light {
   color: $light;
+}
+
+.text {
+  font-size: $base-text;
+  font-weight: 400;
+  color: $dark;
+  &--bold{
+    font-weight: 500;
+  }
+  &--xs {
+    font-size: $xs-text;
+  }
+  &--sm {
+    font-size: $sm-text;
+  }
+  &--md {
+    font-size: $md-text;
+  }
+  &--lg {
+    font-size: $lg-text;
+  }
+}
+
+.dark {
+  color: $dark;
 }

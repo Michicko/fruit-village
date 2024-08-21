@@ -1,9 +1,10 @@
-import { v4 as uuid } from 'uuid';
+import { useState } from "react";
+import Select from "../Select";
 
 export default function Sort() {
   const options = [
     {
-      name: "featured",
+      name: "Featured",
       value: "featured",
     },
     {
@@ -19,11 +20,22 @@ export default function Sort() {
       value: "price, high to low",
     },
   ];
+
+  const [sort, setSort] = useState(options[1].value);
+
+  const handleOnchange = (e: React.ChangeEvent) => {
+    const target = e.target as HTMLSelectElement;
+    setSort(target.value);
+    target.blur();
+  };
+
   return (
-    <select name="sort" id="sort" className="sort">
-      {options.map((el) => {
-        return <option value={el.value} key={uuid()}>{el.name}</option>;
-      })}
-    </select>
+    <Select
+      options={options}
+      name="sort"
+      id="sort"
+      value={sort}
+      handleOnChange={handleOnchange}
+    />
   );
 }

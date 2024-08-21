@@ -1,0 +1,93 @@
+@use "../abstract/variables" as *;
+@use "../abstract/mixins" as *;
+
+$h: 1rem;
+$range-height: 0.25rem;
+
+@mixin track() {
+  background: none; /* get rid of Firefox track background */
+  height: 100%;
+  width: 100%;
+  margin-top: 0.25rem;
+}
+
+@mixin thumb() {
+  background: currentcolor;
+  border: none; /* get rid of Firefox thumb border */
+  border-radius: 50%;
+  pointer-events: auto; /* catch clicks */
+  width: $h;
+  height: $h;
+  margin-top: 0.25rem;
+}
+
+.range-slider {
+  display: inline-block;
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-rows: max-content $h;
+  margin: 1rem auto;
+  width: 100%;
+  // overflow: hidden;
+
+  background: /* emulate track with wrapper background */ linear-gradient(
+    0deg,
+    #ccc 0.25rem,
+    transparent 0
+  );
+
+  grid-template: repeat(2, max-content) #{$h}/ 1fr 1fr;
+
+
+  input[type="range"] {
+    &::-webkit-slider-runnable-track,
+    &::-webkit-slider-thumb,
+    & {
+      -webkit-appearance: none;
+    }
+
+    grid-column: 1;
+    grid-row: 2;
+
+    background: none; /* get rid of white Chrome background */
+    color: $green-dark;
+    font: inherit; /* fix too small font-size in both Chrome & Firefox */
+    margin: 0;
+    pointer-events: none; /* let clicks pass through */
+
+    &::-webkit-slider-runnable-track {
+      @include track;
+    }
+
+    &::-moz-range-track {
+      @include track;
+    }
+
+    &::-webkit-slider-thumb {
+      @include thumb;
+    }
+
+    &::-moz-range-thumb {
+      @include thumb;
+    }
+
+    grid-column: 1 / span 2;
+    grid-row: 3;
+  }
+
+  output {
+    grid-row: 2;
+    font-size: $sm-text;
+    font-weight: 400;
+    color: $dark;
+
+    &::after {
+      content: counter(c);
+    }
+
+    &:last-child {
+      text-align: right;
+    }
+  }
+}

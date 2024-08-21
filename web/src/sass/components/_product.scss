@@ -5,11 +5,8 @@
   display: grid;
   box-shadow: $shadow-3;
   border-radius: $xxs-gutter;
-  // min-width: 22.1rem;
   width: 100%;
   position: relative;
-
-  @include multiplier("min-wdith", 22.1rem, $genQs);
 
   &__discount {
     position: absolute;
@@ -51,6 +48,9 @@
 
   &__body {
     padding: 1rem;
+    &>*:last-child{
+      width: 100%;
+    }
     @include multiplier("padding", 1rem, $genQs);
     & > *:nth-child(1),
     & > *:nth-child(2) {
@@ -133,63 +133,5 @@
     }
 
     @include multiplier("font-size", $md-text, $genQs);
-  }
-
-  &__like-btn {
-    border: none;
-    outline: none;
-    background: transparent;
-
-    & > * {
-      display: none;
-    }
-  }
-
-  &__icon {
-    height: 2rem;
-    width: 2rem;
-    path {
-      fill: $red-dark;
-    }
-    @include multiplier("height", 2rem, $genQs);
-    @include multiplier("width", 2rem, $genQs);
-  }
-
-  &__like-btn.liked,
-  &__like-btn:hover {
-    & > *:first-child {
-      display: none;
-    }
-
-    & > *:last-child {
-      display: block;
-    }
-  }
-
-  &__like-btn {
-    & > *:first-child {
-      display: block;
-    }
-  }
-
-  &__cart-btn {
-    height: 3.5rem;
-    width: 100%;
-    background: $green-light;
-    border-radius: 0.6rem;
-    outline: none;
-    border: none;
-    color: $light;
-    font-weight: 500;
-    font-size: $base-text;
-    cursor: pointer;
-
-    @include multiplier("height", 3.5rem, $genQs);
-    @include multiplier("border-radius", 0.6rem, $genQs);
-    @include multiplier("font-size", $base-text, $genQs);
-
-    &:hover {
-      background: $blue-light;
-    }
   }
 }

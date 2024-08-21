@@ -1,0 +1,39 @@
+@use "../abstract/variables" as *;
+@use "../abstract/mixins" as *;
+
+
+.like-btn {
+  border: none;
+  outline: none;
+  background: transparent;
+  cursor: pointer;
+
+  & > * {
+    display: none;
+  }
+
+  &__icon {
+    height: 2rem;
+    width: 2rem;
+    path {
+      fill: $red-dark;
+    }
+    @include multiplier("height", 2rem, $genQs);
+    @include multiplier("width", 2rem, $genQs);
+  }
+
+  &.liked,
+  &:hover {
+    & > *:first-child {
+      display: none;
+    }
+
+    & > *:last-child {
+      display: block;
+    }
+  }
+
+  & > *:first-child {
+    display: block;
+  }
+}

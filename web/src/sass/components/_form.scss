@@ -10,7 +10,7 @@
     align-items: center;
     background: transparent;
     border: 1px solid $green-light;
-    border-radius: $xxs-gutter;
+    border-radius: 0.6rem;
     padding: 0 1rem;
     @include multiplier("height", 4rem, $genQs);
     @include multiplier("padding-left", 1rem, $genQs);
@@ -20,9 +20,41 @@
       border-color: $light;
     }
 
-    &--sm{
+    &--sm {
       height: 3.5rem;
     }
+  }
+
+  &__review {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    margin-bottom: 4rem;
+  }
+
+  &__control {
+    display: flex;
+    flex-direction: column;
+
+    & > *:first-child {
+      margin-bottom: 1rem;
+    }
+  }
+
+  &__label {
+    font-size: $base-text;
+    font-weight: 500;
+    color: $dark;
+    text-transform: capitalize;
+  }
+
+  &__textarea {
+    background: transparent;
+    outline: none;
+    border: 1px solid $gray;
+    padding: 1rem 1.5rem;
+    border-radius: 0.6rem;
+    resize: none;
   }
 
   &__input-text {
@@ -34,6 +66,14 @@
     border: none;
     @include multiplier("padding-right", 1rem, $genQs);
     @include multiplier("padding-left", 2rem, $genQs);
+
+    &:-webkit-autofill,
+    &:-webkit-autofill:hover,
+    &:-webkit-autofill:focus,
+    &:-webkit-autofill:active {
+      -webkit-box-shadow: 0 0 0px 1000px $light inset !important;
+      -webkit-text-fill-color: $dark !important;
+    }
 
     &,
     &::placeholder {
@@ -48,6 +88,16 @@
     &--light,
     &--light::placeholder {
       color: $light;
+    }
+
+    &--light {
+      &:-webkit-autofill,
+      &:-webkit-autofill:hover,
+      &:-webkit-autofill:focus,
+      &:-webkit-autofill:active {
+        -webkit-box-shadow: 0 0 0px 1000px $green-dark inset !important;
+        -webkit-text-fill-color: $light !important;
+      }
     }
   }
 

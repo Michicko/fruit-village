@@ -1,0 +1,63 @@
+@use "../abstract/variables" as *;
+@use "../abstract/mixins" as *;
+
+.select {
+  position: relative;
+  min-width: 20rem;
+  -webkit-appearance: none;
+  padding: 0.7rem 4rem 0.7rem 1.2rem;
+  width: 100%;
+  border: 1px solid $gray;
+  border-radius: 0.5rem;
+  background: $light;
+  box-shadow: 0 1px 3px -2px $shadow-3;
+  cursor: pointer;
+  font-family: inherit;
+  font-size: $base-text;
+  transition: all 150ms ease;
+  z-index: 5;
+  background: transparent;
+
+  &__label {
+    position: relative;
+  }
+
+  &:required:invalid {
+    color: #5a667f;
+  }
+
+  option {
+    color: $dark;
+    &[value=""][disabled] {
+      display: none;
+    }
+
+    &:hover,
+    &:active,
+    &:focus {
+      background: rgba($green-dark, 0.5);
+      color: $light;
+    }
+  }
+
+  &:focus {
+    outline: none;
+    border-color: $green-dark;
+  }
+
+  &__arrow {
+    height: 1rem;
+    width: 1rem;
+    user-select: none;
+    position: absolute;
+    right: 1rem;
+    top: 50%;
+    transform: translateY(-50%);
+    transition: transform 0.2s linear;
+    fill: $dark;
+  }
+
+  &:focus ~ &__arrow {
+    transform: translateY(-50%) rotateX(180deg);
+  }
+}

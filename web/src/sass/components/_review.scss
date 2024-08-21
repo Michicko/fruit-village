@@ -1,0 +1,47 @@
+@use "../abstract/variables" as *;
+@use "../abstract/mixins" as *;
+
+.review {
+  & > *:first-child {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  h6 {
+    font-size: $base-text;
+    font-weight: 600;
+    color: $dark;
+  }
+
+  &__text {
+    margin-bottom: 1.5rem;
+    font-weight: 500;
+  }
+
+  &__counts {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+
+    & > *:first-child {
+      margin-right: 1rem;
+    }
+  }
+
+  &__count {
+    background: transparent;
+    outline: none;
+    border: none;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+
+    span {
+      margin-left: 0.5rem;
+      font-size: $sm-text;
+      font-weight: 400;
+      color: $dark;
+    }
+  }
+}

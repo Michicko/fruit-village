@@ -18,12 +18,19 @@
 @use "./components/socials";
 @use "./components/filter";
 @use "./components/history";
+@use "./components/select";
+@use "./components/review";
+@use "./components/stars";
+@use "./components/like-button";
+@use "./components/ratings";
+@use "./components/range-slider";
 @use "./components/pagination";
 @use "./components/newsletter";
 
 // pages
 @use './pages/error';
 @use './pages/sale';
+@use './pages/single-product';
 
 // layouts
 @use "./layouts/nav";
