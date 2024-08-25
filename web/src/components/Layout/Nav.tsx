@@ -1,7 +1,7 @@
 import { useState } from "react";
-import CatalogMenu from "../Components/Nav/CatalogMenu";
-import MainNav from "../Components/Nav/MainNav";
-import SmallNav from "../Components/Nav/SmallNav";
+import CatalogMenu from "../Nav/CatalogMenu";
+import MainNav from "../Nav/MainNav";
+import SmallNav from "../Nav/SmallNav";
 
 export default function Nav() {
   const [isCatalogMenuOpened, setIsCatalogMenuOpened] = useState(false);

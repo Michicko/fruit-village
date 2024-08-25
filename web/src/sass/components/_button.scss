@@ -88,12 +88,58 @@
     color: $light;
     font-size: $base-text;
 
+    &-light {
+      background: $green-100;
+
+      &:hover {
+        background: $green-light;
+        color: $light;
+      }
+    }
+
     &:hover {
       background: $blue-light;
     }
   }
 
-  &--trans{
+  &--secondary {
+    background: $red-dark;
+    color: $light;
+
+    &-light {
+      background: $red-100;
+      color: $red-dark;
+
+      &:hover {
+        background: $red-light;
+        color: $light;
+      }
+    }
+
+    &:hover {
+      background: $red-light;
+    }
+  }
+  &--bare {
+    box-shadow: unset;
+    padding: 1rem;
+
+    &.secondary {
+      &,
+      span {
+        color: $red-dark;
+      }
+    }
+
+    &.primary {
+      &,
+      span {
+        color: $green-dark;
+      }
+    }
+  }
+
+  &--trans {
     background: transparent;
     color: $light;
     box-shadow: none;
@@ -101,7 +147,7 @@
 
   &--hovered-green {
     &:hover {
-      background: #ddfbce;
+      background: $green-100;
     }
   }
   &--hovered-red {
@@ -124,6 +170,8 @@
     height: 3rem;
     @include multiplier("height", 3rem, $genQs);
   }
+
+  @include multiplier("height", 4rem, $genQs);
 
   // &--flex {
   //   display: flex;

@@ -6,7 +6,8 @@ export const products = [
     stock: 5,
     image: "pineapple-premium.png",
     slug: "pineapple-premium",
-    quantity: "1 piece",
+    measurement: "piece",
+    code: 1146,
   },
   {
     id: "2cdy57h72782u289uj9",
@@ -15,7 +16,8 @@ export const products = [
     stock: 5,
     image: "persimmon-sharon.png",
     slug: "persimon-sharon",
-    quantity: "1 kg",
+    measurement: "kg",
+    code: 1275,
   },
   {
     id: "2dcr57h44782u289uj9",
@@ -24,7 +26,8 @@ export const products = [
     stock: 5,
     image: "mango-royal.png",
     slug: "mango-royal",
-    quantity: "1 piece",
+    measurement: "piece",
+    code: 313,
   },
   {
     id: "2ccr47h24782u289uj9",
@@ -33,7 +36,8 @@ export const products = [
     stock: 0,
     image: "pitahaya-yellow.png",
     slug: "pitahaya-yellow",
-    quantity: "1 piece",
+    measurement: "piece",
+    code: 275,
   },
   {
     id: "2dcr57h44782u289uj2",
@@ -42,8 +46,9 @@ export const products = [
     stock: 4,
     image: "longan.png",
     slug: "longan",
-    quantity: "1 kg",
     discount: 23,
+    measurement: "kg",
+    code: 1115,
   },
   {
     id: "2ccr47h24782u289uj9",
@@ -52,8 +57,9 @@ export const products = [
     stock: 0,
     image: "mandarin-clementine.png",
     slug: "mandarin-clementine",
-    quantity: "1 kg",
     discount: 49,
+    measurement: "kg",
+    code: 1015,
   },
   {
     id: "2ccr47h24782u289uj9",
@@ -62,8 +68,9 @@ export const products = [
     stock: 4,
     image: "physalis.png",
     slug: "physalis",
-    quantity: "1 kg",
     discount: 25,
+    measurement: "kg",
+    code: 125,
   },
   {
     id: "2ccr47h24782u289uj9",
@@ -72,8 +79,9 @@ export const products = [
     stock: 5,
     image: "avocado.png",
     slug: "physalis",
-    quantity: "1 kg",
     discount: 10,
+    measurement: "k",
+    code: 175,
   },
 ];
 
@@ -107,6 +115,42 @@ export const categories = [
     category: "Citrus",
     link: "/sale?category=citrus",
     image: "citrus-category.jpg",
+  },
+  {
+    id: 6,
+    category: "Apples, pear, persimmon",
+    link: "/sale?category=apples,pear,persimmon",
+    image: "",
+  },
+  {
+    id: 7,
+    category: "Grape",
+    link: "/sale?category=grape",
+    image: "",
+  },
+  {
+    id: 8,
+    category: "Peaches, apricots, plums",
+    link: "/sale?category=peaches,apricots,plums",
+    image: "",
+  },
+  {
+    id: 9,
+    category: "Berries",
+    link: "/sale?category=berries",
+    image: "",
+  },
+  {
+    id: 10,
+    category: "Exotic fruits",
+    link: "/sale?category=exotic+fruits",
+    image: "",
+  },
+  {
+    id: 11,
+    category: "Fruit boxes",
+    link: "/sale?category=fruit+boxes",
+    image: "",
   },
 ];
 
@@ -142,7 +186,60 @@ export const reviews = [
 
 export const ratings = [
   0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1, 1.1, 1.2, 1.3, 1.4, 1.5, 1.6,
-  1.7, 1.8, 1.9, 2, 2.1, 2.2, 2.3, 2.4, 2.5, 2.6, 2.7, 2.8, 2.9, 3, 3.1,
-  3.2, 3.3, 3.4, 3.5, 3.6, 3.7, 3.8, 3.9, 4, 4.1, 4.2, 4.3, 4.4, 4.5, 4.6, 4.7,
-  4.8, 4.9, 5,
+  1.7, 1.8, 1.9, 2, 2.1, 2.2, 2.3, 2.4, 2.5, 2.6, 2.7, 2.8, 2.9, 3, 3.1, 3.2,
+  3.3, 3.4, 3.5, 3.6, 3.7, 3.8, 3.9, 4, 4.1, 4.2, 4.3, 4.4, 4.5, 4.6, 4.7, 4.8,
+  4.9, 5,
+];
+
+export const user = {
+  first_name: "Ronald",
+  last_name: "Richards",
+  phone_number: "(505) 555-0125",
+  email: "ronaldrichards@gmail.com",
+  date_of_birth: "02/04/1980",
+  delivery_address: {
+    country: "United Kingdom",
+    city: "London",
+    address: "235 Euston Road",
+    postal_code: 45000,
+  },
+  wishList: [
+    "2bdy77h72782u289uj9",
+    "cdy57h72782u289uj9",
+    "2dcr57h44782u289uj9",
+  ],
+  waitList: ["2dcr57h44782u289uj9", "2ccr47h24782u289uj9"],
+};
+
+export const wishListProducts = [
+  {
+    id: "2bdy77h72782u289uj9",
+    name: "pineapple premium",
+    price: 5.99,
+    stock: 5,
+    image: "pineapple-premium.png",
+    slug: "pineapple-premium",
+    measurement: "piece",
+    code: 1146,
+  },
+  {
+    id: "2cdy57h72782u289uj9",
+    name: "persimon sharon",
+    price: 4.99,
+    stock: 5,
+    image: "persimmon-sharon.png",
+    slug: "persimon-sharon",
+    measurement: "kg",
+    code: 1275,
+  },
+  {
+    id: "2dcr57h44782u289uj9",
+    name: "mango royal",
+    price: 9.99,
+    stock: 5,
+    image: "mango-royal.png",
+    slug: "mango-royal",
+    measurement: "piece",
+    code: 313,
+  },
 ];

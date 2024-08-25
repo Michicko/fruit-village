@@ -3,30 +3,93 @@
 
 .catalog-menu {
   min-height: 20rem;
-  max-width: 62rem;
+  max-width: 70rem;
   width: 100%;
   margin: 0 auto;
   background: $light;
   position: relative;
   z-index: 650;
+  padding: 2rem;
 
   &--show {
     animation: slideDown 0.2s linear;
     margin-top: 6rem;
 
+    @include breakpoints(mq-sm) {
+      padding: 2rem 4rem;
+    }
+
     @include breakpoints(mq-md) {
       margin-top: 8rem;
+      padding: 4rem;
     }
 
     @include breakpoints(mq-lg) {
       margin-top: 12rem;
+      padding: 4rem 6rem;
     }
 
+    @include breakpoints(mq-xl) {
+      padding: 4rem 10rem;
+    }
+
+    @include multiplier("padding-top", 4rem, $genQs);
+    @include multiplier("padding-bottom", 4rem, $genQs);
+    @include multiplier("padding-left", 10rem, $genQs);
+    @include multiplier("padding-right", 10rem, $genQs);
     @include multiplier("margin-top", 12rem, $genQs);
   }
 
-  @include multiplier("max-width", 62rem, $genQs);
+  @include multiplier("max-width", 70rem, $genQs);
   @include multiplier("min-height", 20rem, $genQs);
+
+  &__links {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-row-gap: 1.5rem;
+    width: 100%;
+
+    @include breakpoints(mq-sm) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @include multiplier("grid-row-gap", 1.5rem, $genQs);
+  }
+
+  &__link {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+
+    span {
+      font-size: $sm-text;
+      font-weight: 600;
+      color: $dark;
+      font-family: $font;
+
+      &::first-letter {
+        text-transform: uppercase;
+      }
+      @include multiplier("font-size", $sm-text, $genQs);
+    }
+
+    .icon {
+      margin-right: 0.5rem;
+      fill: $dark;
+      @include multiplier("margin-right", 0.5rem, $genQs);
+    }
+
+    &:hover,
+    &--active {
+      span {
+        color: $green-dark;
+      }
+
+      .icon {
+        fill: $green-dark;
+      }
+    }
+  }
 }
 
 @keyframes slideDown {

@@ -8,13 +8,14 @@ export type HeaderSlideProps = {
   btn: string;
 };
 
-export type ProductProps = {
+export type ProductTypes = {
   name: string;
   price: number;
   stock: number;
   image: string;
   slug: string;
   id: string;
-  quantity: string;
   discount?: number | null;
+  measurement: string;
+  code: number;
 };

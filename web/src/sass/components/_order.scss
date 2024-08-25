@@ -1,0 +1,395 @@
+@use "../abstract/variables" as *;
+@use "../abstract/mixins" as *;
+
+.order {
+  width: 100%;
+  padding: 1rem;
+  box-shadow: $shadow-3;
+  background: $light;
+  border-radius: $xxs-gutter;
+  cursor: pointer;
+  user-select: none;
+
+  @include multiplier("padding", 1rem, $genQs);
+  @include multiplier("border-radius", $xxs-gutter, $genQs);
+
+  &__list {
+    min-height: 30rem;
+    width: 100%;
+    & > *:not(:last-child) {
+      margin-bottom: 2rem;
+    }
+    @include multiplier("min-height", 30rem, $genQs);
+  }
+
+  &__top {
+    width: 100%;
+    border-left: 3px solid transparent;
+    height: 8rem;
+    padding: 0.5rem 1rem;
+    overflow: hidden;
+    display: grid;
+    grid-template-columns: repeat(2, auto);
+    align-items: center;
+    justify-content: space-between;
+    background: $light;
+
+    & > *:nth-child(2) {
+      display: none;
+    }
+
+    &.completed {
+      border-color: $green-dark;
+    }
+
+    &.canceled {
+      border-color: $red-dark;
+    }
+
+    &-img {
+      height: 3rem;
+      width: 3rem;
+    }
+
+    &-info-box {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      grid-column-gap: $xxs-gutter;
+      grid-row-gap: $xxxs-gutter;
+      max-width: 15rem;
+      grid-template-areas:
+        "id date"
+        "price price"
+        "status status";
+
+      & > *:first-child {
+        grid-area: id;
+      }
+
+      & > *:nth-child(2) {
+        grid-area: date;
+      }
+
+      & > *:nth-child(3) {
+        grid-area: price;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+
+      & > *:last-child {
+        grid-area: status;
+      }
+
+      & > *:first-child,
+      & > *:nth-child(2) {
+        font-weight: 400;
+      }
+    }
+
+    @include breakpoints(mq-xs) {
+      & {
+        grid-template-columns: 2fr min-content auto;
+        gap: 2rem;
+        justify-content: unset;
+      }
+
+      &.isOpened {
+        grid-template-columns: 2fr auto;
+      }
+
+      & > *:nth-child(2) {
+        display: grid;
+        grid-template-columns: repeat(2, auto);
+        gap: 1rem;
+      }
+    }
+
+    @include breakpoints(mq-lg) {
+      & > *:nth-child(2) {
+        display: flex;
+        grid-template-columns: unset;
+        gap: unset;
+      }
+
+      &-img {
+        height: 5rem;
+        width: 5rem;
+      }
+
+      &-images {
+        & > *:not(:last-child) {
+          margin-right: 1.5rem;
+        }
+      }
+    }
+
+    &-img {
+      @include multiplier("height", 5rem, $genQs);
+      @include multiplier("width", 5rem, $genQs);
+    }
+
+    &-images {
+      & > *:not(:last-child) {
+        @include multiplier("margin-right", 1.5rem, $genQs);
+      }
+    }
+    @include multiplier("gap", 2rem, $genQs);
+    @include multiplier("height", 8rem, $genQs);
+    @include multiplier("padding-top", 0.5rem, $genQs);
+    @include multiplier("padding-bottom", 0.5rem, $genQs);
+    @include multiplier("padding-left", 1rem, $genQs);
+    @include multiplier("padding-right", 1rem, $genQs);
+  }
+
+  &__btn {
+    background: transparent;
+    border: none;
+    outline: none;
+    position: relative;
+
+    &::before {
+      position: absolute;
+      display: block;
+      content: "";
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 5;
+    }
+  }
+
+  &__icon {
+    height: 1.6rem;
+    width: 1.6rem;
+    fill: $dark;
+
+    &.arrow-down {
+      transition: transform 0.2s linear;
+    }
+    @include multiplier("height", 1.6rem, $genQs);
+    @include multiplier("width", 1.6rem, $genQs);
+  }
+
+  &__top.isOpened &__icon {
+    transform: rotateX(180deg);
+  }
+
+  p.completed {
+    color: $green-dark;
+  }
+
+  p.canceled {
+    color: $red-dark;
+  }
+
+  p.price {
+    font-weight: 700;
+  }
+
+  p.completed,
+  p.canceled,
+  .top-price-box p:first-child {
+    text-transform: capitalize;
+    font-weight: 600;
+  }
+
+  &__product {
+    & > *:first-child {
+      display: grid;
+      grid-template-columns: repeat(2, min-content);
+      gap: 2rem;
+      grid-auto-rows: auto;
+      @include multiplier("gap", 2rem, $genQs);
+    }
+
+    &-img {
+      height: auto;
+      min-width: 5rem;
+      max-width: 100%;
+      @include multiplier("min-width", 5rem, $genQs);
+    }
+
+    h5 {
+      font-size: $sm-text;
+      font-weight: 600;
+      color: $dark;
+      text-transform: capitalize;
+
+      span {
+        color: $gray-200;
+        font-weight: 500;
+        text-transform: lowercase;
+      }
+      @include multiplier("font-size", $sm-text, $genQs);
+    }
+
+    &-list {
+      margin-bottom: 2rem;
+
+      & > *:not(:last-child) {
+        margin-bottom: 1rem;
+        @include multiplier("margin-bottom", 1rem, $genQs);
+      }
+      @include multiplier("margin-bottom", 2rem, $genQs);
+    }
+
+    &-infos {
+      p,
+      h5 {
+        text-wrap: nowrap;
+      }
+
+      p {
+        font-weight: 500;
+        font-size: $xs-text;
+        @include multiplier("font-size", $xs-text, $genQs);
+      }
+    }
+
+    &-price-box {
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+
+      div {
+        display: flex;
+        align-items: flex-end;
+
+        & > *:first-child {
+          margin-right: 2rem;
+          @include multiplier("margin-right", 2rem, $genQs);
+        }
+      }
+    }
+
+    &-price {
+      font-weight: 600;
+      &.original {
+        font-size: $xs-text;
+        position: relative;
+        font-weight: 500;
+        &::before {
+          position: absolute;
+          height: 1px;
+          width: 100%;
+          content: "";
+          display: block;
+          z-index: 5;
+          background: $dark;
+          transform: rotate(-20deg);
+          top: 0.5rem;
+          @include multiplier("top", 1.15, $genQs);
+        }
+        @include multiplier("font-size", $xs-text, $genQs);
+      }
+    }
+  }
+
+  &__payment-method {
+    display: flex;
+    align-items: center;
+
+    .icon {
+      height: 1.5rem;
+      width: 1.5rem;
+      margin-left: 0.5rem;
+      fill: $green-dark;
+      @include multiplier("height", 1.5rem, $genQs);
+      @include multiplier("width", 1.5rem, $genQs);
+    }
+  }
+
+  &__payment-details,
+  &__delivery-details,
+  &__user-details {
+    margin-bottom: 1rem;
+    @include multiplier("margin-bottom", 1rem, $genQs);
+
+    & > *:not(:last-child) {
+      margin-bottom: 0.5rem;
+      @include multiplier("margin-bottom", 0.5rem, $genQs);
+    }
+  }
+
+  &__delivery-details {
+    margin-bottom: 4rem;
+    @include multiplier("margin-bottom", 4rem, $genQs);
+  }
+
+  &__info {
+    display: flex;
+    justify-content: space-between;
+    p {
+      font-weight: 600;
+    }
+  }
+
+  &__btns {
+    display: flex;
+    flex-direction: column;
+
+    & > *:first-child {
+      margin-bottom: 1rem;
+      @include multiplier("margin-bottom", 1rem, $genQs);
+    }
+
+    @include breakpoints(mq-sm) {
+      align-items: center;
+      justify-content: space-between;
+      flex-direction: row;
+
+      & > *:first-child {
+        margin-right: 2rem;
+        margin-bottom: 0;
+      }
+    }
+
+    & > *:first-child {
+      @include multiplier("margin-right", 2rem, $genQs);
+    }
+  }
+
+  &__heading {
+    font-size: $sm-text;
+    font-weight: 700;
+    margin-bottom: 2rem;
+    color: $dark;
+    font-family: $font;
+    @include multiplier("margin-bottom", 2rem, $genQs);
+    @include multiplier("font-size", $sm-text, $genQs);
+  }
+
+  &__products-box {
+    padding-top: 4rem;
+    @include multiplier("padding-top", 4rem, $genQs);
+  }
+
+  &__main {
+    display: grid;
+    gap: 2rem;
+    transition: all 0.4s ease;
+    background: $light;
+
+    visibility: hidden;
+    opacity: 0;
+    max-height: 0;
+
+    @include breakpoints(mq-lg) {
+      grid-template-columns: calc(60% - 5rem) 40%;
+      gap: 5rem;
+    }
+
+    @include multiplier("gap", 5rem, $genQs);
+  }
+
+  &.isOpened &__main {
+    visibility: visible;
+    opacity: 1;
+    max-height: 100rem;
+    @include multiplier("max-height", 100rem, $genQs);
+  }
+}

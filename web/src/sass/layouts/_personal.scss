@@ -1,0 +1,174 @@
+@use "../abstract/variables" as *;
+@use "../abstract/mixins" as *;
+
+@mixin linkStyles {
+  font-size: $sm-text;
+  font-weight: 500;
+  color: $dark;
+  text-decoration: none;
+  outline: none;
+  border: none;
+  font-family: $font;
+  background: transparent;
+  align-self: flex-start;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+
+  &:hover,
+  &--active {
+    font-weight: 700;
+  }
+
+  &::first-letter {
+    text-transform: uppercase;
+  }
+}
+
+.personal-layout {
+  padding: 4rem 0;
+  @include multiplier("padding-bottom", 4rem, $genQs);
+  @include multiplier("padding-top", 4rem, $genQs);
+
+  &__container {
+    padding: 2rem 0;
+    @include multiplier("padding-bottom", 2rem, $genQs);
+    @include multiplier("padding-top", 2rem, $genQs);
+  }
+
+  &__content {
+    & > *:not(:last-child) {
+      margin-bottom: 4rem;
+      @include multiplier("margin-bottom", 4rem, $genQs);
+    }
+  }
+
+  &__btn {
+    background: transparent;
+    border: none;
+    outline: none;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    margin: 0 auto;
+
+    span {
+      margin-right: 1rem;
+      font-size: $sm-text;
+      font-weight: 500;
+      color: $dark;
+
+      &::first-letter {
+        text-transform: uppercase;
+      }
+    }
+
+    &:hover {
+      span {
+        color: $green-dark;
+      }
+    }
+  }
+
+  &__icon {
+    height: 1.5rem;
+    width: 1.5rem;
+    transition: transform 0.25s linear;
+  }
+
+  &__btn:hover &__icon {
+    fill: $green-dark;
+    transform: rotate(-180deg);
+  }
+}
+
+.personal-page {
+  &__sidebar {
+    flex-direction: column;
+    padding-top: 2rem;
+    display: none;
+
+    & > *:not(:last-child) {
+      margin-bottom: 2rem;
+      @include multiplier("margin-right", 2rem, $genQs);
+    }
+
+    @include breakpoints(mq-lg) {
+      display: flex;
+      width: 18rem;
+    }
+
+    @include multiplier("width", 18rem, $genQs);
+    @include multiplier("padding-top", 2rem, $genQs);
+
+    .total {
+      padding: 0.4rem 0.6rem;
+      background: $green-dark;
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      border-radius: 50%;
+
+      span {
+        font-size: $xs-text;
+        font-weight: 400;
+        color: $light;
+        font-family: $font;
+        line-height: 1;
+        @include multiplier("font-size", $xs-text, $genQs);
+        @include multiplier("line-height", 1, $genQs);
+      }
+
+      @include multiplier("padding-top", 0.4rem, $genQs);
+      @include multiplier("padding-bottom", 0.4rem, $genQs);
+      @include multiplier("padding-left", 0.6rem, $genQs);
+      @include multiplier("padding-right", 0.6rem, $genQs);
+    }
+
+    button {
+      @include linkStyles();
+
+      @include multiplier("font-size", $sm-text, $genQs);
+    }
+  }
+
+  &__link,
+  &__link-box,
+  button {
+    display: inline-flex;
+    align-items: center;
+  }
+
+  &__link-box {
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  &__link {
+    @include linkStyles();
+    @include multiplier("font-size", $sm-text, $genQs);
+  }
+
+  &__icon {
+    height: 1.8rem;
+    width: 1.8rem;
+    fill: $green-dark;
+    margin-right: 1rem;
+
+    &.path-filled {
+      fill: none;
+      path {
+        fill: $green-dark;
+      }
+    }
+
+    &.stroked {
+      fill: none;
+      stroke: $green-dark;
+    }
+
+    @include multiplier("height", 1.8rem, $genQs);
+    @include multiplier("width", 1.8rem, $genQs);
+    @include multiplier("margin-right", 1rem, $genQs);
+  }
+}

@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 import ProductSlider from "../components/Sliders/ProductSlider";
 import CustomLink from "../components/Components/CustomLink";
 import { v4 as uuid } from "uuid";
-import Info from "../components/Components/Info";
+import Stat from "../components/Components/Stat";
 import FruitBox from "../components/Components/FruitBox";
 import NewsLetter from "../components/Components/NewsLetter";
 import { categories, products } from "../data";
@@ -41,8 +41,6 @@ export default function Home() {
     },
   ];
 
-  
-
   const fruitBox = {
     id: "2yhdud7683y8f",
     name: "box xs",
@@ -55,7 +53,7 @@ export default function Home() {
     discount: 25,
   };
 
-  const infos = [
+  const stats = [
     {
       number: "11",
       description:
@@ -85,7 +83,7 @@ export default function Home() {
         </section>
         <section className="section section__promo">
           <div className="text-box">
-            <h2 className="heading heading--section">
+            <h2 className="heading heading--light heading--tiny heading--big">
               Every 2 days we supply exotic fruits
             </h2>
             <div className="box">
@@ -119,7 +117,7 @@ export default function Home() {
         </section>
         <section className="section section__fruit-box">
           <div className="top">
-            <h2 className="heading heading--section">
+            <h2 className="heading heading--light heading--tiny heading--big">
               Ready-made sets of fruits for a gift, yourself, friends and family
             </h2>
           </div>
@@ -134,12 +132,12 @@ export default function Home() {
             products={products.filter((el) => el.discount).slice(0, 4)}
           />
         </section>
-        <section className="section section__infos">
-          {infos.map((info) => {
+        <section className="section section__stats">
+          {stats.map((stat) => {
             return (
-              <Info
-                number={info.number}
-                description={info.description}
+              <Stat
+                number={stat.number}
+                description={stat.description}
                 key={uuid()}
               />
             );

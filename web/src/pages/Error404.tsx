@@ -7,7 +7,7 @@ export default function Error404() {
   return (
     <main className="main error__page">
       <section className="error__page-container">
-        <h2 className="heading heading--section heading--dark">
+        <h2 className="heading heading--primary">
           Oops((( Page not found
         </h2>
         <img

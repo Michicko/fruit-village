@@ -5,7 +5,7 @@ import { v4 as uuid } from "uuid";
 import React from "react";
 
 type HistoryObjectProps = {
-  name: string;
+  name: string | undefined;
   link: string;
 };
 

@@ -1,9 +1,9 @@
-import { ProductProps } from "../../constants";
+import { ProductTypes } from "../../constants";
 import Product from "../Components/Product";
 import { v4 as uuid } from "uuid";
 
 type ProductSliderProps = {
-  products: ProductProps[];
+  products: ProductTypes[];
 };
 
 export default function ProductSlider({ products }: ProductSliderProps) {
@@ -12,7 +12,7 @@ export default function ProductSlider({ products }: ProductSliderProps) {
       <div className="product-slider__box">
         <div className="product-slider__slides">
           {products.map((product) => {
-            return <Product product={product} key={uuid()} />;
+            return <Product type="product" product={product} key={uuid()} />;
           })}
         </div>
       </div>

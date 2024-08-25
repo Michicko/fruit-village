@@ -1,4 +1,5 @@
-@use '../abstract/variables' as *;
+@use "../abstract/variables" as *;
+@use "../abstract/mixins" as *;
 
 *,
 *::before,
@@ -18,4 +19,16 @@ body {
   background: $light;
   font-family: $font;
   color: $dark;
+}
+
+p,
+li,
+button,
+input[type="text"] {
+  font-size: $sm-text;
+  color: $dark;
+  font-weight: 500;
+  line-height: 1.5;
+
+  @include multiplier("font-size", $sm-text, $genQs);
 }

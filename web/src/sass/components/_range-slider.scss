@@ -39,14 +39,7 @@ $range-height: 0.25rem;
 
   grid-template: repeat(2, max-content) #{$h}/ 1fr 1fr;
 
-
   input[type="range"] {
-    &::-webkit-slider-runnable-track,
-    &::-webkit-slider-thumb,
-    & {
-      -webkit-appearance: none;
-    }
-
     grid-column: 1;
     grid-row: 2;
 
@@ -55,6 +48,13 @@ $range-height: 0.25rem;
     font: inherit; /* fix too small font-size in both Chrome & Firefox */
     margin: 0;
     pointer-events: none; /* let clicks pass through */
+       grid-column: 1 / span 2;
+    grid-row: 3;
+    &::-webkit-slider-runnable-track,
+    &::-webkit-slider-thumb,
+    & {
+      -webkit-appearance: none;
+    }
 
     &::-webkit-slider-runnable-track {
       @include track;
@@ -72,8 +72,7 @@ $range-height: 0.25rem;
       @include thumb;
     }
 
-    grid-column: 1 / span 2;
-    grid-row: 3;
+ 
   }
 
   output {

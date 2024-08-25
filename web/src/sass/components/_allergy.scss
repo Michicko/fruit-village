@@ -1,0 +1,148 @@
+@use "../abstract/variables" as *;
+@use "../abstract/mixins" as *;
+
+@mixin flex {
+  display: flex;
+  align-items: center;
+}
+
+.allergy {
+  border: 1px solid $green-dark;
+  padding: 0 0.5rem;
+  border-radius: 2rem;
+  height: 3.5rem;
+  min-width: 10rem;
+  justify-content: space-between;
+  @include flex();
+
+  @include multiplier("height", 3.5rem, $genQs);
+  @include multiplier("min-width", 10rem, $genQs);
+  @include multiplier("border-radius", 2rem, $genQs);
+  @include multiplier("padding-left", 0.5rem, $genQs);
+  @include multiplier("padding-right", 0.5rem, $genQs);
+
+  p {
+    order: 1;
+    margin-right: 3rem;
+
+    &::first-letter {
+      text-transform: uppercase;
+    }
+    @include multiplier("margin-right", 3rem, $genQs);
+  }
+
+  &__list {
+    flex-wrap: wrap;
+    margin-top: 1rem;
+    @include flex();
+    & > *:not(:last-child) {
+      margin-right: 1rem;
+      @include multiplier("margin-right", 1rem, $genQs);
+    }
+    & > * {
+      margin-bottom: 1rem;
+      @include multiplier("margin-bottom", 1rem, $genQs);
+    }
+    @include multiplier("margin-top", 1rem, $genQs);
+  }
+
+  button,
+  &__btn {
+    background: transparent;
+    outline: none;
+    border: 1px solid $dark;
+    border-radius: 50%;
+    height: 2.2rem;
+    width: 2.2rem;
+    justify-content: center;
+    @include flex();
+    @include multiplier("height", 2.2rem, $genQs);
+    @include multiplier("width", 2.2rem, $genQs);
+  }
+
+  &__icon {
+    height: 1.8rem;
+    width: 1.8rem;
+    fill: $dark;
+    @include multiplier("height", 1.8rem, $genQs);
+    @include multiplier("width", 1.8rem, $genQs);
+  }
+
+  button {
+    order: 2;
+  }
+
+  button:hover {
+    border-color: $red-dark;
+
+    .allergy__icon.stroked {
+      path {
+        stroke: $red-dark;
+      }
+    }
+  }
+
+  button:hover + p {
+    color: $red-dark;
+  }
+
+  &__form-box {
+    border: 1px solid $green-dark;
+    padding: 0 0.5rem;
+    border-radius: 2rem;
+    height: 3.5rem;
+    min-width: 3.5rem;
+
+    @include flex();
+    @include multiplier("min-width", 3.5rem, $genQs);
+    @include multiplier("height", 3.5rem, $genQs);
+    @include multiplier("padding-left", 0.5rem, $genQs);
+    @include multiplier("padding-right", 0.5rem, $genQs);
+    @include multiplier("border-radius", 2rem, $genQs);
+  }
+
+  &__form {
+    @include flex();
+
+    & > *:not(:last-child) {
+      margin-right: 0.5rem;
+      @include multiplier("margin-right", 0.5rem, $genQs);
+    }
+
+    input[type="text"] {
+      border: 1px solid rgba($green-light, 0.25);
+      background: transparent;
+      @include multiplier("border-width", 1px, $genQs);
+    }
+
+    button {
+      background: $green-dark;
+      color: $light !important;
+      border: none;
+
+      &:last-child {
+        background: $red-dark;
+      }
+    }
+
+    input[type="text"],
+    button {
+      padding: 0.25rem 1rem;
+      border-radius: 0.5rem;
+      outline: none;
+
+      @include multiplier("padding-top", 0.25rem, $genQs);
+      @include multiplier("padding-bottom", 0.25rem, $genQs);
+      @include multiplier("padding-left", 1rem, $genQs);
+      @include multiplier("padding-right", 1rem, $genQs);
+      @include multiplier("border-radius", 0.5rem, $genQs);
+    }
+  }
+
+  &__btn:hover {
+    border-color: $green-dark;
+    .allergy__icon {
+      fill: $green-dark;
+    }
+  }
+}

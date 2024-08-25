@@ -1,0 +1,96 @@
+@use "../abstract/variables" as *;
+@use "../abstract/mixins" as *;
+
+.blog-card {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 100%;
+  padding: 1rem;
+  border-radius: $xxs-gutter;
+  box-shadow: $shadow-3;
+
+  @include multiplier("padding", 1rem, $genQs);
+
+  &__img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    border-radius: $xxs-gutter;
+    height: 15rem;
+    @include multiplier("height", 15rem, $genQs);
+  }
+
+  &__body {
+    padding-top: 1rem;
+    & > *:not(:last-child) {
+      margin-bottom: 1rem;
+      @include multiplier("margin-bottom", 1rem, $genQs);
+    }
+  }
+
+  &__top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  &__title,
+  &__sum,
+  &__text,
+  &__category,
+  &__link,
+  &__date {
+    font-size: $sm-text;
+    color: $dark;
+    font-weight: 500;
+    @include multiplier("font-size", $sm-text, $genQs);
+  }
+
+  &__date {
+    color: $gray-200;
+  }
+
+  &__sum {
+    height: 3.5rem;
+    overflow: hidden;
+    @include multiplier("height", 3.5rem, $genQs);
+  }
+
+  &__title {
+    font-weight: 600;
+    font-size: $base-text;
+    @include multiplier("font-size", $base-text, $genQs);
+  }
+
+  &__category,
+  &__link {
+    color: $green-dark;
+  }
+
+  &__category {
+    text-transform: capitalize;
+  }
+}
+
+.blog {
+  &__list {
+    display: grid;
+    gap: 2rem;
+    margin-bottom: 4rem;
+
+    @include breakpoints(mq-lg) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @include multiplier("gap", 2rem, $genQs);
+    @include multiplier("margin-bottom", 4rem, $genQs);
+  }
+
+  &__category {
+    text-decoration: none;
+    background: transparent;
+    outline: none;
+    border: none;
+  }
+}

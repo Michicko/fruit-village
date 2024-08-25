@@ -94,6 +94,7 @@
     &--active {
       color: $warning-400;
     }
+    @include multiplier("font-size", $sm-text, $genQs);
   }
 
   &__tel {

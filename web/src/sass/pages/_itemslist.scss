@@ -1,0 +1,38 @@
+@use "../abstract/variables" as *;
+@use "../abstract/mixins" as *;
+
+.items-list {
+  display: grid;
+  gap: 1rem;
+
+  @include breakpoints(mq-xs) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  @include breakpoints(mq-md) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  @include breakpoints(mq-lg) {
+    gap: 3rem;
+  }
+
+  @include multiplier("gap", 3rem, $genQs);
+
+  &__btns {
+    display: flex;
+    align-items: center;
+    & > *:first-child {
+      margin-right: 1rem;
+    }
+  }
+
+  &__icon {
+    height: 1.2rem;
+    width: 1.2rem;
+    fill: $red-dark;
+    margin-left: 0.6rem;
+    @include multiplier("margin-left", 0.6rem, $genQs);
+    @include multiplier("height", 1.2rem, $genQs);
+    @include multiplier("width", 1.2rem, $genQs);
+  }
+}

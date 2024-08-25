@@ -2,21 +2,68 @@
 @use "../abstract/mixins" as *;
 
 .info {
-  &__number {
-    font-size: $iv-text;
-    font-weight: 500;
-    color: $light;
-    margin-bottom: 1rem;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-column-gap: 2rem;
 
-    @include multiplier("font-size", $iv-text, $genQs);
-    @include multiplier("margin-bottom", 1rem, $genQs);
+  @include breakpoints(mq-xxs) {
+    grid-template-columns: min-content min-content;
   }
 
-  &__desc {
-    font-size: $base-text;
-    font-weight: 300;
-    color: $light;
+  @include breakpoints(mq-xs) {
+    grid-template-columns: 10rem 1fr;
+  }
 
-    @include multiplier("font-size", $base-text, $genQs);
+  @include breakpoints(mq-sm) {
+    grid-template-columns: 15rem 1fr;
+    grid-column-gap: 6rem;
+  }
+
+  p {
+    &::first-letter {
+      text-transform: uppercase;
+    }
+
+    &:first-child {
+      color: $gray-200;
+    }
+  }
+
+  & > *:last-child {
+    display: flex;
+    align-items: center;
+
+    p {
+      color: $dark;
+      font-weight: 600;
+    }
+  }
+
+  button {
+    margin-left: 1rem;
+    text-decoration: none;
+    background: transparent;
+    outline: none;
+    border: none;
+    cursor: pointer;
+    position: relative;
+
+    &::before {
+      position: absolute;
+      content: "";
+      display: block;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      height: 100%;
+      width: 100%;
+    }
+
+    &:hover .icon {
+      fill: $green-dark;
+    }
+
+    @include multiplier("margin-left", 1rem, $genQs);
   }
 }

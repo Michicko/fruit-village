@@ -76,8 +76,9 @@
     & {
       background: $blue-light;
       padding-bottom: 0 !important;
-      @include defaultSection();
       position: relative;
+      @include defaultSection();
+      
     }
 
     .text-box {
@@ -289,7 +290,7 @@
     }
   }
 
-  &__infos {
+  &__stats {
     min-height: 20rem;
     align-items: center;
     background-image: linear-gradient(

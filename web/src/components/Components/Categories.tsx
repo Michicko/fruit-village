@@ -14,8 +14,9 @@ type CategoriesProps = {
 };
 
 export default function Categories({ categories }: CategoriesProps) {
+  const copied = [...categories].splice(0, 5);
   const cate = [
-    ...categories,
+    ...copied,
     {
       id: 6,
       category: "all",
@@ -23,7 +24,7 @@ export default function Categories({ categories }: CategoriesProps) {
       image: "all-category.jpg",
     },
   ];
-  
+
   return (
     <div className="category__list">
       {cate.map((category) => {

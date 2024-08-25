@@ -1,0 +1,64 @@
+@use "../abstract/variables" as *;
+@use "../abstract/mixins" as *;
+
+.switch {
+  background: transparent;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  text-transform: capitalize;
+  font-weight: 600;
+  padding: 1rem;
+  position: relative;
+  font-size: $base-text;
+  color: $dark;
+  margin-right: 2rem;
+  font-family: $font;
+
+  span {
+    font-weight: 400;
+    color: $gray-200;
+  }
+
+  &::after {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 5;
+    width: 100%;
+    height: 100%;
+    content: "";
+    background: transparent;
+  }
+
+  &::before {
+    height: 2px;
+    width: 100%;
+    position: absolute;
+    bottom: 0.5rem;
+    left: 0;
+    right: 0;
+    content: "";
+    background: transparent;
+    @include multiplier("height", 2px, $genQs);
+    @include multiplier("bottom", 0.5rem, $genQs);
+  }
+
+  &:hover &::before,
+  &--current::before {
+    background: $green-dark;
+  }
+
+  &__view {
+    display: none;
+
+    &--current {
+      display: block;
+    }
+  }
+
+  @include multiplier("font-size", $sm-text, $genQs);
+  @include multiplier("padding", 1rem, $genQs);
+}

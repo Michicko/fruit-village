@@ -2,10 +2,17 @@
 @use "../abstract/mixins" as *;
 
 .heading {
+  font-weight: 600;
+  color: $dark;
+
+  &--primary {
+    font-size: $xl-text;
+
+    @include multiplier("font-size", $xl-text, $genQs);
+  }
+
   &--secondary {
     font-size: $lg-text;
-    font-weight: 700;
-    color: $dark;
 
     @include breakpoints(mq-lg) {
       font-size: $xl-text;
@@ -15,10 +22,41 @@
   }
 
   &--section {
-    font-size: $xl-text;
-    color: $light;
-    font-weight: 400;
-    margin-bottom: 1rem;
+    font-size: $md-text;
+
+    @include multiplier("font-size", $md-text, $genQs);
+  }
+
+  &--page {
+    position: relative;
+    span {
+      position: relative;
+      z-index: 15;
+      background: $light;
+      padding-right: 1.5rem;
+    }
+
+    &::before {
+      content: "";
+      display: block;
+      height: 2px;
+      width: 100%;
+      position: absolute;
+      right: 0;
+      top: 55%;
+      transform: translateY(-55%);
+      width: 100%;
+      z-index: 1;
+      background: linear-gradient(
+        to right,
+        rgba($green-dark, 0.8),
+        rgba($gray, 0.1)
+      );
+    }
+  }
+
+  &--big {
+    font-size: $lg-text;
 
     @include breakpoints(mq-sm) {
       font-size: $xxl-text;
@@ -39,7 +77,11 @@
     @include multiplier("font-size", $v-text, $genQs);
   }
 
-  &--dark{
-    color: $dark;
+  &--light {
+    color: $light;
+  }
+
+  &--tiny {
+    font-weight: 400;
   }
 }

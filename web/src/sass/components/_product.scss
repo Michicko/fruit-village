@@ -7,6 +7,7 @@
   border-radius: $xxs-gutter;
   width: 100%;
   position: relative;
+  @include multiplier("border-radius", $xxs-gutter, $genQs);
 
   &__discount {
     position: absolute;
@@ -20,11 +21,21 @@
     justify-content: center;
     text-align: center;
     z-index: 20;
+    max-height: 2.5rem;
+    @include multiplier("max-height", 2.5rem, $genQs);
+    @include multiplier("border-radius", 1rem, $genQs);
+    @include multiplier("padding-top", 0.35rem, $genQs);
+    @include multiplier("padding-bottom", 0.35rem, $genQs);
+    @include multiplier("padding-left", 0.8rem, $genQs);
+    @include multiplier("padding-right", 0.8rem, $genQs);
+    @include multiplier("top", 2rem, $genQs);
+    @include multiplier("bottom", 2rem, $genQs);
 
     span {
       font-size: $xs-text;
       font-weight: 400;
       color: $light;
+      @include multiplier("font-size", $xs-text, $genQs);
     }
   }
 
@@ -48,7 +59,7 @@
 
   &__body {
     padding: 1rem;
-    &>*:last-child{
+    & > *:last-child {
       width: 100%;
     }
     @include multiplier("padding", 1rem, $genQs);
@@ -133,5 +144,35 @@
     }
 
     @include multiplier("font-size", $md-text, $genQs);
+  }
+
+  &__del-btn {
+    position: absolute;
+    top: 1.5rem;
+    left: 1.5rem;
+    cursor: pointer;
+    background: transparent;
+    border: none;
+    outline: none;
+    z-index: 250;
+
+    &::before{
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      position: absolute;
+      z-index: 252;
+      height: 100%;
+      width: 100%;
+      content: '';
+      display: block;
+    }
+  }
+
+  &__del-icon {
+    height: 1.8rem;
+    width: 1.8rem;
+    fill: $red-dark;
   }
 }

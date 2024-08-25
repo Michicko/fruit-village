@@ -1,4 +1,4 @@
-import React, { ReactNode, useRef, useState } from "react";
+import { useState } from "react";
 import History from "../components/Components/History";
 import LikeButton from "../components/Components/LikeButton";
 import Strawberry from "./../assets/icons/strawberry.svg?react";
@@ -13,40 +13,17 @@ import Stars from "../components/Components/Stars";
 import ArrowDown from "../assets/icons/arrow-down.svg?react";
 import ProductSlider from "../components/Sliders/ProductSlider";
 import CustomLink from "../components/Components/CustomLink";
-import ReviewForm from "../components/Components/Forms/ReviewForm";
+import ReviewForm from "../components/Forms/ReviewForm";
+import Switch from "../components/Components/Switch";
 
 export default function Product() {
-  const [history, setHistory] = useState([
-    {
-      name: "Exotic fruits",
-      link: "/sale?category=exotic+fruits",
-    },
-    {
-      name: "Pitahaya white / Dragon fruit",
-      link: "/sale/pitahaya-white-/-dragon-fruit",
-    },
-  ]);
-
   const [index, setIndex] = useState(0);
   const [switchIndex, setSwitchIndex] = useState(0);
 
-  const switchesRef = useRef<HTMLDivElement | null>(null);
   const [isReviewFormShown, setIsReviewFormShown] = useState(false);
 
   const toggleReviewForm = () => {
     setIsReviewFormShown(!isReviewFormShown);
-  };
-
-  const switchView = (e: React.MouseEvent) => {
-    const target = e.target as HTMLElement;
-    const switches = switchesRef.current;
-    if (target.classList.contains("switch--current")) {
-      return;
-    }
-    if (switches) {
-      const index = Array.from(switches.children).indexOf(target);
-      setSwitchIndex(index);
-    }
   };
 
   const images = [
@@ -58,17 +35,29 @@ export default function Product() {
   const product = {
     id: "2bdy77h72782u289uj9",
     name: "pineapple premium",
+    code: 1245,
     price: 5.99,
     stock: 5,
     image: "pineapple-premium.png",
     slug: "pineapple-premium",
-    quantity: "1 piece",
+    measurement: "piece",
   };
 
   return (
     <>
       <main className="main single-product__main">
-        <History history={history} />
+        <History
+          history={[
+            {
+              name: "Exotic fruits",
+              link: "/sale?category=exotic+fruits",
+            },
+            {
+              name: "Pitahaya white / Dragon fruit",
+              link: "/sale/pitahaya-white-/-dragon-fruit",
+            },
+          ]}
+        />
 
         <div className="single-product__container">
           <section className="section single-product__content">
@@ -153,9 +142,18 @@ export default function Product() {
                   <li>Delivery service; UPS, SkyNet, FedEx</li>
                 </ul>
               </div>
+              <div className="single-product__waitlist-btn-box">
+                <p>
+                  Join the waitlist to be emailed when this product becomes
+                  available
+                </p>
+                <button className="btn btn--sm btn--secondary">
+                  Join waitlist
+                </button>
+              </div>
               <div className="single-product__price-box">
                 <h4 className="single-product__price">$9.99</h4>
-                <LikeButton product={product} />
+                <LikeButton isLiked={true} />
                 <button className="btn btn--sm btn--primary">
                   Add to Cart
                 </button>
@@ -163,25 +161,16 @@ export default function Product() {
             </div>
           </section>
           <section className="section">
-            <div className="single-product__switches" ref={switchesRef}>
-              <button
-                className={
-                  switchIndex === 0 ? "switch switch--current" : "switch"
-                }
-                onClick={switchView}
-              >
-                about
-              </button>
-              <button
-                className={
-                  switchIndex === 1 ? "switch switch--current" : "switch"
-                }
-                onClick={switchView}
-              >
-                reviews <span>({reviews.length})</span>
-              </button>
-            </div>
-
+            <Switch
+              switchIndex={switchIndex}
+              setSwitchIndex={setSwitchIndex}
+              switches={[
+                "about",
+                <>
+                  reviews <span>({reviews.length})</span>
+                </>,
+              ]}
+            />
             <div className="single-product__switch-views">
               <div
                 className={
@@ -190,8 +179,8 @@ export default function Product() {
                     : "single-product__switch-view about"
                 }
               >
-                <h5>Pitahaya white</h5>
-                <p className="text text--sm text--bold">
+                <h3 className="heading heading--section">Pitahaya white</h3>
+                <p>
                   Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab
                   voluptatem perspiciatis blanditiis odit quas mollitia quasi,
                   sapiente modi dolorem culpa? Ex consequuntur officiis iusto
@@ -199,26 +188,26 @@ export default function Product() {
                   dolore earum iure unde ipsam ab necessitatibus fugiat
                   reiciendis!
                 </p>
-                <h5>Regions</h5>
-                <p className="text text--sm text--bold">
+                <h3 className="heading heading--section">Regions</h3>
+                <p>
                   Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab
                   voluptatem perspiciatis blanditiis odit quas mollitia quasi,
                   sapiente modi dolorem culpa? Ex con.
                 </p>
-                <h5>Flavors & Texture</h5>
-                <p className="text text--sm text--bold">
+                <h3 className="heading heading--section">Flavors & Texture</h3>
+                <p>
                   Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab
                   voluptatem perspiciatis blanditiis odit quas mollitia quasi,
                   sapiente modi dolorem culpa? Ex con.
                 </p>
-                <h5>Regions</h5>
-                <p className="text text--sm text--bold">
+                <h3 className="heading heading--section">Regions</h3>
+                <p>
                   Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab
                   voluptatem perspiciatis blanditiis odit quas mollitia quasi,
                   sapiente modi dolorem culpa? Ex con.
                 </p>
-                <h5>Preparation</h5>
-                <p className="text text--sm text--bold">
+                <h3 className="heading heading--section">Preparation</h3>
+                <p>
                   Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab
                   voluptatem perspiciatis blanditiis odit quas mollitia quasi,
                   sapiente modi dolorem culpa? Ex con.
@@ -233,7 +222,7 @@ export default function Product() {
               >
                 <div className="single-product__btn-box">
                   <div className="single-product__review-intro">
-                    <h5>5.0</h5>
+                    <h3 className="heading heading--section">5.0</h3>
                     <Stars rating={5} size="xl" />
                     <p className="text">
                       <span>{reviews.length} </span>

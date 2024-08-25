@@ -5,20 +5,23 @@
   font-size: $sm-text;
   font-weight: 500;
   color: $dark;
+
+  @include multiplier("font-size", $sm-text, $genQs);
 }
 
 .single-product {
   &__main {
+    & > *:first-child {
+      margin-bottom: 0;
+    }
     & > *:not(:last-child) {
       margin-bottom: 4rem;
 
       @include breakpoints(mq-lg) {
         margin-bottom: 6rem;
       }
-    }
 
-    & > *:first-child {
-      margin-bottom: 0;
+      @include multiplier("margin-bottom", 6rem, $genQs);
     }
   }
 
@@ -29,6 +32,10 @@
       box-shadow: $shadow-3;
       padding: 2rem;
     }
+
+    @include multiplier("margin-top", 2rem, $genQs);
+    @include multiplier("margin-bottom", 2rem, $genQs);
+    @include multiplier("padding", 2rem, $genQs);
   }
 
   &__content {
@@ -56,9 +63,17 @@
         grid-area: text;
       }
     }
+
     @include breakpoints(mq-xl) {
       margin-bottom: 4rem;
     }
+
+    @include breakpoints(mq-2xl) {
+      grid-template-rows: 7.5rem auto;
+    }
+
+    @include multiplier("margin-bottom", 4rem, $genQs);
+    @include multiplier("grid-gap", 2rem, $genQs);
   }
 
   &__info {
@@ -68,12 +83,15 @@
       color: $dark;
       text-transform: capitalize;
       margin-bottom: 1rem;
+      @include multiplier("font-size", $md-text, $genQs);
+      @include multiplier("margin-bottom", 1rem, $genQs);
     }
   }
 
   &__text-box {
     & > * {
       margin-bottom: 2.5rem;
+      @include multiplier("margin-bottom", 2.5rem, $genQs);
     }
   }
 
@@ -81,6 +99,7 @@
     font-size: $xl-text;
     font-weight: 700;
     color: $dark;
+    @include multiplier("font-size", $xl-text, $genQs);
 
     &-box {
       display: grid;
@@ -102,6 +121,8 @@
       & > *:nth-child(3) {
         grid-area: btn;
       }
+
+      @include multiplier("gap", 2rem, $genQs);
     }
 
     @include breakpoints(mq-md) {
@@ -132,7 +153,7 @@
     }
   }
 
-  &__review-btn{
+  &__review-btn {
     border: none;
     outline: none;
     background: transparent;
@@ -143,12 +164,18 @@
     color: $dark;
     cursor: pointer;
 
-    .icon{
+    .icon {
       margin-left: 1rem;
       height: 1.1rem;
       width: 1.1rem;
-      margin-top: .2rem;
+      margin-top: 0.2rem;
+      @include multiplier("height", 1.1rem, $genQs);
+      @include multiplier("width", 1.1rem, $genQs);
+      @include multiplier("margin-top", 0.2rem, $genQs);
+      @include multiplier("margin-left", 1rem, $genQs);
     }
+
+    @include multiplier("font-size", $sm-text, $genQs);
   }
 
   &__code {
@@ -157,6 +184,12 @@
     color: $light;
     border-radius: 0.5rem;
     margin-left: 1rem;
+    @include multiplier("margin-left", 1rem, $genQs);
+    @include multiplier("padding-top", 0.25rem, $genQs);
+    @include multiplier("padding-bottom", 0.25rem, $genQs);
+    @include multiplier("padding-left", 0.6rem, $genQs);
+    @include multiplier("padding-right", 0.6rem, $genQs);
+    @include multiplier("border-radius", 0.5rem, $genQs);
   }
 
   &__img {
@@ -168,6 +201,7 @@
   &__img-view {
     margin-bottom: 1rem;
     user-select: none;
+    @include multiplier("margin-bottom", 1rem, $genQs);
   }
 
   &__img-slider {
@@ -181,6 +215,7 @@
 
     & > *:not(:last-child) {
       margin-right: 2rem;
+      @include multiplier("margin-left", 2rem, $genQs);
     }
   }
 
@@ -190,6 +225,11 @@
     object-fit: contain;
     border: 2px solid transparent;
     border-radius: 0.5rem;
+
+    @include multiplier("height", 6rem, $genQs);
+    @include multiplier("width", 6rem, $genQs);
+    @include multiplier("border-width", 2px, $genQs);
+    @include multiplier("border-radius", 0.5rem, $genQs);
 
     &.current,
     &:hover {
@@ -202,12 +242,15 @@
       display: flex;
       align-items: center;
       margin-bottom: 0.5rem;
+      @include multiplier("margin-bottom", 0.5rem, $genQs);
     }
 
     h4 {
-      @include text();
       color: $green-dark;
       margin-left: 0.5rem;
+      @include text();
+
+      @include multiplier("margin-left", 0.5rem, $genQs);
     }
 
     li {
@@ -216,18 +259,22 @@
 
     ul {
       padding-left: 1.5rem;
+      @include multiplier("padding-left", 1.5rem, $genQs);
     }
 
     & > *:nth-child(2) {
       margin-bottom: 2rem;
+      @include multiplier("margin-bottom", 2rem, $genQs);
     }
   }
 
   &__taste-box {
     h3 {
-      @include text();
       font-weight: 600;
       margin-bottom: 0.5rem;
+      @include text();
+
+      @include multiplier("margin-bottom", 0.5rem, $genQs);
     }
     .content {
       display: flex;
@@ -241,6 +288,7 @@
       flex-direction: column;
       align-items: center;
       padding: 0 2rem;
+      @include multiplier("min-width", 6rem, $genQs);
 
       p {
         @include text();
@@ -257,93 +305,41 @@
 
       .icon {
         margin-bottom: 0.5rem;
+        @include multiplier("margin-bottom", 0.5rem, $genQs);
       }
-    }
-  }
-
-  &__switches {
-    margin-bottom: 1rem;
-    & > *:first-child {
-      margin-right: 2rem;
-    }
-
-    .switch {
-      background: transparent;
-      border: none;
-      outline: none;
-      cursor: pointer;
-      @include text();
-      text-transform: capitalize;
-      font-weight: 600;
-      padding: 1rem;
-      position: relative;
-
-      span {
-        font-weight: 300;
-        color: $gray-200;
-      }
-
-      &::after {
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        z-index: 5;
-        width: 100%;
-        height: 100%;
-        content: "";
-        background: transparent;
-      }
-
-      &::before {
-        height: 2px;
-        width: 100%;
-        position: absolute;
-        bottom: 0.5rem;
-        left: 0;
-        right: 0;
-        content: "";
-        background: transparent;
-      }
-
-      &:hover &::before,
-      &--current::before {
-        background: $green-dark;
-      }
-    }
-
-    @include breakpoints(mq-md) {
-      margin-bottom: 2.5rem;
     }
   }
 
   &__switch-views {
     position: relative;
     width: 100%;
+    margin-top: 2rem;
   }
 
   &__switch-view {
     display: none;
 
     &.about {
-      h5 {
+      h3 {
         margin-bottom: 1rem;
+        @include multiplier("margin-bottom", 1rem, $genQs);
+      }
+
+      p {
+        font-size: $sm-text;
+        color: $dark;
+        font-weight: 500;
+        line-height: 1.5;
       }
 
       p:not(:last-child) {
-        margin-bottom: 2.5rem;
+        margin-bottom: 2rem;
+        @include multiplier("margin-bottom", 2rem, $genQs);
       }
     }
 
     &--current {
       display: block;
-    }
-
-    h5 {
-      font-size: $base-text;
-      font-weight: 600;
-      color: $dark;
     }
   }
 
@@ -358,14 +354,9 @@
     display: flex;
     align-items: center;
 
-    h5 {
-      font-size: $md-text;
-      font-weight: 600;
-      color: $dark;
-    }
-
     & > *:not(:last-child) {
       margin-right: 1rem;
+      @include multiplier("margin-right", 1rem, $genQs);
     }
   }
 
@@ -373,9 +364,11 @@
     display: flex;
     flex-direction: column;
     margin-bottom: 2.5rem;
+    @include multiplier("margin-bottom", 2.5rem, $genQs);
 
     & > *:first-child {
       margin-bottom: 1rem;
+      @include multiplier("margin-bottom", 1rem, $genQs);
     }
 
     @include breakpoints(mq-md) {
@@ -392,10 +385,24 @@
   &__reviews {
     & > *:not(:last-child) {
       margin-bottom: 2.5rem;
+      @include multiplier("margin-bottom", 2.5rem, $genQs);
     }
 
     @include breakpoints(mq-md) {
       margin-bottom: 3rem;
     }
+    @include multiplier("margin-bottom", 3rem, $genQs);
+  }
+
+  &__waitlist-btn-box {
+    width: 100%;
+    padding: 1rem;
+    background: lighten($red-dark, 50%);
+    p {
+      margin-bottom: 1rem;
+      color: $red-dark;
+      @include multiplier("margin-bottom", 1rem, $genQs);
+    }
+    @include multiplier("padding", 1rem, $genQs);
   }
 }

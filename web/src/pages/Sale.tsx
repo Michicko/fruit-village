@@ -1,12 +1,12 @@
 import { useState } from "react";
 import History from "../components/Components/History";
-import { products } from "../data";
+import { products, user } from "../data";
 import Product from "../components/Components/Product";
-import DesktopTop from "../components/Components/Sale/DesktopTop";
-import MobileTop from "../components/Components/Sale/MobileTop";
+import DesktopTop from "../components/Sale/DesktopTop";
+import MobileTop from "../components/Sale/MobileTop";
 import { v4 as uuid } from "uuid";
 import Pagination from "../components/Components/Pagination";
-import Filter from "../components/Components/Filters/Filter";
+import Filter from "../components/Filters/Filter";
 
 export default function Sale() {
   const [history, setHistory] = useState([
@@ -15,7 +15,7 @@ export default function Sale() {
       link: "/sale",
     },
   ]);
-  
+
   const [isFilterOpened, setIsFilterOpened] = useState(false);
   return (
     <>
@@ -35,7 +35,14 @@ export default function Sale() {
             <div className="products__top-filters"></div>
             <div className="products__list">
               {products.map((product) => {
-                return <Product product={product} key={uuid()} />;
+                return (
+                  <Product
+                    type="product"
+                    product={product}
+                    isLiked={user.wishList.includes(product.id)}
+                    key={uuid()}
+                  />
+                );
               })}
             </div>
           </div>

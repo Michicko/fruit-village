@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import Cards from "../Components/Footer/Cards";
+import Cards from "../Footer/Cards";
 import Logo from "../Components/Logo";
 import { v4 as uuid } from "uuid";
 import Socials from "../Components/Socials";

@@ -1,0 +1,26 @@
+@use "../abstract/variables" as *;
+@use "../abstract/mixins" as *;
+
+.account {
+  &__infos {
+    &-box {
+      h3 {
+        margin-bottom: 2rem;
+        @include multiplier("margin-bottom", 2rem, $genQs);
+      }
+      
+
+      p {
+        font-size: $sm-text;
+        font-weight: 500;
+        color: $dark;
+        @include multiplier("font-size", $sm-text, $genQs);
+      }
+    }
+
+    & > *:not(:last-child), &-lead {
+      margin-bottom: 1rem;
+      @include multiplier("margin-bottom", 1rem, $genQs);
+    }
+  }
+}

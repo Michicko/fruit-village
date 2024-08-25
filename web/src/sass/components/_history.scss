@@ -10,23 +10,23 @@
   }
 
   &__icon {
-    height: 2rem;
-    width: 2rem;
+    height: 1.5rem;
+    width: 1.5rem;
 
     &.small {
-      height: 1.4rem;
-      width: 1.4rem;
-      @include multiplier("height", 1.4rem, $genQs);
-      @include multiplier("width", 1.4rem, $genQs);
+      margin-top: -.25rem;
+      height: 1.1rem;
+      width: 1.1rem;
+      @include multiplier("height", 1.1rem, $genQs);
+      @include multiplier("width", 1.1rem, $genQs);
     }
 
     path {
-      // fill: $dark;
       stroke: $dark;
     }
 
-    @include multiplier("height", 2rem, $genQs);
-    @include multiplier("width", 2rem, $genQs);
+    @include multiplier("height", 1.5rem, $genQs);
+    @include multiplier("width", 1.5rem, $genQs);
   }
 
   &__link {
@@ -39,9 +39,6 @@
       color: $green-dark;
     }
 
-    @include breakpoints(mq-xs) {
-      font-size: $base-text;
-    }
-    @include multiplier("font-size", $base-text, $genQs);
+    @include multiplier("font-size", $sm-text, $genQs);
   }
 }

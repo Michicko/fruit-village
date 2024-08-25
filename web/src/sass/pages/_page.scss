@@ -1,0 +1,75 @@
+@use "../abstract/variables" as *;
+@use "../abstract/mixins" as *;
+
+.page {
+  &__container {
+    @include breakpoints(mq-lg) {
+      display: grid;
+      grid-template-columns: 75% 25%;
+    }
+  }
+
+  &__content {
+    width: 100%;
+    padding: 2rem 0;
+
+    & > *:first-child {
+      margin-bottom: 2.5rem;
+      @include multiplier("margin-bottom", 2.5rem, $genQs);
+    }
+
+    & > * {
+      margin-bottom: 4rem;
+      @include multiplier("margin-bottom", 4rem, $genQs);
+    }
+
+    @include breakpoints(mq-lg) {
+      padding-right: 3rem;
+    }
+    @include multiplier("padding-right", 4rem, $genQs);
+    @include multiplier("padding-top", 2rem, $genQs);
+    @include multiplier("padding-bottom", 2rem, $genQs);
+  }
+
+  &__section {
+    & > *:not(:last-child) {
+      margin-bottom: 1.5rem;
+      @include multiplier("margin-bottom", 1.5rem, $genQs);
+    }
+  }
+
+  &__sidebar {
+    padding: 5rem 1rem;
+    padding-right: 0;
+    display: none;
+    flex-direction: column;
+
+    @include breakpoints(mq-lg) {
+      display: flex;
+    }
+
+    & > *:not(:last-child) {
+      margin-bottom: 2rem;
+      @include multiplier("margin-bottom", 2rem, $genQs);
+    }
+
+    @include multiplier("padding-top", 5rem, $genQs);
+    @include multiplier("padding-bottom", 5rem, $genQs);
+    @include multiplier("padding-right", 1rem, $genQs);
+    @include multiplier("padding-left", 1rem, $genQs);
+  }
+
+  &__link {
+    font-size: $base-text;
+    font-weight: 600;
+    color: $dark;
+    text-decoration: none;
+
+    &:hover,
+    &--active {
+      color: $green-dark;
+    }
+
+    @include multiplier("font-size", $base-text, $genQs);
+  }
+}

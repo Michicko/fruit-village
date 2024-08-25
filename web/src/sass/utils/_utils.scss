@@ -45,35 +45,22 @@
 .icon {
   height: 2rem;
   width: 2rem;
+  fill: $dark;
 
   &--sm {
     height: 1.5rem;
     width: 1.5rem;
   }
 
-  path {
-    fill: $dark;
-    stroke: $dark;
-  }
-
   &--light {
-    path {
-      fill: $light;
-      stroke: $light;
-    }
+    fill: $light;
   }
 
   &--primary {
-    path {
-      fill: $green-dark;
-      stroke: $green-dark;
-    }
+    fill: $green-dark;
   }
   &--secondary {
-    path {
-      fill: $red-dark;
-      stroke: $red-dark;
-    }
+    fill: $red-dark;
   }
 
   @include multiplier("height", 2rem, $genQs);
@@ -88,23 +75,44 @@
   font-size: $base-text;
   font-weight: 400;
   color: $dark;
-  &--bold{
+
+  &--bold {
     font-weight: 500;
   }
+
   &--xs {
     font-size: $xs-text;
+    @include multiplier("font-size", $xs-text, $genQs);
   }
   &--sm {
     font-size: $sm-text;
+    @include multiplier("font-size", $sm-text, $genQs);
   }
   &--md {
     font-size: $md-text;
+    @include multiplier("font-size", $md-text, $genQs);
   }
   &--lg {
     font-size: $lg-text;
+    @include multiplier("font-size", $lg-text, $genQs);
   }
+
+  @include multiplier("font-size", $base-text, $genQs);
 }
 
 .dark {
   color: $dark;
+}
+
+.primary {
+  color: $green-dark;
+}
+
+.tel {
+  font-size: $sm-text;
+  font-weight: 500;
+  color: $green-dark;
+  text-decoration: none;
+
+  @include multiplier("font-size", $sm-text, $genQs);
 }

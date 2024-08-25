@@ -1,0 +1,65 @@
+@use "../abstract/variables" as *;
+@use "../abstract/mixins" as *;
+
+.page-card {
+  display: grid;
+  grid-template-columns: 5rem auto;
+  grid-column-gap: 2rem;
+  grid-row-gap: 1rem;
+  grid-template-areas:
+    "icon title"
+    "icon dsc";
+
+  @include multiplier("grid-column-gap", 2rem, $genQs);
+  @include multiplier("grid-column-gap", 2rem, $genQs);
+
+  &__heading {
+    font-family: $font;
+    grid-area: title;
+    font-size: $base-text;
+    font-weight: 600;
+    color: $dark;
+  }
+
+  &__icon {
+    height: 2.5rem;
+    width: 2.5rem;
+    fill: $light;
+  }
+
+  p {
+    grid-area: dsc;
+    font-size: $sm-text;
+    color: $dark;
+    font-weight: 500;
+    line-height: 1.5;
+  }
+
+  &__list {
+    display: grid;
+    gap: 2rem;
+
+    @include breakpoints(mq-md) {
+      grid-template-columns: repeat(2, 1fr);
+      grid-column-gap: 2rem;
+      grid-row-gap: 4rem;
+    }
+  }
+
+  &__icon-box {
+    height: 4.5rem;
+    width: 4.5rem;
+    background: $green-dark;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    grid-area: icon;
+
+    .icon {
+      height: 2rem;
+      width: 2rem;
+    }
+  }
+}
+

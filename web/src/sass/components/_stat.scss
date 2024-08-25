@@ -1,0 +1,22 @@
+@use "../abstract/variables" as *;
+@use "../abstract/mixins" as *;
+
+.stat {
+  &__number {
+    font-size: $iv-text;
+    font-weight: 500;
+    color: $light;
+    margin-bottom: 1rem;
+
+    @include multiplier("font-size", $iv-text, $genQs);
+    @include multiplier("margin-bottom", 1rem, $genQs);
+  }
+
+  &__desc {
+    font-size: $base-text;
+    font-weight: 300;
+    color: $light;
+
+    @include multiplier("font-size", $base-text, $genQs);
+  }
+}

@@ -1,0 +1,94 @@
+@use "../abstract/variables" as *;
+@use "../abstract/mixins" as *;
+
+@mixin text {
+  font-family: $font;
+  font-size: $sm-text;
+  color: $dark;
+  @include multiplier("font-size", $sm-text, $genQs);
+}
+
+@mixin flex {
+  display: flex;
+  align-items: center;
+}
+
+.contacts {
+  &__box {
+    & > *:first-child {
+      margin-bottom: 2rem;
+      @include flex();
+
+      span {
+        font-weight: 700;
+        @include text();
+      }
+
+      .icon {
+        margin-right: 0.2rem;
+        @include multiplier("margin-right", 0.2rem, $genQs);
+      }
+      @include multiplier("margin-bottom", 2rem, $genQs);
+    }
+
+    .phones {
+      div {
+        @include flex();
+      }
+
+      & > *:not(:last-child) {
+        margin-bottom: 1.5rem;
+        @include multiplier("margin-bottom", 1.5rem, $genQs);
+      }
+
+      h4 {
+        font-size: $md-text;
+        font-weight: 600;
+        color: $dark;
+        @include multiplier("font-size", $md-text, $genQs);
+      }
+    }
+
+    &:last-child {
+      p:not(:first-child) {
+        font-weight: 500;
+        margin-bottom: 0.5rem;
+        @include text();
+        @include multiplier("margin-bottom", 0.5rem, $genQs);
+      }
+    }
+  }
+
+  &__icon {
+    height: 2rem;
+    width: 2rem;
+    fill: $light;
+
+    &.path-fill {
+      path {
+        fill: $light;
+      }
+    }
+
+    &-box {
+      height: 3.2rem;
+      width: 3.2rem;
+      background: $green-dark;
+      border-radius: 50%;
+      justify-content: center;
+      margin-right: 1rem;
+      @include flex();
+      @include multiplier("margin-right", 1rem, $genQs);
+      @include multiplier("height", 3.2rem, $genQs);
+      @include multiplier("width", 3.2rem, $genQs);
+    }
+    @include multiplier("height", 2rem, $genQs);
+    @include multiplier("width", 2rem, $genQs);
+  }
+
+  &__map-box {
+    min-height: 30rem;
+    background: rgba($gray, 0.8);
+    @include multiplier("min-height", 30rem, $genQs);
+  }
+}

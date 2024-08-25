@@ -1,0 +1,32 @@
+@use "../abstract/variables" as *;
+@use "../abstract/mixins" as *;
+
+.grid {
+  display: grid;
+}
+
+.col {
+  @include breakpoints(mq-lg) {
+    &-2 {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    &-s-m {
+      grid-template-columns: 18rem calc(100% - 14rem);
+    }
+
+    &-m-s {
+      grid-template-columns: calc(100% - 14rem) 18rem;
+    }
+
+    &-min-auto{
+      grid-template-columns: min-content auto;
+    }
+  }
+}
+
+.gap {
+  &-4 {
+    gap: 4rem;
+  }
+}

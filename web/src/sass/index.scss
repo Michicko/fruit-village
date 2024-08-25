@@ -15,12 +15,18 @@
 @use "./components/category";
 @use "./components/product";
 @use "./components/info";
+@use "./components/stat";
 @use "./components/socials";
 @use "./components/filter";
 @use "./components/history";
 @use "./components/select";
 @use "./components/review";
 @use "./components/stars";
+@use "./components/allergy";
+@use "./components/switch";
+@use "./components/order";
+@use "./components/page-card";
+@use "./components/blog-card";
 @use "./components/like-button";
 @use "./components/ratings";
 @use "./components/range-slider";
@@ -30,11 +36,17 @@
 // pages
 @use './pages/error';
 @use './pages/sale';
+@use './pages/page';
+@use './pages/account';
+@use './pages/contacts';
+@use './pages/itemslist';
 @use './pages/single-product';
 
 // layouts
 @use "./layouts/nav";
+@use "./layouts/grid";
 @use "./layouts/header";
+@use "./layouts/personal";
 @use "./layouts/main";
 @use "./layouts/section";
 @use "./layouts/footer";
