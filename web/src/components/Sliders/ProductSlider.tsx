@@ -18,6 +18,7 @@ export default function ProductSlider({ products }: ProductSliderProps) {
               type="product"
               isLiked={user.wishList.includes(product.id)}
               product={product}
+              source="slider"
               key={uuid()}
             />
           );

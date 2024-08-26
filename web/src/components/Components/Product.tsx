@@ -8,11 +8,12 @@ type ProductProper = {
   product: ProductTypes;
   type: "product" | "wishlist" | "waitlist";
   isLiked: boolean;
+  source?: string;
 };
 
-export default function Product({ product, type, isLiked }: ProductProper) {
+export default function Product({ product, type, isLiked, source }: ProductProper) {
   return (
-    <div className="product">
+    <div className={`product ${source}`} title={product.name}>
       {product.discount && (
         <div className="product__discount">
           <span>{product.discount}%</span>

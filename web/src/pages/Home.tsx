@@ -111,9 +111,7 @@ export default function Home() {
             <h2 className="heading heading--secondary">Popular products</h2>
             <CustomLink text="Show all products" to="/sale" type="dark" />
           </div>
-          <ProductSlider
-            products={products.filter((el) => !el.discount).slice(0, 4)}
-          />
+          <ProductSlider products={products.filter((el) => !el.discount)} />
         </section>
         <section className="section section__fruit-box">
           <div className="top">
@@ -128,9 +126,7 @@ export default function Home() {
             <h2 className="heading heading--secondary">Promotional offers</h2>
             <CustomLink text="Show all products" to="/sale" type="dark" />
           </div>
-          <ProductSlider
-            products={products.filter((el) => el.discount).slice(0, 4)}
-          />
+          <ProductSlider products={products.filter((el) => el.discount)} />
         </section>
         <section className="section section__stats">
           {stats.map((stat) => {

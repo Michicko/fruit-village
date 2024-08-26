@@ -9,6 +9,11 @@
   position: relative;
   min-width: 18.2rem;
 
+  &.slider {
+    min-width: 22.1rem;
+    @include multiplier("min-width", 24.1rem, $genQs);
+  }
+
   @include breakpoints(mq-2xl) {
     min-width: 22.1rem;
   }
@@ -83,10 +88,13 @@
     text-decoration: none;
     text-transform: capitalize;
     color: $dark;
-    line-height: 1;
+    line-height: 1.5;
     display: block;
+    height: 1.8rem;
+    overflow: hidden;
     @include multiplier("font-size", $base-text, $genQs);
-    @include multiplier("line-height", 1, $genQs);
+    @include multiplier("line-height", 1.5, $genQs);
+    @include multiplier("height", 1.8rem, $genQs);
   }
 
   &__quantity,

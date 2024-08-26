@@ -248,6 +248,8 @@
 .product-slider {
   width: 100%;
   height: 36rem;
+
+  @include multiplier("height", 36rem, $genQs);
 }
 
 .draggable-slider {
@@ -286,5 +288,7 @@
     }
 
     @include hideScrollBar();
+
+    @include multiplier("padding", 0.5rem, $genQs);
   }
 }

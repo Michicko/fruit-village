@@ -91,6 +91,16 @@ export const products = [
     measurement: "k",
     code: 175,
   },
+  {
+    id: "2ccr47h24782u289uj9",
+    name: "avocado",
+    price: 4.99,
+    stock: 5,
+    image: "avocado.png",
+    slug: "physalis",
+    measurement: "k",
+    code: 175,
+  },
 ];
 
 export const categories = [
