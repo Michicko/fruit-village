@@ -15,7 +15,7 @@ export default function SmallNav() {
             login
           </Link>
         ) : (
-          <Link to={"/profile"} className="nav__small-profile">
+          <Link to={"/account"} className="nav__small-profile">
             <p className="light">{user.first_name}</p>
             <User className="nav__small-icon" />
           </Link>

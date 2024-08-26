@@ -1,6 +1,8 @@
-import { ProductTypes } from "../../constants";
+import { user } from "../../data";
 import Product from "../Components/Product";
 import { v4 as uuid } from "uuid";
+import DraggableSlider from "./DraggableSlider";
+import { ProductTypes } from "../../constants";
 
 type ProductSliderProps = {
   products: ProductTypes[];
@@ -9,13 +11,19 @@ type ProductSliderProps = {
 export default function ProductSlider({ products }: ProductSliderProps) {
   return (
     <div className="product-slider">
-      <div className="product-slider__box">
-        <div className="product-slider__slides">
-          {products.map((product) => {
-            return <Product type="product" product={product} key={uuid()} />;
-          })}
-        </div>
-      </div>
+      <DraggableSlider>
+        {products.map((product) => {
+          return (
+            <Product
+              type="product"
+              isLiked={user.wishList.includes(product.id)}
+              product={product}
+              key={uuid()}
+            />
+          );
+        })}
+        
+      </DraggableSlider>
     </div>
   );
 }

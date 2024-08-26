@@ -204,19 +204,10 @@
     @include multiplier("margin-bottom", 1rem, $genQs);
   }
 
-  &__img-slider {
+  &__slider {
     width: 100%;
+    height: 7rem;
     overflow-x: hidden;
-  }
-
-  &__img-slides {
-    display: flex;
-    align-items: center;
-
-    & > *:not(:last-child) {
-      margin-right: 2rem;
-      @include multiplier("margin-left", 2rem, $genQs);
-    }
   }
 
   &__img-slide {

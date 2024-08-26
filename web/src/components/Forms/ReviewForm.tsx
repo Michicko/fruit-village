@@ -2,7 +2,11 @@ import { useState } from "react";
 import Select from "../Components/Select";
 import { ratings } from "../../data";
 
-export default function ReviewForm() {
+type ReviewFormProps = {
+  setIsReviewFormShown: React.Dispatch<React.SetStateAction<boolean>>;
+};
+
+export default function ReviewForm({ setIsReviewFormShown }: ReviewFormProps) {
   const temOptions = ratings.map((rating) => {
     return {
       name: `${rating}`,
@@ -51,7 +55,16 @@ export default function ReviewForm() {
           className="form__textarea"
         ></textarea>
       </div>
-      <button className="btn btn--sm btn--primary">Submit Review</button>
+      <div className="form__review-btns">
+        <button className="btn btn--sm btn--primary">Submit Review</button>
+        <button
+          className="btn btn--sm btn--secondary"
+          type="button"
+          onClick={() => setIsReviewFormShown(false)}
+        >
+          Cancel
+        </button>
+      </div>
     </form>
   );
 }

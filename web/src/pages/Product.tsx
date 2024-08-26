@@ -15,16 +15,13 @@ import ProductSlider from "../components/Sliders/ProductSlider";
 import CustomLink from "../components/Components/CustomLink";
 import ReviewForm from "../components/Forms/ReviewForm";
 import Switch from "../components/Components/Switch";
+import SingleProductSlider from "../components/Sliders/SingleProductSlider";
 
 export default function Product() {
   const [index, setIndex] = useState(0);
   const [switchIndex, setSwitchIndex] = useState(0);
 
   const [isReviewFormShown, setIsReviewFormShown] = useState(false);
-
-  const toggleReviewForm = () => {
-    setIsReviewFormShown(!isReviewFormShown);
-  };
 
   const images = [
     "pitahaya-white-1.png",
@@ -82,25 +79,11 @@ export default function Product() {
                   className="single-product__img"
                 />
               </div>
-              <div className="single-product__img-slider">
-                <div className="single-product__img-slides">
-                  {images.map((img, i) => {
-                    return (
-                      <img
-                        src={`/assets/images/${img}`}
-                        alt="Pitahaya white / Dragon fruit"
-                        key={uuid()}
-                        className={
-                          index === i
-                            ? "single-product__img-slide current"
-                            : "single-product__img-slide"
-                        }
-                        onClick={() => setIndex(i)}
-                      />
-                    );
-                  })}
-                </div>
-              </div>
+              <SingleProductSlider
+                images={images}
+                index={index}
+                setIndex={setIndex}
+              />
             </div>
 
             <div className="single-product__text-box">
@@ -234,16 +217,18 @@ export default function Product() {
                       reviews
                     </p>
                   </div>
-                  <button
-                    className="btn btn--sm btn--primary"
-                    onClick={toggleReviewForm}
-                  >
-                    Write a Review
-                  </button>
+                  {!isReviewFormShown && (
+                    <button
+                      className="btn btn--sm btn--primary"
+                      onClick={() => setIsReviewFormShown(true)}
+                    >
+                      Write a Review
+                    </button>
+                  )}
                 </div>
                 {isReviewFormShown && (
                   <div className="single-product__review-form-box">
-                    <ReviewForm />
+                    <ReviewForm setIsReviewFormShown={setIsReviewFormShown} />
                   </div>
                 )}
                 <div className="single-product__reviews">

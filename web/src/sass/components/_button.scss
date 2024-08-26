@@ -124,7 +124,7 @@
     }
 
     &:hover {
-      background: $red-light;
+      background: darken($red-dark, 5%);
     }
   }
   &--bare {

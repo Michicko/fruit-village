@@ -7,7 +7,14 @@
   border-radius: $xxs-gutter;
   width: 100%;
   position: relative;
+  min-width: 18.2rem;
+
+  @include breakpoints(mq-2xl) {
+    min-width: 22.1rem;
+  }
+
   @include multiplier("border-radius", $xxs-gutter, $genQs);
+  @include multiplier("min-width", 22.1rem, $genQs);
 
   &__discount {
     position: absolute;
@@ -156,7 +163,7 @@
     outline: none;
     z-index: 250;
 
-    &::before{
+    &::before {
       top: 0;
       left: 0;
       right: 0;
@@ -165,7 +172,7 @@
       z-index: 252;
       height: 100%;
       width: 100%;
-      content: '';
+      content: "";
       display: block;
     }
   }

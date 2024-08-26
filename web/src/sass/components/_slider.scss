@@ -246,35 +246,45 @@
 }
 
 .product-slider {
-  padding: 0.5rem;
+  width: 100%;
+  height: 36rem;
+}
+
+.draggable-slider {
+  height: 100%;
+  width: 100%;
   overflow: hidden;
+
   @include multiplier("padding-right", 0.5rem, $genQs);
   @include multiplier("padding-left", 0.5rem, $genQs);
 
   &__box {
     width: 100%;
-    min-height: 35rem;
+    height: 100%;
     position: relative;
     @include multiplier("min-height", 35rem, $genQs);
   }
 
   &__slides {
     width: 100%;
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 1rem;
     position: absolute;
     left: 0;
     grid-auto-rows: 1fr;
+    overflow-x: scroll;
+    padding: 0.5rem;
+    display: flex;
+    align-items: center;
 
     & > * {
-      min-width: 22.1rem;
+      margin-right: 1rem;
+
+      @include breakpoints(mq-lg) {
+        margin-right: 3rem;
+      }
+
+      @include multiplier("margin-right", 3rem, $genQs);
     }
 
-    @include breakpoints(mq-lg) {
-      gap: 3rem;
-    }
-
-    @include multiplier("gap", 3rem, $genQs);
+    @include hideScrollBar();
   }
 }
