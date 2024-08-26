@@ -1,3 +1,11 @@
+import UserIcon from "./assets/icons/user.svg?react";
+import DocIcon from "./assets/icons/document.svg?react";
+import HeartIcon from "./assets/icons/like.svg?react";
+import ClockIcon from "./assets/icons/clock-3.svg?react";
+import EyeIcon from "./assets/icons/eye.svg?react";
+import GiftIcon from "./assets/icons/gift.svg?react";
+import LogoutIcon from "./assets/icons/logout.svg?react";
+
 export const products = [
   {
     id: "2bdy77h72782u289uj9",
@@ -241,5 +249,52 @@ export const wishListProducts = [
     slug: "mango-royal",
     measurement: "piece",
     code: 313,
+  },
+];
+
+export const privateLinks = [
+  {
+    name: "My account",
+    link: "/account",
+    icon: <UserIcon className="personal-page__icon path-filled" />,
+    showTotal: false,
+  },
+  {
+    name: "My orders",
+    link: "/orders",
+    icon: <DocIcon className="personal-page__icon" />,
+    showTotal: false,
+  },
+  {
+    name: "Wishlist",
+    link: "/wishlist",
+    icon: <HeartIcon className="personal-page__icon path-filled" />,
+    showTotal: true,
+    total: user.wishList.length,
+  },
+  {
+    name: "Waitlist",
+    link: "/waitlist",
+    icon: <ClockIcon className="personal-page__icon" />,
+    showTotal: true,
+    total: user.waitList.length,
+  },
+  {
+    name: "Viewed products",
+    link: "/viewed-products",
+    icon: <EyeIcon className="personal-page__icon" />,
+    showTotal: false,
+  },
+  {
+    name: "My bonus account",
+    link: "/bonus",
+    icon: <GiftIcon className="personal-page__icon stroked" />,
+    showTotal: false,
+  },
+  {
+    name: "Log out",
+    link: "",
+    icon: <LogoutIcon className="personal-page__icon" />,
+    showTotal: false,
   },
 ];

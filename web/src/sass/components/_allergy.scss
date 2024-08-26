@@ -46,46 +46,6 @@
     @include multiplier("margin-top", 1rem, $genQs);
   }
 
-  button,
-  &__btn {
-    background: transparent;
-    outline: none;
-    border: 1px solid $dark;
-    border-radius: 50%;
-    height: 2.2rem;
-    width: 2.2rem;
-    justify-content: center;
-    @include flex();
-    @include multiplier("height", 2.2rem, $genQs);
-    @include multiplier("width", 2.2rem, $genQs);
-  }
-
-  &__icon {
-    height: 1.8rem;
-    width: 1.8rem;
-    fill: $dark;
-    @include multiplier("height", 1.8rem, $genQs);
-    @include multiplier("width", 1.8rem, $genQs);
-  }
-
-  button {
-    order: 2;
-  }
-
-  button:hover {
-    border-color: $red-dark;
-
-    .allergy__icon.stroked {
-      path {
-        stroke: $red-dark;
-      }
-    }
-  }
-
-  button:hover + p {
-    color: $red-dark;
-  }
-
   &__form-box {
     border: 1px solid $green-dark;
     padding: 0 0.5rem;
@@ -112,6 +72,7 @@
     input[type="text"] {
       border: 1px solid rgba($green-light, 0.25);
       background: transparent;
+      width: 100%;
       @include multiplier("border-width", 1px, $genQs);
     }
 
@@ -139,10 +100,61 @@
     }
   }
 
+  &__btn {
+    background: transparent;
+    outline: none;
+    border: 1px solid $dark;
+    border-radius: 50%;
+    height: 2.2rem;
+    width: 2.2rem;
+    justify-content: center;
+    order: 2;
+    cursor: pointer;
+    @include flex();
+    @include multiplier("height", 2.2rem, $genQs);
+    @include multiplier("width", 2.2rem, $genQs);
+  }
+
+  &__btn:hover + p {
+    color: $red-dark;
+  }
+
+  &__icon {
+    height: 1rem;
+    width: 1rem;
+    fill: $dark;
+
+    &.with-g {
+      fill: none;
+      g {
+        fill: $dark;
+      }
+    }
+
+    @include multiplier("height", 1rem, $genQs);
+    @include multiplier("width", 1rem, $genQs);
+  }
+
   &__btn:hover {
     border-color: $green-dark;
-    .allergy__icon {
-      fill: $green-dark;
+
+    &.del {
+      border-color: $red-dark;
     }
+  }
+
+  &__btn:hover .allergy__icon {
+    fill: $green-dark;
+    &.with-g {
+      fill: none;
+
+      g {
+        fill: $green-dark;
+      }
+    }
+  }
+
+  &__btn.del:hover .allergy__icon {
+    fill: $red-dark;
   }
 }

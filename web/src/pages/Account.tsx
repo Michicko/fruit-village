@@ -111,7 +111,7 @@ export default function Account() {
                 className="allergy__btn"
                 onClick={() => setIsAllergyInputShown(true)}
               >
-                <Plus className="allergy__icon" />
+                <Plus className="allergy__icon with-g" />
               </button>
             )}
           </div>

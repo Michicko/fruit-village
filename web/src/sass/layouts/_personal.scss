@@ -15,9 +15,18 @@
   align-items: center;
   cursor: pointer;
 
+  &.light {
+    color: $light;
+    font-weight: 300;
+  }
+
   &:hover,
   &--active {
     font-weight: 700;
+
+    &.light{
+      font-weight: 500;
+    }
   }
 
   &::first-letter {
@@ -101,30 +110,6 @@
     @include multiplier("width", 18rem, $genQs);
     @include multiplier("padding-top", 2rem, $genQs);
 
-    .total {
-      padding: 0.4rem 0.6rem;
-      background: $green-dark;
-      display: inline-flex;
-      justify-content: center;
-      align-items: center;
-      border-radius: 50%;
-
-      span {
-        font-size: $xs-text;
-        font-weight: 400;
-        color: $light;
-        font-family: $font;
-        line-height: 1;
-        @include multiplier("font-size", $xs-text, $genQs);
-        @include multiplier("line-height", 1, $genQs);
-      }
-
-      @include multiplier("padding-top", 0.4rem, $genQs);
-      @include multiplier("padding-bottom", 0.4rem, $genQs);
-      @include multiplier("padding-left", 0.6rem, $genQs);
-      @include multiplier("padding-right", 0.6rem, $genQs);
-    }
-
     button {
       @include linkStyles();
 
@@ -142,11 +127,44 @@
   &__link-box {
     width: 100%;
     justify-content: space-between;
+
+    .total {
+      padding: 0.4rem 0.6rem;
+      background: $green-dark;
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      border-radius: 50%;
+
+      span {
+        font-size: $xs-text;
+        font-weight: 500;
+        color: $light;
+        font-family: $font;
+        line-height: 1;
+        display: inline-block;
+        @include multiplier("font-size", $xs-text, $genQs);
+        @include multiplier("line-height", 1, $genQs);
+      }
+
+      @include multiplier("padding-top", 0.4rem, $genQs);
+      @include multiplier("padding-bottom", 0.4rem, $genQs);
+      @include multiplier("padding-left", 0.6rem, $genQs);
+      @include multiplier("padding-right", 0.6rem, $genQs);
+    }
   }
 
   &__link {
     @include linkStyles();
     @include multiplier("font-size", $sm-text, $genQs);
+  }
+
+  &__link.light ~ .total {
+    background: $light;
+
+    span {
+      color: $dark;
+    }
   }
 
   &__icon {
@@ -170,5 +188,16 @@
     @include multiplier("height", 1.8rem, $genQs);
     @include multiplier("width", 1.8rem, $genQs);
     @include multiplier("margin-right", 1rem, $genQs);
+  }
+
+  &__link.light &__icon {
+    fill: $light;
+
+    &.path-filled {
+      fill: none;
+      path {
+        fill: $light;
+      }
+    }
   }
 }

@@ -44,7 +44,7 @@ export default function Filter({
     <div className={isFilterOpened ? "filter filter--show" : "filter"}>
       <div className="filter__header">
         <div>
-          <FilterIcon className="icon icon--light" />
+          <FilterIcon className="icon icon--light path-filled" />
           <h3 className="light">Filter</h3>
         </div>
         <button className="cancel" onClick={() => setIsFilterOpened(false)}>

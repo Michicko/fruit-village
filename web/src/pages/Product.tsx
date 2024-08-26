@@ -142,19 +142,24 @@ export default function Product() {
                   <li>Delivery service; UPS, SkyNet, FedEx</li>
                 </ul>
               </div>
-              <div className="single-product__waitlist-btn-box">
-                <p>
-                  Join the waitlist to be emailed when this product becomes
-                  available
-                </p>
-                <button className="btn btn--sm btn--secondary">
-                  Join waitlist
-                </button>
-              </div>
+              {!product.stock && (
+                <div className="single-product__waitlist-btn-box">
+                  <p>
+                    Join the waitlist to be emailed when this product becomes
+                    available
+                  </p>
+                  <button className="btn btn--sm btn--secondary">
+                    Join waitlist
+                  </button>
+                </div>
+              )}
               <div className="single-product__price-box">
                 <h4 className="single-product__price">$9.99</h4>
                 <LikeButton isLiked={true} />
-                <button className="btn btn--sm btn--primary">
+                <button
+                  className="btn btn--sm btn--primary"
+                  disabled={!product.stock}
+                >
                   Add to Cart
                 </button>
               </div>

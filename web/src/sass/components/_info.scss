@@ -20,6 +20,7 @@
   }
 
   p {
+    text-wrap: nowrap;
     &::first-letter {
       text-transform: uppercase;
     }
