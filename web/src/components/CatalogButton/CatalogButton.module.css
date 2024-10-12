@@ -1,0 +1,38 @@
+.catalog-btn {
+  align-items: center;
+  gap: 1rem;
+  background: transparent;
+  border: none;
+  font-size: var(--base-text);
+  font-weight: 500;
+  color: var(--green-500);
+  background: var(--light);
+  height: 4rem;
+  border-radius: var(--md-radius);
+  padding: 0 2rem 0 1rem;
+  display: none;
+  cursor: pointer;
+}
+
+.catalog-btn .icon {
+  fill: var(--green-400);
+  transition: transform 0.3s ease;
+  transform-origin: center;
+}
+
+.catalog-btn:hover .icon {
+  transform: rotate(180deg);
+}
+
+@media only screen and (min-width: 320px) {
+  .catalog-btn {
+    display: flex;
+  }
+}
+
+@media only screen and (min-width: 480px) {
+  .catalog-btn {
+    padding: 0 3rem 0 1.5rem;
+    gap: 1.5rem;
+  }
+}

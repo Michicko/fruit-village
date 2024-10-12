@@ -1,0 +1,150 @@
+.nav {
+  width: 100%;
+}
+
+.nav-sm {
+  background: var(--green-500);
+  height: 4rem;
+  width: 100%;
+  display: none;
+}
+
+.nav-main {
+  width: 100%;
+  background: var(--green-300);
+  height: 7rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  overflow: hidden;
+  padding: 0 2rem 0 0;
+}
+
+.right {
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  margin-right: 0.8rem;
+}
+
+.logo-box {
+  padding: 0 1rem 0 2rem;
+  background: var(--light);
+  height: 4rem;
+  display: flex;
+  align-items: center;
+  border-top-right-radius: 2rem;
+  border-bottom-right-radius: 2rem;
+  gap: 1rem;
+}
+
+.nav-btn {
+  border: none;
+  background: transparent;
+  outline: transparent;
+}
+
+.nav-btn > .icon path {
+  fill: var(--green-500);
+  stroke: var(--green-500);
+}
+
+.nav-link {
+  font-size: var(--base-text);
+  text-decoration: none;
+  color: var(--light);
+}
+
+.nav-link::first-letter{
+  text-transform: uppercase;
+}
+
+.nav-link.with-icon {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.nav-link:hover, .nav-link.current{
+  color: var(--yellow-400);
+}
+
+.nav-link.with-icon .icon > path{
+  fill: var(--light);
+}
+
+.nav-link.with-icon:hover{
+  color: var(--light);
+}
+
+@media only screen and (min-width: 576px) {
+  .nav-main {
+    gap: 2rem;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .nav-main {
+    gap: 3rem;
+    padding: 0 3rem 0 0;
+  }
+
+  .logo-box {
+    padding: 0 1rem 0 3rem;
+  }
+}
+
+@media only screen and (min-width: 1024px) {
+  .nav-main {
+    gap: 3.5rem;
+    padding: 0 4rem 0 0;
+  }
+
+  .nav-sm {
+    display: flex;
+    align-items: center;
+    gap: 4rem;
+    padding: 0 4rem;
+  }
+  .nav-sm > *:last-child {
+    margin-left: auto;
+  }
+
+  .logo-box {
+    padding: 0 1rem 0 4rem;
+  }
+
+  .nav-btn {
+    display: none;
+  }
+}
+
+@media only screen and (min-width: 1200px) {
+  .logo-box {
+    height: 5rem;
+    padding: 0 2rem 0 10rem;
+    border-top-right-radius: 2.5rem;
+    border-bottom-right-radius: 2.5rem;
+  }
+  .nav-main {
+    padding: 0 10rem 0 0;
+  }
+
+  .nav-sm {
+    padding: 0 10rem;
+  }
+}
+
+@media only screen and (min-width: 1440px) {
+  .logo-box {
+    padding: 0 2rem 0 14rem;
+  }
+  .nav-main {
+    padding: 0 14rem 0 0;
+  }
+
+  .nav-sm {
+    padding: 0 14rem;
+  }
+}

@@ -1,0 +1,45 @@
+.notification-btn {
+  position: relative;
+  background: transparent;
+  border: none;
+  outline: transparent;
+  display: block;
+  height: 3rem;
+  cursor: pointer;
+}
+
+.icon path {
+  fill: var(--light);
+}
+
+.notification-btn div {
+  position: absolute;
+  padding: 0.2rem 0.6rem;
+  font-size: var(--xs-text);
+  font-weight: 500;
+  background: var(--red-400);
+  color: var(--light);
+  border-radius: 50%;
+  top: -0.75rem;
+  right: -0.9rem;
+  height: 1.8rem;
+  width: 1.8rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.wishList {
+  display: none;
+}
+
+
+@media only screen and (min-width: 375px) {
+  .wishList {
+    display: block;
+  }
+
+  .cart {
+    margin-left: 0;
+  }
+}

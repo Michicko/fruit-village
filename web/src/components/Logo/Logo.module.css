@@ -1,0 +1,35 @@
+.logo {
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+}
+
+.logo-img {
+  width: 2.5rem;
+  height: auto;
+}
+
+.logo.show-text p {
+  display: block;
+}
+
+p {
+  font-size: var(--base-text);
+  font-weight: 500;
+  color: var(--green-500);
+  margin-left: 0.5rem;
+  margin-top: 0.2rem;
+  display: none;
+}
+
+@media only screen and (min-width: 1024px) {
+  p {
+    display: block;
+  }
+}
+
+@media only screen and (min-width: 1200px) {
+  .logo-img {
+    width: 3rem;
+  }
+}
