@@ -14,6 +14,10 @@
   cursor: pointer;
 }
 
+.catalog-btn.full{
+  width: 100%;
+}
+
 .catalog-btn .icon {
   fill: var(--green-400);
   transition: transform 0.3s ease;

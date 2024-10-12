@@ -4,19 +4,15 @@ import WishListButton from "../NotificationButton/WishListButton";
 import Phone from "../Phone/Phone";
 import SearchInput from "../SearchInput/SearchInput";
 import styles from "./Nav.module.css";
-import { useState } from "react";
 import NavLogoBox from "./NavLogoBox";
 import SearchDialogButton from "../SearchInput/SearchDialogButton";
+import { NavLogoBoxProps } from "../../constants";
 
-export default function NavMain() {
-  const [isMobileNavOpened, setIsMobileNavOpened] = useState(false);
+export default function NavMain({ toggleMobileNav }: NavLogoBoxProps) {
   return (
     <div className={styles["nav-main"]}>
-      <NavLogoBox
-        isMobileNavOpened={isMobileNavOpened}
-        setIsMobileNavOpened={setIsMobileNavOpened}
-      />
-      <CatalogButton />
+      <NavLogoBox showButton={true} toggleMobileNav={toggleMobileNav} />
+      <CatalogButton fullWidth={false} />
       <SearchDialogButton />
       <SearchInput />
       <Phone />

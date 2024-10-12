@@ -2,37 +2,21 @@ import { Link, useLocation } from "react-router-dom";
 import styles from "./Nav.module.css";
 import { v4 as uuid } from "uuid";
 import User from "../../assets/icons/user.svg?react";
+import { links } from "../../data";
 
 export default function NavSmall() {
-  const links = [
-    {
+  const navLinks = links.map((link) => {
+    return {
+      ...link,
       id: uuid(),
-      name: "About",
-      url: "/about",
-    },
-    {
-      id: uuid(),
-      name: "Shipping and payment",
-      url: "/shipping-and-payment",
-    },
-    {
-      id: uuid(),
-      name: "Blog",
-      url: "/blog",
-    },
-    {
-      id: uuid(),
-      name: "Sale",
-      url: "/sale",
-    },
-  ];
-
+    };
+  });
   const { pathname: path, search } = useLocation();
   const pathname = path + search;
 
   return (
     <div className={styles["nav-sm"]}>
-      {links.map((link) => {
+      {navLinks.map((link) => {
         return (
           <Link
             key={link.id}
