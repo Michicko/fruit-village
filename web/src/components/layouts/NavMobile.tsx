@@ -106,7 +106,7 @@ export default function NavMobile({
           <div className={styles["mobile-links-box"]}>
             <CatalogButton
               fullWidth={true}
-              onClickHandler={() => setShowCatalogModal(false)}
+              onClickHandler={() => setShowCatalogModal(true)}
             />
             {user && (
               <div className={styles["mobile-links"]}>

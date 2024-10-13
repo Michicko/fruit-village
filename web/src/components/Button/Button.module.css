@@ -1,0 +1,21 @@
+.btn {
+  height: 3.5rem;
+  min-width: 12rem;
+  padding: 0 2rem;
+  border-radius: var(--sm-radius);
+  border: none;
+  outline: transparent;
+  cursor: pointer;
+  font-size: var(--base-text);
+  font-weight: 500;
+  text-transform: capitalize;
+  transform: all 0.4s ease;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.btn:hover {
+  font-weight: 600;
+}
