@@ -85,7 +85,11 @@ export default function Carousel() {
         />
       </div>
       <div className={styles.right}>
-        <img src={currentData.image} alt={currentData.title} className={styles['carousel-img']} />
+        <img
+          src={currentData.image}
+          alt={currentData.title}
+          className={styles["carousel-img"]}
+        />
       </div>
       <CarouselMobileController
         data={signals}

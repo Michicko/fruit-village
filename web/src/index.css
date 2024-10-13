@@ -62,14 +62,36 @@ html {
   padding: 2rem 0;
 }
 
+.home-categories{
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+  padding: 1rem 2rem;
+}
+
+@media only screen and (min-width: 1024px) {
+  .home-categories{
+    grid-template-columns: repeat(3, 1fr);
+    gap: 3rem;
+    padding: 1rem 4rem;
+  }
+}
+
 @media only screen and (min-width: 1200px) {
   .home-header {
     padding: 4rem 10rem;
   }
+  .home-categories{
+    padding: 2rem 10rem;
+  }
+
 }
 
 @media only screen and (min-width: 1440px) {
   .home-header {
     padding: 4rem 14rem;
+  }
+  .home-categories{
+    padding: 2rem 14rem;
   }
 }

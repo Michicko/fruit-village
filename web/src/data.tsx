@@ -38,11 +38,13 @@ export const catalogue = [
     id: uuid(),
     name: "Mango",
     url: "/sale?category=mango",
+    image: "/images/mango.jpg",
   },
   {
     id: uuid(),
-    name: "Avogado",
-    url: "/sale?category=avogado",
+    name: "Avocado",
+    url: "/sale?category=avocado",
+    image: "/images/avocado-img.jpg",
   },
   {
     id: uuid(),
@@ -58,16 +60,19 @@ export const catalogue = [
     id: uuid(),
     name: "Pineapple",
     url: "/sale?category=pineapple",
+    image: "/images/pineapple-img.jpg",
   },
   {
     id: uuid(),
     name: "Citrus",
     url: "/sale?category=citrus",
+    image: "/images/citrus.jpeg",
   },
   {
     id: uuid(),
     name: "Watermelon, melons",
     url: "/sale?category=watermelon,melons",
+    image: "/images/watermelons-melons.jpg",
   },
   {
     id: uuid(),
