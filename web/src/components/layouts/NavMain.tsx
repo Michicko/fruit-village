@@ -8,11 +8,21 @@ import NavLogoBox from "./NavLogoBox";
 import SearchDialogButton from "../SearchInput/SearchDialogButton";
 import { NavLogoBoxProps } from "../../constants";
 
-export default function NavMain({ toggleMobileNav }: NavLogoBoxProps) {
+interface NavMainProps extends NavLogoBoxProps {
+  setShowCatalogModal: React.Dispatch<React.SetStateAction<boolean>>;
+}
+
+export default function NavMain({
+  toggleMobileNav,
+  setShowCatalogModal,
+}: NavMainProps) {
   return (
     <div className={styles["nav-main"]}>
       <NavLogoBox showButton={true} toggleMobileNav={toggleMobileNav} />
-      <CatalogButton fullWidth={false} />
+      <CatalogButton
+        fullWidth={false}
+        onClickHandler={() => setShowCatalogModal(true)}
+      />
       <SearchDialogButton />
       <SearchInput />
       <Phone />

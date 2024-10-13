@@ -3,9 +3,12 @@ import NavSmall from "./NavSmall";
 import styles from "./Nav.module.css";
 import NavMobile from "./NavMobile";
 import { useState } from "react";
+import CatalogDialogMenu from "../CatalogMenu/CatalogDialogMenu";
 
 export default function Nav() {
   const [isMobileNavOpened, setIsMobileNavOpened] = useState(false);
+  const [showCatalogModal, setShowCatalogModal] = useState(false);
+  
   const toggleMobileNav = () => {
     setIsMobileNavOpened(!isMobileNavOpened);
   };
@@ -15,18 +18,26 @@ export default function Nav() {
   };
 
   return (
-    <nav className={styles.nav}>
-      <NavSmall />
-      <NavMain
-        isMobileNavOpened={isMobileNavOpened}
-        toggleMobileNav={toggleMobileNav}
-        showTextSmallScreen={false}
-        showButton={true}
+    <>
+      <CatalogDialogMenu
+        showCatalogModal={showCatalogModal}
+        setShowCatalogModal={setShowCatalogModal}
       />
-      <NavMobile
-        isMobileNavOpened={isMobileNavOpened}
-        closeMobileNav={closeMobileNav}
-      />
-    </nav>
+      <nav className={styles.nav}>
+        <NavSmall />
+        <NavMain
+          isMobileNavOpened={isMobileNavOpened}
+          toggleMobileNav={toggleMobileNav}
+          showTextSmallScreen={false}
+          setShowCatalogModal={setShowCatalogModal}
+          showButton={true}
+        />
+        <NavMobile
+          isMobileNavOpened={isMobileNavOpened}
+          closeMobileNav={closeMobileNav}
+          setShowCatalogModal={setShowCatalogModal}
+        />
+      </nav>
+    </>
   );
 }

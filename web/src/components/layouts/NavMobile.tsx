@@ -1,15 +1,15 @@
 import styles from "./Nav.module.css";
 import NavLogoBox from "./NavLogoBox";
-import Close from "../../assets/icons/close.svg?react";
-import { Link } from "react-router-dom";
-import User from "../../assets/icons/user.svg?react";
 import UserOutline from "../../assets/icons/user-outline.svg?react";
 import Orders from "../../assets/icons/orders.svg?react";
 import Clock from "../../assets/icons/clock.svg?react";
 import Eye from "../../assets/icons/eye.svg?react";
 import Gift from "../../assets/icons/gift.svg?react";
-import PlusBoxed from "../../assets/icons/plus-boxed.svg?react";
 import HeartOutline from "../../assets/icons/heart-outline.svg?react";
+import Close from "../../assets/icons/close.svg?react";
+import { Link } from "react-router-dom";
+import User from "../../assets/icons/user.svg?react";
+import PlusBoxed from "../../assets/icons/plus-boxed.svg?react";
 import Logout from "../../assets/icons/logout.svg?react";
 import ArrowDown from "../../assets/icons/arrow-down.svg?react";
 import CatalogButton from "../CatalogButton/CatalogButton";
@@ -19,12 +19,14 @@ import { useState } from "react";
 
 interface NavMobileProps {
   isMobileNavOpened: boolean;
+  setShowCatalogModal: React.Dispatch<React.SetStateAction<boolean>>;
   closeMobileNav: React.MouseEventHandler<HTMLButtonElement>;
 }
 
 export default function NavMobile({
   isMobileNavOpened,
   closeMobileNav,
+  setShowCatalogModal,
 }: NavMobileProps) {
   const user = { name: "Ronald" };
   const [isMainLinksOpened, setIsMainLinksOpened] = useState(true);
@@ -74,13 +76,6 @@ export default function NavMobile({
     },
   ];
 
-  const navLinks = links.map((link) => {
-    return {
-      ...link,
-      id: uuid(),
-    };
-  });
-
   return (
     <aside
       className={`${styles["nav-mobile"]} ${
@@ -109,7 +104,10 @@ export default function NavMobile({
         </div>
         <div className={styles["main"]}>
           <div className={styles["mobile-links-box"]}>
-            <CatalogButton fullWidth={true} />
+            <CatalogButton
+              fullWidth={true}
+              onClickHandler={() => setShowCatalogModal(false)}
+            />
             {user && (
               <div className={styles["mobile-links"]}>
                 {userLinks.map((link) => {
@@ -146,7 +144,7 @@ export default function NavMobile({
               } ${!user ? styles["no-user"] : ""}`}
             >
               <div className={styles["mobile-links"]}>
-                {navLinks.map((link) => {
+                {links.map((link) => {
                   return (
                     <Link
                       to={link.url}
