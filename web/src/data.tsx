@@ -85,3 +85,84 @@ export const catalogue = [
     url: "/sale?category=fruit+boxes",
   },
 ];
+
+export const products = [
+  {
+    id: "9c4a1127-0687-4e09-a398-84895dc84053",
+    name: "Pineapple premium",
+    image: "/images/pineapple.png",
+    category: "pineapple",
+    price: 5.99,
+    isFavorite: true,
+    discount: 0,
+    stock: 5,
+    measurement: "piece",
+    slug: "pineapple-premium",
+  },
+  {
+    id: "39413517-62da-4912-aa98-865d90d9455d",
+    name: "Persimmon Sharon",
+    image: "/images/persimmon-sharon.jpg",
+    category: "pineapple",
+    price: 4.99,
+    isFavorite: false,
+    discount: 0,
+    stock: 8,
+    measurement: "kg",
+    slug: "persimmon-sharon",
+  },
+  {
+    id: "f2217dd9-bf31-4074-9a9e-02841d803c31",
+    name: "Longan",
+    image: "/images/longan.png",
+    category: "pineapple",
+    price: 3.39,
+    isFavorite: false,
+    discount: 10,
+    stock: 10,
+    measurement: "kg",
+    slug: "longan",
+  },
+  {
+    id: "fd2a15ba-3161-40bc-baeb-96249b0c63e0",
+    name: "Pitahaya yellow",
+    image: "/images/pitahaya-yellow.jpg",
+    category: "cactus",
+    price: 9.49,
+    isFavorite: true,
+    discount: 0,
+    stock: 0,
+    measurement: "piece",
+    slug: "pitahaya-yellow",
+  },
+];
+
+export const wishList = [
+  {
+    id: "9c4a1127-0687-4e09-a398-84895dc84053",
+    name: "Pineapple premium",
+    image: "/images/pineapple.png",
+    category: "pineapple",
+    price: 5.99,
+    isFavorite: true,
+    discount: 0,
+    stock: 5,
+    measurement: "piece",
+    slug: "pineapple-premium",
+  },
+];
+
+export const CartProducts = [
+  {
+    id: "fd2a15ba-3161-40bc-baeb-96249b0c63e0",
+    name: "Pitahaya yellow",
+    image: "/images/pitahaya-yellow.jpg",
+    category: "cactus",
+    price: 9.49,
+    isFavorite: true,
+    discount: 0,
+    stock: 0,
+    measurement: "piece",
+    slug: "pitahaya-yellow",
+  },
+];

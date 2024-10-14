@@ -1,0 +1,30 @@
+.link {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: var(--base-text);
+  font-weight: 500;
+  text-decoration: none;
+}
+
+.link.dark {
+  color: var(--dark);
+}
+
+.link.dark .icon {
+  fill: var(--dark);
+}
+
+.link.light {
+  color: var(--light);
+}
+
+.link.light .icon {
+  fill: var(--light);
+}
+
+@media only screen and (min-width: 768px) {
+  .link {
+    font-size: calc(var(--base-text) * 1.1);
+  }
+}

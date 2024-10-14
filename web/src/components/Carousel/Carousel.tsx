@@ -56,7 +56,7 @@ export default function Carousel() {
   return (
     <div className={styles.carousel}>
       <div className={styles.left} style={{ background: currentData.boxBg }}>
-        <h1>
+        <h1 className={styles.heading}>
           {currentData.title}
           <span
             style={{

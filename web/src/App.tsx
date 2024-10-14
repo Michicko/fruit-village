@@ -6,6 +6,7 @@ import ShippingAndPayment from "./pages/ShippingAndPayment";
 import Blog from "./pages/Blog";
 import Sale from "./pages/Sale";
 import Account from "./pages/Account";
+import Wishlist from "./pages/Wishlist";
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
           <Route path="blog" element={<Blog />} />
           <Route path="sale" element={<Sale />} />
           <Route path="account" element={<Account />} />
+          <Route path="wishlist" element={<Wishlist />} />
         </Route>
       </Routes>
     </BrowserRouter>

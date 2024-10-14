@@ -1,7 +1,10 @@
 import Carousel from "../components/Carousel/Carousel";
+import ProductSlider from "../components/Carousel/ProductSlider";
 import Category from "../components/Category/Category";
+import CustomLink from "../components/CustomLink/CustomLink";
+import Product from "../components/Product/Product";
 import Promo from "../components/Promo/Promo";
-import { catalogue } from "../data";
+import { catalogue, products } from "../data";
 import { v4 as uuid } from "uuid";
 
 export default function Home() {
@@ -13,7 +16,7 @@ export default function Home() {
       url: "/sale",
       image: "/images/show-all.jpg",
     },
-  ];
+  ];  
 
   return (
     <>
@@ -37,6 +40,17 @@ export default function Home() {
         </section>
         <section className="section section-promo">
           <Promo />
+        </section>
+        <section className="section section-popular">
+          <h3 className="section-heading">Popular products</h3>
+          <CustomLink text="Show all products" url="/sale" color="dark" />
+          <ProductSlider>
+            <div className="products">
+              {products.map((product) => {
+                return <Product key={product.id} product={product} />;
+              })}
+            </div>
+          </ProductSlider>
         </section>
       </main>
     </>
