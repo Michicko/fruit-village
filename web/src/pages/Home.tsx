@@ -2,10 +2,11 @@ import Carousel from "../components/Carousel/Carousel";
 import ProductSlider from "../components/Carousel/ProductSlider";
 import Category from "../components/Category/Category";
 import CustomLink from "../components/CustomLink/CustomLink";
+import Fact from "../components/Fact/Fact";
 import FruitBox from "../components/FruitBox/FruitBox";
 import Product from "../components/Product/Product";
 import Promo from "../components/Promo/Promo";
-import { catalogue, fruitbox, products } from "../data";
+import { catalogue, facts, fruitbox, products } from "../data";
 import { v4 as uuid } from "uuid";
 
 export default function Home() {
@@ -71,6 +72,15 @@ export default function Home() {
                 })}
             </div>
           </ProductSlider>
+        </section>
+        <section className="section section-facts section-with-bg">
+         <div className="facts">
+         {
+            facts.map((fact) => {
+              return <Fact key={fact.id} fact={fact} />
+            })
+          }
+         </div>
         </section>
       </main>
     </>

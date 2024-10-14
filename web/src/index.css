@@ -124,6 +124,18 @@ html {
   background: var(--blue-400);
 }
 
+.section-facts {
+  background: linear-gradient(
+      to right,
+      rgba(10, 168, 147, 0.9),
+      rgba(10, 168, 147, 0.9)
+    ),
+    url("/images/handdrawn-fruits.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
 .section-fruitbox .secondary-heading {
   max-width: 65rem;
   margin-bottom: 3rem;
@@ -133,6 +145,14 @@ html {
   padding: 5rem 2rem;
 }
 
+.facts {
+  min-height: 25rem;
+  display: grid;
+  grid-template-columns: 1fr;
+  align-items: center;
+  gap: 2rem;
+}
+
 /* utilities */
 .light {
   color: var(--light);
@@ -140,6 +160,12 @@ html {
 
 .section {
   margin-bottom: 5rem;
+}
+
+@media only screen and (min-width: 375px) {
+  .facts {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
 
 @media only screen and (min-width: 576px) {
@@ -161,6 +187,11 @@ html {
 
   .secondary-heading {
     font-size: var(--xxl-text);
+  }
+
+  .facts {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 4rem;
   }
 
   .section.section-popular {
@@ -209,6 +240,10 @@ html {
 
   .section {
     margin-bottom: 6rem;
+  }
+
+  .facts {
+    gap: 8rem;
   }
 }
 

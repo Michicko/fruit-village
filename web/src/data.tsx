@@ -187,3 +187,27 @@ export const fruitbox = {
   discount: 0,
   stock: 5,
 };
+
+export const facts = [
+  {
+    id: uuid(),
+    title: "11",
+    description:
+      "For 11 years we have been delivering fresh fruits to consumers",
+  },
+  {
+    id: uuid(),
+    title: "100+",
+    description: "More than 100 items in assortments and more are added",
+  },
+  {
+    id: uuid(),
+    title: "120+",
+    description: "We cooperate with more than 120 suppliers",
+  },
+  {
+    id: uuid(),
+    title: "1000+",
+    description: "More than 1000 satisfied partners around the world",
+  },
+];
