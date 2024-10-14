@@ -59,6 +59,19 @@ export default function Home() {
           </h2>
           <FruitBox fruitbox={fruitbox} showAll={true} />
         </section>
+        <section className="section section-popular">
+          <h3 className="section-heading">Promotional products</h3>
+          <CustomLink text="Show all products" url="/sale" color="dark" />
+          <ProductSlider>
+            <div className="products">
+              {products
+                .filter((el) => el.discount > 0)
+                .map((product) => {
+                  return <Product key={product.id} product={product} />;
+                })}
+            </div>
+          </ProductSlider>
+        </section>
       </main>
     </>
   );
