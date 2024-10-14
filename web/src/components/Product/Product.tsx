@@ -4,23 +4,13 @@ import { useCallback, useRef, useState } from "react";
 import { Link } from "react-router-dom";
 import Check from "../../assets/icons/check-circle.svg?react";
 import { CartProducts, wishList } from "../../data";
+import { ProductProps } from "../../constants";
 
-interface ProductProps {
-  product: {
-    id: string;
-    name: string;
-    image: string;
-    category: string;
-    price: number;
-    isFavorite: boolean;
-    discount: number;
-    stock: number;
-    measurement: string;
-    slug: string;
-  };
+interface ProductPropTypes {
+  product: ProductProps;
 }
 
-export default function Product({ product }: ProductProps) {
+export default function Product({ product }: ProductPropTypes) {
   const checkRef = useRef<HTMLInputElement | null>(null);
   const [dataWishList, setDataWishList] = useState(wishList);
 

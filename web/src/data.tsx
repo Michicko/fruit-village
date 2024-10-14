@@ -98,6 +98,7 @@ export const products = [
     stock: 5,
     measurement: "piece",
     slug: "pineapple-premium",
+    size: 1,
   },
   {
     id: "39413517-62da-4912-aa98-865d90d9455d",
@@ -110,6 +111,7 @@ export const products = [
     stock: 8,
     measurement: "kg",
     slug: "persimmon-sharon",
+    size: 1,
   },
   {
     id: "f2217dd9-bf31-4074-9a9e-02841d803c31",
@@ -121,6 +123,7 @@ export const products = [
     discount: 10,
     stock: 10,
     measurement: "kg",
+    size: 1,
     slug: "longan",
   },
   {
@@ -133,6 +136,7 @@ export const products = [
     discount: 0,
     stock: 0,
     measurement: "piece",
+    size: 1,
     slug: "pitahaya-yellow",
   },
 ];
@@ -162,7 +166,24 @@ export const CartProducts = [
     isFavorite: true,
     discount: 0,
     stock: 0,
+    size: 1,
     measurement: "piece",
     slug: "pitahaya-yellow",
   },
 ];
+
+export const fruitbox = {
+  id: "fc3b15ba-3161-40bc-bbeb-76249b0c63e0",
+  name: "Box XS",
+  category: "fruit box",
+  size: 1.8,
+  measurement: "kg",
+  description:
+    "Mango ready to eat, young coconut, Herring, Rambutan 2px, Kiwi Gold, Passio fruit 2pcs, Grenadilla, Lychee 100g",
+  price: 21.99,
+  slug: "box-xs",
+  image: "/images/box-xs.png",
+  isFavorite: true,
+  discount: 0,
+  stock: 5,
+};

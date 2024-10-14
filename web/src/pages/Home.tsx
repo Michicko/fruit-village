@@ -2,9 +2,10 @@ import Carousel from "../components/Carousel/Carousel";
 import ProductSlider from "../components/Carousel/ProductSlider";
 import Category from "../components/Category/Category";
 import CustomLink from "../components/CustomLink/CustomLink";
+import FruitBox from "../components/FruitBox/FruitBox";
 import Product from "../components/Product/Product";
 import Promo from "../components/Promo/Promo";
-import { catalogue, products } from "../data";
+import { catalogue, fruitbox, products } from "../data";
 import { v4 as uuid } from "uuid";
 
 export default function Home() {
@@ -16,7 +17,7 @@ export default function Home() {
       url: "/sale",
       image: "/images/show-all.jpg",
     },
-  ];  
+  ];
 
   return (
     <>
@@ -38,7 +39,7 @@ export default function Home() {
             })}
           </div>
         </section>
-        <section className="section section-promo">
+        <section className="section section-promo section-with-bg">
           <Promo />
         </section>
         <section className="section section-popular">
@@ -51,6 +52,12 @@ export default function Home() {
               })}
             </div>
           </ProductSlider>
+        </section>
+        <section className="section section-fruitbox section-with-bg">
+          <h2 className="secondary-heading light">
+            Ready-made sets of fruits for a gift, yourself, friends and family
+          </h2>
+          <FruitBox fruitbox={fruitbox} showAll={true} />
         </section>
       </main>
     </>

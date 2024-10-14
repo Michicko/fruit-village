@@ -1,0 +1,74 @@
+.fruitbox {
+}
+
+.fruitbox-img {
+  max-width: 100%;
+  height: auto;
+}
+
+.fruitbox-name,
+.fruitbox-price {
+  font-size: var(--lg-text);
+  font-weight: 600;
+}
+
+.fruitbox h3,
+.fruitbox p {
+  color: var(--light);
+}
+
+.fruitbox-size {
+  font-size: var(--sm-text);
+  font-weight: 400;
+}
+
+.fruitbox-desc {
+  font-size: var(--base-text);
+  max-width: 75%;
+  margin: 1rem 0;
+}
+
+.fruitbox-price {
+  margin-bottom: 1rem;
+}
+
+.right,
+.btn-box {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.btn-box > *:last-child {
+  align-self: center;
+  margin-top: 1.5rem;
+}
+
+@media only screen and (min-width: 768px) {
+  .fruitbox {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+    align-items: center;
+  }
+
+  .btn-box {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .btn-box > *:last-child {
+    margin-top: 0;
+  }
+
+  .fruitbox-name,
+  .fruitbox-price {
+    font-size: calc(var(--lg-text) * 1.2);
+  }
+}
+
+@media only screen and (min-width: 1024px) {
+  .fruitbox {
+    gap: 4rem;
+  }
+}

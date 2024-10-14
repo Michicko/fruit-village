@@ -11,7 +11,7 @@
   color: var(--dark);
 }
 
-.link.dark .icon {
+.link.dark > .icon path{
   fill: var(--dark);
 }
 
@@ -19,7 +19,7 @@
   color: var(--light);
 }
 
-.link.light .icon {
+.link.light > .icon  path{
   fill: var(--light);
 }
 

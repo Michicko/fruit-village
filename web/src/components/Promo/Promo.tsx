@@ -5,7 +5,7 @@ import Button from "../Button/Button";
 export default function Promo() {
   return (
     <div className={styles.promo}>
-      <h2 className={styles['promo-heading']}>
+      <h2 className={`${styles['promo-heading']} secondary-heading light`}>
         Every 2 days we supply <span>exotic fruits</span>
       </h2>
       <p className={styles["promo-lead"]}>
