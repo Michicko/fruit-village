@@ -69,6 +69,17 @@ html {
   padding: 1rem 2rem;
 }
 
+.section.section-promo{
+  margin-top: 4rem;
+}
+
+@media only screen and (min-width: 768px) {
+  .section.section-promo{
+    margin-top: 6rem;
+  }
+}
+
+
 @media only screen and (min-width: 1024px) {
   .home-categories{
     grid-template-columns: repeat(3, 1fr);

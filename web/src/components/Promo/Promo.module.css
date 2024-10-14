@@ -1,0 +1,124 @@
+.promo {
+  width: 100%;
+  background: var(--blue-400);
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.promo-img {
+  max-width: 100%;
+  height: auto;
+}
+
+.promo-heading {
+  font-size: var(--lg-text);
+  color: var(--light);
+  font-weight: 500;
+}
+
+.promo-heading span {
+  display: block;
+}
+
+.promo-lead {
+  font-size: var(--md-text);
+  font-weight: 400;
+  color: var(--light);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.promo-lead .icon {
+  fill: var(--light);
+}
+
+@media only screen and (min-width: 576px) {
+  .promo-heading {
+    font-size: var(--xl-text);
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .promo {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: repeat(6, 5rem);
+    column-gap: 2rem;
+    row-gap: 0;
+    padding: 4rem 2rem;
+  }
+
+  .promo > *:nth-child(1) {
+    grid-column-start: 1;
+    grid-column-end: 8;
+    grid-row-start: 2;
+    grid-row-end: 4;
+  }
+
+  .promo > *:nth-child(2) {
+    grid-column-start: 1;
+    grid-column-end: 6;
+    grid-row-start: 4;
+    grid-row-end: 5;
+  }
+
+  .promo > *:nth-child(3) {
+    grid-column-start: 7;
+    grid-column-end: -1;
+    grid-row-start: 1;
+    grid-row-end: -1;
+    margin-top: -8rem;
+    display: inline;
+  }
+
+  .promo > *:nth-child(4) {
+    grid-column-start: 1;
+    grid-column-end: 6;
+    grid-row-start: 5;
+    grid-row-end: 6;
+    justify-self: flex-start;
+    margin-top: 2rem;
+  }
+}
+
+@media only screen and (min-width: 1024px) {
+  .promo {
+    padding: 8rem 4rem;
+    row-gap: 1rem;
+  }
+
+  .promo-heading {
+    font-size: var(--xxl-text);
+    line-height: 1.2;
+  }
+
+  .promo > *:nth-child(3) {
+    margin-top: -10rem;
+  }
+}
+
+@media only screen and (min-width: 1200px) {
+  .promo {
+    padding: 8rem 10rem;
+    row-gap: 1.5rem;
+  }
+  .promo-heading {
+    font-size: calc(var(--xxl-text) * 1.1);
+    line-height: 1.2;
+  }
+}
+
+
+@media only screen and (min-width: 1440px) {
+  .promo {
+    padding: 8rem 14rem;
+  }
+
+  .promo-heading {
+    font-size: calc(var(--xxl-text) * 1.2);
+    line-height: 1.2;
+  }
+}

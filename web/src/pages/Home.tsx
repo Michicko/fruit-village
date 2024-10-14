@@ -1,5 +1,6 @@
 import Carousel from "../components/Carousel/Carousel";
 import Category from "../components/Category/Category";
+import Promo from "../components/Promo/Promo";
 import { catalogue } from "../data";
 import { v4 as uuid } from "uuid";
 
@@ -33,6 +34,9 @@ export default function Home() {
               );
             })}
           </div>
+        </section>
+        <section className="section section-promo">
+          <Promo />
         </section>
       </main>
     </>

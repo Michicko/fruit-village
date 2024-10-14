@@ -16,7 +16,7 @@ export default function Category({ name, url, image }: CategoryProps) {
       }`}
     >
       <img src={image} alt={name} className={styles["category-img"]} />
-      {name !== "Show all categories" && <h2>{name}</h2>}
+      {name !== "Show all categories" && <h2 className={styles['category-title']}>{name}</h2>}
       <div className={styles["category-footer"]}>
         <Link to={url} className={styles["category-link"]}>
           {name}

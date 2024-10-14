@@ -18,7 +18,7 @@ export default function Logo({ showTextSmallScreen }: LogoProps) {
         alt="fruit village logo"
         className={styles["logo-img"]}
       />
-      <p>FruitVillage</p>
+      <p className={styles['logo-text']}>FruitVillage</p>
     </Link>
   );
 }

@@ -9,11 +9,11 @@
   height: auto;
 }
 
-.logo.show-text p {
+.logo.show-text .logo-text {
   display: block;
 }
 
-p {
+.logo-text {
   font-size: var(--base-text);
   font-weight: 500;
   color: var(--green-500);
@@ -23,7 +23,7 @@ p {
 }
 
 @media only screen and (min-width: 1024px) {
-  p {
+  .logo-text {
     display: block;
   }
 }
