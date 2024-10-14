@@ -6,13 +6,30 @@ interface CustomLinkProps {
   text: string;
   url: string;
   color: "dark" | "light";
+  noIcon?: boolean;
+  underline?: boolean;
+  tone?: "thick" | "tiny";
+  inline?: boolean;
 }
 
-export default function CustomLink({ text, url, color }: CustomLinkProps) {
+export default function CustomLink({
+  text,
+  url,
+  color,
+  noIcon,
+  underline,
+  tone,
+  inline,
+}: CustomLinkProps) {
   return (
-    <Link to={url} className={`${styles.link} ${styles[color]}`}>
+    <Link
+      to={url}
+      className={`${styles.link} ${styles[color]} ${
+        underline ? styles["underline"] : ""
+      } ${tone ? styles[tone] : ""} ${inline ? styles.inline : ""}`}
+    >
       {text}
-      <ArrowRight className={`${styles.icon} icon`} />
+      {!noIcon && <ArrowRight className={`${styles.icon} icon`} />}
     </Link>
   );
 }

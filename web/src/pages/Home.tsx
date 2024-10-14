@@ -6,6 +6,7 @@ import Fact from "../components/Fact/Fact";
 import FruitBox from "../components/FruitBox/FruitBox";
 import Product from "../components/Product/Product";
 import Promo from "../components/Promo/Promo";
+import Subscription from "../components/Subscription/Subscription";
 import { catalogue, facts, fruitbox, products } from "../data";
 import { v4 as uuid } from "uuid";
 
@@ -74,13 +75,14 @@ export default function Home() {
           </ProductSlider>
         </section>
         <section className="section section-facts section-with-bg">
-         <div className="facts">
-         {
-            facts.map((fact) => {
-              return <Fact key={fact.id} fact={fact} />
-            })
-          }
-         </div>
+          <div className="facts">
+            {facts.map((fact) => {
+              return <Fact key={fact.id} fact={fact} />;
+            })}
+          </div>
+        </section>
+        <section className="section section-subscription">
+          <Subscription />
         </section>
       </main>
     </>

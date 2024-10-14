@@ -8,6 +8,7 @@ interface ButtonProps {
   color?: string;
   hoveredBg?: string;
   hoveredColor?: string;
+  type: "reset" | "button" | "submit";
   link?: string;
   onClickHandler?: MouseEventHandler<HTMLButtonElement>;
 }
@@ -18,6 +19,7 @@ export default function Button({
   color,
   hoveredBg,
   hoveredColor,
+  type,
   onClickHandler,
   link,
 }: ButtonProps) {
@@ -32,8 +34,8 @@ export default function Button({
   const onHover = useCallback(
     (btn: HTMLAnchorElement | HTMLButtonElement | null) => {
       if (btn) {
-        btn.style.background = hoveredBg || bg || 'white';
-        btn.style.color = hoveredColor || color || 'white';
+        btn.style.background = hoveredBg || bg || "white";
+        btn.style.color = hoveredColor || color || "white";
       }
     },
     [bg, color, hoveredBg, hoveredColor]
@@ -42,8 +44,8 @@ export default function Button({
   const onHoverLeave = useCallback(
     (btn: HTMLAnchorElement | HTMLButtonElement | null) => {
       if (btn) {
-        btn.style.background = bg || 'white';
-        btn.style.color = color || '#2c302d';
+        btn.style.background = bg || "white";
+        btn.style.color = color || "#2c302d";
       }
     },
     [bg, color]
@@ -87,6 +89,7 @@ export default function Button({
       style={buttonStyles}
       className={styles.btn}
       onClick={onClickHandler}
+      type={type || "button"}
       ref={btnRef}
     >
       {text}

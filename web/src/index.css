@@ -153,9 +153,35 @@ html {
   gap: 2rem;
 }
 
+.section-subscription {
+  padding: 0 2rem;
+  min-height: 15rem;
+}
+
 /* utilities */
 .light {
   color: var(--light);
+}
+
+input[type="email"] {
+  height: 3.5rem;
+  border: 1px solid var(--green-300);
+  outline: transparent;
+  border-radius: var(--sm-radius);
+  padding: 0 1rem;
+}
+
+input[type="email"]::placeholder,
+input[type="email"] {
+  font-size: var(--base-text);
+  font-weight: 400;
+  color: var(--dark);
+}
+
+.form-text {
+  font-size: var(--sm-text);
+  font-weight: 400;
+  color: var(--dark);
 }
 
 .section {
@@ -205,7 +231,8 @@ html {
     display: flex;
   }
 
-  .section.section-popular {
+  .section.section-popular,
+  .section-subscription {
     padding: 0 4rem;
   }
 
@@ -222,6 +249,7 @@ html {
   .home-header {
     padding: 4rem 10rem;
   }
+
   .home-categories {
     padding: 2rem 10rem;
   }
@@ -230,7 +258,8 @@ html {
     padding: 5rem 10rem;
   }
 
-  .section.section-popular {
+  .section.section-popular,
+  .section-subscription {
     padding: 0 10rem;
   }
 
@@ -254,7 +283,8 @@ html {
   .home-categories {
     padding: 2rem 14rem;
   }
-  .section.section-popular {
+  .section.section-popular,
+  .section-subscription {
     padding: 0 14rem;
   }
   .section.section-with-bg {

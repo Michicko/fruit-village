@@ -7,11 +7,23 @@
   text-decoration: none;
 }
 
+.link.underline {
+  text-decoration: underline;
+}
+
+.link.tiny {
+  font-weight: 400;
+}
+
 .link.dark {
   color: var(--dark);
 }
 
-.link.dark > .icon path{
+.link.inline{
+  display: inline;
+}
+
+.link.dark > .icon path {
   fill: var(--dark);
 }
 
@@ -19,7 +31,7 @@
   color: var(--light);
 }
 
-.link.light > .icon  path{
+.link.light > .icon path {
   fill: var(--light);
 }
 
