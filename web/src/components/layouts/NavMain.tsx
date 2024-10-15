@@ -25,7 +25,7 @@ export default function NavMain({
       />
       <SearchDialogButton />
       <SearchInput />
-      <Phone />
+      <Phone text="(805) 555-0011" color="light" showOnSmallScreen={false} />
       <div className={styles.right}>
         <WishListButton />
         <CartButton />

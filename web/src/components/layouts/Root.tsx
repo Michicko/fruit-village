@@ -1,3 +1,4 @@
+import Footer from "./Footer";
 import Nav from "./Nav";
 import { Outlet } from "react-router-dom";
 
@@ -6,6 +7,7 @@ export default function Root() {
     <>
       <Nav />
       <Outlet />
+      <Footer />
     </>
   );
 }
