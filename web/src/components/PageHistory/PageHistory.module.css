@@ -1,0 +1,31 @@
+.page-history {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 3rem;
+}
+
+.history-link {
+  font-size: var(--sm-text);
+  font-weight: 400;
+  color: var(--dark);
+  text-decoration: none;
+}
+
+.history-link:hover {
+  color: var(--blue-400);
+}
+
+.home {
+  text-decoration: none;
+}
+
+.icon path{
+    fill: var(--dark);
+}
+
+.link-box{
+    display: flex;
+    align-items: center;
+    gap: .5rem;
+}

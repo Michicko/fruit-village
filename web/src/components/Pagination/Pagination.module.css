@@ -1,0 +1,50 @@
+.pagination {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  list-style: none;
+  user-select: none;
+}
+
+.page-btn,
+.link,
+.page-btn a {
+  height: 2.5rem;
+  width: 2.5rem;
+  background: transparent;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  border-radius: var(--md-radius);
+  font-size: var(--sm-text);
+  font-weight: 400;
+}
+
+.current-page-btn,
+.page-btn:hover {
+  background: var(--green-300);
+  color: var(--light);
+}
+
+.link .icon.path-filled path {
+  fill: var(--green-400);
+}
+
+.link .icon.stroke-filled path {
+  stroke: var(--green-400);
+}
+
+.disabled-btn .icon.path-filled path {
+  fill: var(--green-100);
+}
+
+.disabled-btn .icon.stroke-filled path {
+  stroke: var(--green-100);
+}
+
+.ellips {
+  font-size: var(--md-text);
+  font-weight: 400;
+  color: var(--dark);
+}

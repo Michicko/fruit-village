@@ -211,3 +211,62 @@ export const facts = [
     description: "More than 1000 satisfied partners around the world",
   },
 ];
+
+export const brands = [
+  { id: uuid(), name: "bakker", image: "/images/bakker.png" },
+  { id: uuid(), name: "berries-pride", image: "/images/berries-pride.jpg" },
+  { id: uuid(), name: "elbefruit", image: "/images/elbefruit.png" },
+  { id: uuid(), name: "fyffes", image: "/images/fyffes.png" },
+  { id: uuid(), name: "fairfruit", image: "/images/fairfruit.png" },
+];
+
+export const articles = [
+  {
+    id: uuid(),
+    category: "news",
+    title: "Fruit village branded delivery car",
+    createdAt: "1 day ago",
+    coverImage: "/images/fruit-village-branded-delivery-car.png",
+    summary:
+      "Today there are many advertising options that help attract new ones",
+    article:
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti laborum voluptate quibusdam soluta veritatis. Laudantium nisi voluptas voluptate debitis unde.",
+      slug: "fruit-village-branded-delivery-car"
+  },
+  {
+    id: uuid(),
+    category: "lifehacks",
+    title: "9 tricks for storing fruits",
+    createdAt: "2 days ago",
+    coverImage: "/images/9-tricks-for-storing-fruits.jpg",
+    summary:
+      "Food products tends to spoil even when you buy fresh and high quality",
+    article:
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti laborum voluptate quibusdam soluta veritatis. Laudantium nisi voluptas voluptate debitis unde.",
+      slug: "9-tricks-for-storing-fruits"
+  },
+  {
+    id: uuid(),
+    category: "recipes",
+    title: "What is known about Thai food",
+    createdAt: "3 days ago",
+    coverImage: "/images/what-is-known-about-thai-food.jpg",
+    summary:
+      "It is unlinkely that anyone in our harsh land would think of marinating an exotic product",
+    article:
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti laborum voluptate quibusdam soluta veritatis. Laudantium nisi voluptas voluptate debitis unde.",
+      slug: "what-is-known-about-thai-food"
+  },
+  {
+    id: uuid(),
+    category: "news",
+    title: "Fruit village inspires chef",
+    createdAt: "3 days ago",
+    coverImage: "/images/fruit-village-inspires-chef.jpeg",
+    summary:
+      "Fruit village is a reliable destributor of fruits for establishment in the segment",
+    article:
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti laborum voluptate quibusdam soluta veritatis. Laudantium nisi voluptas voluptate debitis unde.",
+      slug: "fruit-village-inspires-chef"
+  },
+];

@@ -12,12 +12,13 @@
   --light: #fcfff9;
   --dark: #2c302d;
   --gray: #bbbbbb;
+  --gray-400: #979797;
   --green-100: #c6eeca;
   --green-200: #42c84f;
   --green-300: #37900d;
   --green-400: #31870b;
   --green-500: #386d15;
-  --green-600:#043313;
+  --green-600: #043313;
   --blue-100: #cfebfb;
   --blue-400: #4c6fc8;
   --blue-500: #0d6494;
@@ -43,10 +44,16 @@ html {
   font-family: "Nunito", sans-serif;
 }
 
+/* utilities */
 .icon {
   height: 2rem;
   width: 2rem;
   flex-shrink: 0;
+}
+
+.icon.sm {
+  height: 1.6rem;
+  width: 1.6rem;
 }
 
 .icon.lg {
@@ -58,6 +65,50 @@ html {
   height: 2.5rem;
   width: 2.5rem;
 }
+
+.icon.filled,
+.icon.path-filled path {
+  fill: var(--light);
+}
+.icon.stroke path {
+  stroke: var(--light);
+}
+
+.light {
+  color: var(--light);
+}
+
+input[type="email"] {
+  height: 3.5rem;
+  border: 1px solid var(--green-300);
+  outline: transparent;
+  border-radius: var(--sm-radius);
+  padding: 0 1rem;
+}
+
+input[type="email"]::placeholder,
+input[type="email"] {
+  font-size: var(--base-text);
+  font-weight: 400;
+  color: var(--dark);
+}
+
+.form-text {
+  font-size: var(--sm-text);
+  font-weight: 400;
+  color: var(--dark);
+}
+
+.center {
+  text-align: center;
+}
+
+.jc {
+  display: flex;
+  justify-content: center;
+}
+
+/* end of utilities */
 
 .home-header {
   padding: 2rem 0;
@@ -104,17 +155,45 @@ html {
   margin-right: 2rem;
 }
 
+.primary-heading {
+  font-size: var(--lg-text);
+  font-weight: 500;
+  color: var(--dark);
+  position: relative;
+  display: flex;
+  align-items: center;
+  white-space: nowrap;
+}
+
+.line {
+  height: 2px;
+  width: 100%;
+  content: "";
+  display: block;
+  background: linear-gradient(
+    to right,
+    rgba(55, 144, 13, 0.9),
+    rgba(252, 255, 249, 0.7)
+  );
+  margin-left: 1rem;
+}
+
 .secondary-heading {
   font-size: var(--lg-text);
   font-weight: 500;
   line-height: 1.2;
 }
 
-.section-heading {
+.section-heading,
+.sm-heading {
   font-size: var(--lg-text);
   font-weight: 500;
   color: var(--dark);
   text-transform: initial;
+}
+
+.sm-heading {
+  font-size: var(--md-text);
 }
 
 .section-fruitbox {
@@ -154,39 +233,101 @@ html {
   gap: 2rem;
 }
 
+span.green {
+  font-weight: 500;
+  color: var(--green-400);
+}
+
 .section-subscription {
   padding: 0 2rem;
   min-height: 15rem;
 }
 
-/* utilities */
-.light {
-  color: var(--light);
-}
-
-input[type="email"] {
-  height: 3.5rem;
-  border: 1px solid var(--green-300);
-  outline: transparent;
-  border-radius: var(--sm-radius);
-  padding: 0 1rem;
-}
-
-input[type="email"]::placeholder,
-input[type="email"] {
+.section-about p,
+.section-page p {
   font-size: var(--base-text);
   font-weight: 400;
   color: var(--dark);
+  margin-bottom: 1.5rem;
+}
+.brand-img {
+  width: 10rem;
+  height: auto;
+  filter: grayscale(1);
+  transition: all 0.3s ease;
 }
 
-.form-text {
-  font-size: var(--sm-text);
-  font-weight: 400;
-  color: var(--dark);
+.brand-img:hover {
+  filter: grayscale(0);
+}
+
+.brands {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+  align-items: center;
+  gap: 2rem;
+}
+
+.articles {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 3rem;
+}
+
+.page-cards {
+  display: grid;
+  gap: 2rem;
+}
+
+.main h1,
+.main h2,
+.main h3 {
+  margin-bottom: 2rem;
 }
 
 .section {
   margin-bottom: 5rem;
+}
+
+.section.blog {
+  margin-top: 4rem;
+}
+
+.article-categories {
+  display: flex;
+  align-items: center;
+  column-gap: 1rem;
+  row-gap: 1rem;
+  flex-wrap: wrap;
+  margin-bottom: 4rem;
+}
+
+.article-category-btn {
+  padding: 1rem 1.2rem;
+  font-size: var(--base-text);
+  font-weight: 400;
+  background: transparent;
+  outline: transparent;
+  border: none;
+  padding-bottom: 0.5rem;
+  color: var(--dark);
+  height: 3rem;
+  cursor: pointer;
+}
+
+.article-category-btn:hover,
+.article-category-btn.active {
+  border-bottom: 2px solid var(--green-300);
+}
+
+.article-category-btn::first-letter {
+  text-transform: uppercase;
+}
+
+@media only screen and (min-width: 320px) {
+  .articles {
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  }
 }
 
 @media only screen and (min-width: 375px) {
@@ -203,6 +344,9 @@ input[type="email"] {
 
 /* media queries */
 @media only screen and (min-width: 768px) {
+  .page-cards {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
 
 @media only screen and (min-width: 1024px) {

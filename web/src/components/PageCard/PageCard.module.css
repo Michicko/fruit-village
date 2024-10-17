@@ -1,0 +1,41 @@
+.card {
+  display: grid;
+  grid-template-columns: 5rem auto;
+  row-gap: 1rem;
+  column-gap: 2rem;
+  grid-template-areas:
+    "icon title"
+    "icon desc";
+}
+
+.card > *:nth-child(1) {
+  grid-area: icon;
+}
+.card > *:nth-child(2) {
+  grid-area: title;
+}
+.card > *:nth-child(3) {
+  grid-area: desc;
+}
+
+.card-icon-box {
+  height: 4.5rem;
+  width: 4.5rem;
+  border-radius: 50%;
+  background: var(--green-400);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.card h4,
+.card p {
+  font-size: var(--base-text);
+  font-weight: 600;
+  color: var(--dark);
+}
+
+.card p {
+  font-size: var(--sm-text);
+  font-weight: 400;
+}

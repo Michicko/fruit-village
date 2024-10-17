@@ -3,11 +3,17 @@ import PhoneIcon from "../../assets/icons/phone.svg?react";
 
 interface PhoneProps {
   text: string;
-  color: "dark" | "light";
+  color: "dark" | "light" | "green";
   showOnSmallScreen: boolean;
+  noIcon?: boolean;
 }
 
-export default function Phone({ text, color, showOnSmallScreen }: PhoneProps) {
+export default function Phone({
+  text,
+  color,
+  showOnSmallScreen,
+  noIcon,
+}: PhoneProps) {
   return (
     <a
       href={`tel:${text}`}
@@ -15,7 +21,7 @@ export default function Phone({ text, color, showOnSmallScreen }: PhoneProps) {
         showOnSmallScreen ? styles["small-sc"] : styles["lg-sc"]
       }`}
     >
-      <PhoneIcon className={`${styles.icon} icon md`} />
+      {!noIcon && <PhoneIcon className={`${styles.icon} icon md`} />}
       {text}
     </a>
   );
