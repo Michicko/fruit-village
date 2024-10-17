@@ -12,6 +12,10 @@
   text-decoration: none;
 }
 
+.history-link::first-letter{
+  text-transform: uppercase;
+}
+
 .history-link:hover {
   color: var(--blue-400);
 }
