@@ -5,7 +5,7 @@ import PageHistory from "../PageHistory/PageHistory";
 
 export default function PageLayout() {
   return (
-    <div className={styles["page-layout"]}>
+    <div className={"page-layout"}>
       <PageHistory />
       <div className={styles.container}>
         <Outlet />

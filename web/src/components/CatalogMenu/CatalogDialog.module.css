@@ -29,6 +29,14 @@
   color: var(--dark);
   font-weight: 500;
   text-decoration: none;
+  background: transparent;
+  outline: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.catalog-link::first-letter {
+  text-transform: uppercase;
 }
 
 .catalog-link:hover,

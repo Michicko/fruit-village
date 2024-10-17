@@ -70,7 +70,7 @@ export const catalogue = [
   },
   {
     id: uuid(),
-    name: "Watermelon, melons",
+    name: "Watermelon and melons",
     url: "/sale?category=watermelon,melons",
     image: "/images/watermelons-melons.jpg",
   },

@@ -14,6 +14,8 @@ export default function NavSmall() {
   const { pathname: path, search } = useLocation();
   const pathname = path + search;
 
+  const user = null;
+
   return (
     <div className={styles["nav-sm"]}>
       {navLinks.map((link) => {
@@ -29,13 +31,24 @@ export default function NavSmall() {
           </Link>
         );
       })}
-      <Link
-        to={"/account"}
-        className={`${styles["nav-link"]} ${styles["with-icon"]}`}
-      >
-        Ronald
-        <User className={`${styles.icon} icon`} />
-      </Link>
+      <>
+        {user ? (
+          <Link
+            to={"/account"}
+            className={`${styles["nav-link"]} ${styles["with-icon"]}`}
+          >
+            Ronald
+            <User className={`${styles.icon} icon`} />
+          </Link>
+        ) : (
+          <Link
+            to={"/login"}
+            className={`${styles["nav-link"]} ${styles["with-icon"]}`}
+          >
+            Login
+          </Link>
+        )}
+      </>
     </div>
   );
 }
