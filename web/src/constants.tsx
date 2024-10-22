@@ -27,3 +27,9 @@ export interface ProductProps {
   slug: string;
   description?: string;
 }
+
+export interface MultiRangeSliderPropsTypes {
+  min: number;
+  max: number;
+  onChange: ({ min, max }: { min: number; max: number }) => void;
+}

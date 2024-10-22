@@ -36,11 +36,21 @@
   --xxxl-text: 6.4rem;
   --sm-radius: 0.5rem;
   --md-radius: 0.8rem;
+  --font: "Nunito";
 }
 
 html {
   font-size: 10px;
   box-sizing: border-box;
+}
+
+body {
+  font-family: "Nunito", sans-serif;
+}
+
+button,
+a,
+li {
   font-family: "Nunito", sans-serif;
 }
 
@@ -71,8 +81,17 @@ html {
   fill: var(--light);
 }
 
+.icon.path-filled.green path {
+  fill: var(--green-300);
+}
+
 .icon.stroke path {
   stroke: var(--light);
+}
+
+.icon.stroke.green path {
+  stroke: var(--green-300);
+  fill: none;
 }
 
 .light {
@@ -258,13 +277,23 @@ span.green {
   min-height: 15rem;
 }
 
-.section-about p,
-.section-page p {
+p {
   font-size: var(--base-text);
   font-weight: 400;
   color: var(--dark);
-  margin-bottom: 1.5rem;
+  line-height: 1.5;
 }
+
+.section-page > *:not(:last-child),
+.section-about > *:not(:last-child) {
+  margin-bottom: 1rem;
+}
+
+.section-page > *:first-child,
+.section-about > *:first-child {
+  margin-bottom: 2rem;
+}
+
 .brand-img {
   width: 10rem;
   height: auto;
@@ -397,10 +426,16 @@ iframe {
 
 .page-layout {
   padding: 2rem;
+  background: var(--light);
+}
+
+.sale-content {
+  width: 100%;
 }
 
 .sale-container,
 .sale-content-header {
+  width: 100%;
   display: grid;
   grid-template-columns: 1fr;
   gap: 4rem;
@@ -408,6 +443,7 @@ iframe {
 
 .sale-content-header {
   gap: 2rem;
+  width: 100%;
 }
 
 .sale-content-header h1 {
@@ -418,6 +454,13 @@ iframe {
 
 .sale-content-header h1::first-letter {
   text-transform: uppercase;
+}
+
+.sale-products {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(20rem, 1fr));
+  gap: 1rem;
+  margin: 2rem 0;
 }
 
 @media only screen and (min-width: 320px) {
@@ -436,12 +479,21 @@ iframe {
   .secondary-heading {
     font-size: var(--xl-text);
   }
+
+  .sale-products {
+    gap: 2rem;
+  }
 }
 
 /* media queries */
 @media only screen and (min-width: 768px) {
   .page-cards {
     grid-template-columns: repeat(2, 1fr);
+  }
+
+  .sale-products {
+    gap: 3rem;
+    grid-template-columns: repeat(auto-fill, minmax(22rem, 1fr));
   }
 }
 

@@ -6,7 +6,7 @@
 }
 
 .history-link {
-  font-size: var(--sm-text);
+  font-size: var(--base-text);
   font-weight: 400;
   color: var(--dark);
   text-decoration: none;
@@ -17,7 +17,7 @@
 }
 
 .history-link:hover {
-  color: var(--blue-400);
+  color: var(--green-400);
 }
 
 .home {

@@ -3,7 +3,7 @@
   box-shadow: 0 0 3px rgba(0, 0, 0, 0.3);
   border-radius: var(--md-radius);
   overflow: hidden;
-  width: 22rem;
+  min-width: 20rem;
   position: relative;
 }
 
@@ -151,4 +151,10 @@
   display: block;
   background: var(--dark);
   transform: translateY(-50%) rotate(-25deg);
+}
+
+@media only screen and (min-width: 768px) {
+  .product {
+    min-width: 22rem;
+  }
 }

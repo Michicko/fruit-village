@@ -231,7 +231,7 @@ export const articles = [
       "Today there are many advertising options that help attract new ones",
     article:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti laborum voluptate quibusdam soluta veritatis. Laudantium nisi voluptas voluptate debitis unde.",
-      slug: "fruit-village-branded-delivery-car"
+    slug: "fruit-village-branded-delivery-car",
   },
   {
     id: uuid(),
@@ -243,7 +243,7 @@ export const articles = [
       "Food products tends to spoil even when you buy fresh and high quality",
     article:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti laborum voluptate quibusdam soluta veritatis. Laudantium nisi voluptas voluptate debitis unde.",
-      slug: "9-tricks-for-storing-fruits"
+    slug: "9-tricks-for-storing-fruits",
   },
   {
     id: uuid(),
@@ -255,7 +255,7 @@ export const articles = [
       "It is unlinkely that anyone in our harsh land would think of marinating an exotic product",
     article:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti laborum voluptate quibusdam soluta veritatis. Laudantium nisi voluptas voluptate debitis unde.",
-      slug: "what-is-known-about-thai-food"
+    slug: "what-is-known-about-thai-food",
   },
   {
     id: uuid(),
@@ -267,6 +267,27 @@ export const articles = [
       "Fruit village is a reliable destributor of fruits for establishment in the segment",
     article:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti laborum voluptate quibusdam soluta veritatis. Laudantium nisi voluptas voluptate debitis unde.",
-      slug: "fruit-village-inspires-chef"
+    slug: "fruit-village-inspires-chef",
   },
 ];
+
+export const sortOptions = [
+  {
+    name: "Featured",
+    value: "featured",
+  },
+  {
+    name: "Best selling",
+    value: "best selling",
+  },
+  {
+    name: "Price, low to high",
+    value: "price, low to high",
+  },
+  {
+    name: "Price, high to low",
+    value: "price, high to low",
+  },
+];
+
+export const tastes = ["citrus", "fresh", "sour", "sour-sweet", "sweet"];

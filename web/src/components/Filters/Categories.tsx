@@ -14,7 +14,7 @@ export default function Categories({
   currentCategory,
   setCurrentCategory,
 }: CategoriesProps) {
-  
+
   const selectCategory = (
     e: React.MouseEvent<HTMLButtonElement | undefined>
   ) => {
@@ -25,8 +25,8 @@ export default function Categories({
   };
 
   return (
-    <FiltersDropdown>
-      <div className={styles.categories}>
+    <FiltersDropdown showBtn={true} name="Categories">
+      <div className={styles.list}>
         {categories.map((category, i) => {
           return (
             <button
