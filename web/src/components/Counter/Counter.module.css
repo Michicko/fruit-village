@@ -1,0 +1,41 @@
+.counter {
+  height: 3.2rem;
+  border-radius: var(--sm-radius);
+  width: 10rem;
+  border: 1px solid var(--green-300);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 .5rem;
+  user-select: none;
+}
+
+.count {
+  height: 100%;
+  width: 4rem;
+  border: none;
+  background: transparent;
+  outline: transparent;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  font-size: var(--base-text);
+  font-weight: 400;
+  color: var(--dark);
+}
+
+.count::-webkit-outer-spin-button,
+.count::-webkit-inner-spin-button {
+  /* display: none; <- Crashes Chrome on hover */
+  -webkit-appearance: none;
+  margin: 0; /* <-- Apparently some margin are still there even though it's hidden */
+}
+
+.count {
+  -moz-appearance: textfield; /* Firefox */
+}
+
+.btn{
+    padding-top: .5rem;
+    height: 100%;
+}

@@ -26,6 +26,7 @@ export interface ProductProps {
   measurement: string;
   slug: string;
   description?: string;
+  code: number
 }
 
 export interface MultiRangeSliderPropsTypes {

@@ -1,0 +1,45 @@
+.dialog::backdrop {
+  background: rgba(0, 0, 0, 0.4);
+}
+
+.dialog {
+  min-width: 12rem;
+  min-height: 20rem;
+  background: var(--light);
+  border: none;
+  outline: transparent;
+  margin: auto;
+  margin-top: 7rem;
+  user-select: none;
+  animation: slide-in 0.3s ease-out;
+}
+
+.dialog.full-on-mobile {
+  margin-top: 0;
+  min-width: 100%;
+  min-height: 100vh;
+}
+
+@media only screen and (min-width: 768px) {
+  .dialog,
+  .dialog.dialog.full-on-mobile {
+    min-width: 70rem;
+    min-height: 20rem;
+  }
+}
+
+@media only screen and (min-width: 1024px) {
+  .dialog,
+  .dialog.dialog.full-on-mobile {
+    margin-top: 11rem;
+  }
+}
+
+@keyframes slide-in {
+  from {
+    transform: translateY(-100%);
+  }
+  to {
+    transform: translateY(0);
+  }
+}

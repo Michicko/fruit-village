@@ -1,11 +1,5 @@
 import styles from "./Nav.module.css";
 import NavLogoBox from "./NavLogoBox";
-import UserOutline from "../../assets/icons/user-outline.svg?react";
-import Orders from "../../assets/icons/orders.svg?react";
-import Clock from "../../assets/icons/clock.svg?react";
-import Eye from "../../assets/icons/eye.svg?react";
-import Gift from "../../assets/icons/gift.svg?react";
-import HeartOutline from "../../assets/icons/heart-outline.svg?react";
 import Close from "../../assets/icons/close.svg?react";
 import { Link } from "react-router-dom";
 import User from "../../assets/icons/user.svg?react";
@@ -13,14 +7,14 @@ import PlusBoxed from "../../assets/icons/plus-boxed.svg?react";
 import Logout from "../../assets/icons/logout.svg?react";
 import ArrowDown from "../../assets/icons/arrow-down.svg?react";
 import CatalogButton from "../CatalogButton/CatalogButton";
-import { v4 as uuid } from "uuid";
 import { links } from "../../data";
 import { useState } from "react";
+import PersonalLinks from "./PersonalLinks";
 
 interface NavMobileProps {
   isMobileNavOpened: boolean;
   setShowCatalogModal: React.Dispatch<React.SetStateAction<boolean>>;
-  closeMobileNav: React.MouseEventHandler<HTMLButtonElement>;
+  closeMobileNav: () => void;
 }
 
 export default function NavMobile({
@@ -34,47 +28,6 @@ export default function NavMobile({
   const toggleMainLinks = () => {
     setIsMainLinksOpened(!isMainLinksOpened);
   };
-
-  const userLinks = [
-    {
-      id: uuid(),
-      name: "My account",
-      url: "/account",
-      icon: <UserOutline className={`${styles.icon} ${styles.outline} icon`} />,
-    },
-    {
-      id: uuid(),
-      name: "My orders",
-      url: "/orders",
-      icon: <Orders className={`${styles.icon} ${styles.fill} icon`} />,
-    },
-    {
-      id: uuid(),
-      name: "Wishlist",
-      url: "/wishlist",
-      icon: (
-        <HeartOutline className={`${styles.icon} ${styles.outline} icon`} />
-      ),
-    },
-    {
-      id: uuid(),
-      name: "waitlist",
-      url: "/waitlist",
-      icon: <Clock className={`${styles.icon} ${styles.outline} icon`} />,
-    },
-    {
-      id: uuid(),
-      name: "Viewed products",
-      url: "/viewed-products",
-      icon: <Eye className={`${styles.icon} ${styles.fill} icon`} />,
-    },
-    {
-      id: uuid(),
-      name: "My bonus account",
-      url: "/bonuses",
-      icon: <Gift className={`${styles.icon} ${styles.fill} icon`} />,
-    },
-  ];
 
   return (
     <aside
@@ -106,23 +59,13 @@ export default function NavMobile({
           <div className={styles["mobile-links-box"]}>
             <CatalogButton
               fullWidth={true}
-              onClickHandler={() => setShowCatalogModal(true)}
+              onClickHandler={() => {
+                setShowCatalogModal(true);
+                closeMobileNav();
+              }}
             />
             {user && (
-              <div className={styles["mobile-links"]}>
-                {userLinks.map((link) => {
-                  return (
-                    <Link
-                      to={link.url}
-                      className={`${styles["mobile-link"]}`}
-                      key={link.id}
-                    >
-                      {link.icon}
-                      {link.name}
-                    </Link>
-                  );
-                })}
-              </div>
+              <PersonalLinks theme="light" handleOnClick={closeMobileNav} />
             )}
             {user && (
               <button
@@ -150,6 +93,7 @@ export default function NavMobile({
                       to={link.url}
                       className={`${styles["mobile-link"]}`}
                       key={link.id}
+                      onClick={closeMobileNav}
                     >
                       {link.name}
                     </Link>

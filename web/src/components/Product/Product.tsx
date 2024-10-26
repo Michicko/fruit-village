@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 import Check from "../../assets/icons/check-circle.svg?react";
 import { CartProducts, wishList } from "../../data";
 import { ProductProps } from "../../constants";
+import Price from "../Price/Price";
 
 interface ProductPropTypes {
   product: ProductProps;
@@ -23,7 +24,7 @@ export default function Product({ product }: ProductPropTypes) {
   );
 
   const inCart = (id: string) => {
-    const cardIds = CartProducts.map((el) => el.id);
+    const cardIds = CartProducts.map((el) => el.product.id);
     return cardIds.includes(id);
   };
 
@@ -69,16 +70,11 @@ export default function Product({ product }: ProductPropTypes) {
           {product.stock > 0 ? "in stock" : "by order"}
         </p>
         <div className={styles["price-box"]}>
-          {product.discount > 0 ? (
-            <div className={styles["discount-prices"]}>
-              <h3 className={styles["product-price"]}>
-                ${(product.price - (10 / 100) * product.price).toFixed(2)}
-              </h3>
-              <h3 className={styles["product-price-old"]}>${product.price}</h3>
-            </div>
-          ) : (
-            <h3 className={styles["product-price"]}>${product.price}</h3>
-          )}
+          <Price
+            discount={product.discount}
+            price={product.price}
+            size={"lg"}
+          />
           <label htmlFor={product.slug} className={styles["favorite-label"]}>
             <HeartOutline
               className={`${styles["favorite-icon"]} ${

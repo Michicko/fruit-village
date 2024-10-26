@@ -1,18 +1,21 @@
-import {
-  BrowserRouter,
-  Route,
-  Routes,
-} from "react-router-dom";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Home from "./pages/Home";
-import Root from "./components/layouts/Root";
+import Root from "./components/Layouts/Root";
 import About from "./pages/About";
 import ShippingAndPayment from "./pages/ShippingAndPayment";
 import Blog from "./pages/Blog";
 import Sale from "./pages/Sale";
 import Account from "./pages/Account";
 import Wishlist from "./pages/Wishlist";
-import PageLayout from "./components/layouts/PageLayout";
+import PageLayout from "./components/Layouts/PageLayout";
 import Contacts from "./pages/Contacts";
+import NotFound from "./pages/NotFound";
+import Login from "./pages/Login";
+import Signup from "./pages/Signup";
+import Orders from "./pages/Orders";
+import Waitlist from "./pages/Waitlist";
+import ViewedProducts from "./pages/ViewedProducts";
+import Bonuses from "./pages/Bonuses";
 
 function App() {
   return (
@@ -20,6 +23,8 @@ function App() {
       <Routes>
         <Route path="/" element={<Root />}>
           <Route index element={<Home />} />
+          <Route path="sale" element={<Sale />} />
+
           <Route element={<PageLayout />}>
             <Route path="about" element={<About />} />
             <Route
@@ -29,9 +34,19 @@ function App() {
             <Route path="blog" element={<Blog />} />
             <Route path="contacts" element={<Contacts />} />
           </Route>
-          <Route path="sale" element={<Sale />} />
-          <Route path="account" element={<Account />} />
-          <Route path="wishlist" element={<Wishlist />} />
+
+          <Route element={<PageLayout noRightSidebar={true} />}>
+            <Route path="account" element={<Account />} />
+            <Route path="orders" element={<Orders />} />
+            <Route path="wishlist" element={<Wishlist />} />
+            <Route path="waitlist" element={<Waitlist />} />
+            <Route path="bonuses" element={<Bonuses />} />
+            <Route path="viewed-products" element={<ViewedProducts />} />
+          </Route>
+
+          <Route path="login" element={<Login />} />
+          <Route path="signup" element={<Signup />} />
+          <Route path="*" element={<NotFound />} />
         </Route>
       </Routes>
     </BrowserRouter>

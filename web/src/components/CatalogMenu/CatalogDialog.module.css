@@ -1,22 +1,4 @@
-.dialog::backdrop {
-  background: rgba(0, 0, 0, 0.4);
-}
-
-.dialog {
-  min-width: 12rem;
-  min-height: 20rem;
-  background: var(--light);
-  border: none;
-  outline: transparent;
-  margin: 0 auto;
-  margin-top: 7rem;
-  user-select: none;
-  animation: slide-in 0.3s ease-out;
-}
-
 .catalog-menu {
-  width: 100%;
-  height: 100%;
   padding: 2rem;
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
@@ -77,12 +59,6 @@
 }
 
 @media only screen and (min-width: 768px) {
-  .dialog {
-    min-width: 70rem;
-    min-height: 20rem;
-    margin-top: 11rem;
-  }
-
   .catalog-menu {
     padding: 3rem 8rem;
   }

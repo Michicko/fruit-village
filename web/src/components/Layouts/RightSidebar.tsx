@@ -3,7 +3,7 @@ import { links } from "../../data";
 import styles from "./PageLayout.module.css";
 import { v4 as uuid } from "uuid";
 
-export default function PageSidebar() {
+export default function RightSidebar() {
   const { pathname: path, search } = useLocation();
   const pathname = path + search;
   return (

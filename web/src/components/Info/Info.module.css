@@ -1,0 +1,92 @@
+.info {
+  display: inline-flex;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.info label {
+  white-space: nowrap;
+  font-size: var(--base-text);
+  font-weight: 400;
+  color: var(--gray-400);
+  width: 10rem;
+}
+
+.info input:disabled {
+  background: transparent;
+  outline: transparent;
+  border: none;
+}
+
+.rounded-info-form.active .round-info-input,
+.info input:disabled {
+  font-size: var(--base-text);
+  font-weight: 400;
+  color: var(--dark);
+}
+
+.info input::-webkit-outer-spin-button,
+.info input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.info input[type="number"] {
+  -moz-appearance: textfield;
+}
+
+.edit-btn:hover .icon path {
+  stroke: var(--green-300) !important;
+}
+
+.btn {
+  display: flex;
+}
+
+.rounded-info,
+.rounded-info-form {
+  display: flex;
+  border: 1px solid var(--green-300);
+  border-radius: 2rem;
+  height: 3.5rem;
+  min-width: 6rem;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 0.5rem;
+  gap: 2rem;
+}
+
+.rounded-info p::first-letter {
+  text-transform: uppercase;
+}
+
+.rounded-info:hover p {
+  color: var(--red-400);
+}
+
+.rounded-info:hover .round-icon {
+  fill: var(--red-400);
+}
+
+.rounded-info-form {
+  min-width: auto;
+  gap: 0;
+}
+
+.round-info-input {
+  width: 0;
+  border: 1px solid var(--dark);
+  padding: 0;
+  opacity: 0;
+  overflow: hidden;
+  outline-color: var(--green-400);
+}
+
+.rounded-info-form.active .round-info-input {
+  width: 10rem;
+  opacity: 1;
+  padding: 0 0.5rem;
+  overflow: unset;
+  margin-right: 2rem;
+}

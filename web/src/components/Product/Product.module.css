@@ -39,8 +39,7 @@
   gap: 0.5rem;
 }
 
-.product-name,
-.product-price {
+.product-name {
   font-size: var(--md-text);
   font-weight: 600;
   color: var(--dark);
@@ -61,10 +60,6 @@
 
 .product-stock.unavailable {
   color: var(--red-400);
-}
-
-.product-price {
-  font-size: calc(var(--md-text) * 1.2);
 }
 
 .price-box {
@@ -126,31 +121,6 @@
 .favorite-icon.filled path {
   fill: var(--red-400);
   stroke: var(--red-400);
-}
-
-.discount-prices {
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-}
-
-.product-price-old {
-  font-size: var(--md-text);
-  font-weight: 400;
-  color: var(--dark);
-  position: relative;
-}
-
-.product-price-old::before {
-  position: absolute;
-  top: 50%;
-  right: 0;
-  height: 1px;
-  width: 100%;
-  content: "";
-  display: block;
-  background: var(--dark);
-  transform: translateY(-50%) rotate(-25deg);
 }
 
 @media only screen and (min-width: 768px) {

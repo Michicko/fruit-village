@@ -1,0 +1,36 @@
+.price {
+  font-size: var(--md-text);
+  font-weight: 600;
+  color: var(--dark);
+  text-decoration: none;
+  text-transform: capitalize;
+}
+
+/* .price.no-discount{
+
+} */
+
+.discount-prices {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.price-old {
+  font-size: calc(var(--md-text) - 0.3rem);
+  font-weight: 400;
+  color: var(--dark);
+  position: relative;
+}
+
+.price-old::before {
+  position: absolute;
+  top: 50%;
+  right: 0;
+  height: 1px;
+  width: 100%;
+  content: "";
+  display: block;
+  background: var(--dark);
+  transform: translateY(-50%) rotate(-25deg);
+}

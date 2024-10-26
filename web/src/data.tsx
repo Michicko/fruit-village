@@ -99,6 +99,7 @@ export const products = [
     measurement: "piece",
     slug: "pineapple-premium",
     size: 1,
+    code: 24,
   },
   {
     id: "39413517-62da-4912-aa98-865d90d9455d",
@@ -112,6 +113,7 @@ export const products = [
     measurement: "kg",
     slug: "persimmon-sharon",
     size: 1,
+    code: 114,
   },
   {
     id: "f2217dd9-bf31-4074-9a9e-02841d803c31",
@@ -125,6 +127,7 @@ export const products = [
     measurement: "kg",
     size: 1,
     slug: "longan",
+    code: 104,
   },
   {
     id: "fd2a15ba-3161-40bc-baeb-96249b0c63e0",
@@ -138,6 +141,7 @@ export const products = [
     measurement: "piece",
     size: 1,
     slug: "pitahaya-yellow",
+    code: 14,
   },
 ];
 
@@ -153,22 +157,75 @@ export const wishList = [
     stock: 5,
     measurement: "piece",
     slug: "pineapple-premium",
+    code: 13,
+  },
+];
+
+export const waitList = [
+  {
+    id: "9c4a1127-0687-4e09-a398-84895dc84053",
+    name: "Pineapple premium",
+    image: "/images/pineapple.png",
+    category: "pineapple",
+    price: 5.99,
+    isFavorite: true,
+    discount: 0,
+    stock: 5,
+    measurement: "piece",
+    slug: "pineapple-premium",
+    code: 13,
+  },
+  {
+    id: "9c4a1127-0687-4e09-a398-84895dc84053",
+    name: "Pineapple premium",
+    image: "/images/pineapple.png",
+    category: "pineapple",
+    price: 5.99,
+    isFavorite: true,
+    discount: 0,
+    stock: 5,
+    measurement: "piece",
+    slug: "pineapple-premium",
+    code: 13,
   },
 ];
 
 export const CartProducts = [
   {
-    id: "fd2a15ba-3161-40bc-baeb-96249b0c63e0",
-    name: "Pitahaya yellow",
-    image: "/images/pitahaya-yellow.jpg",
-    category: "cactus",
-    price: 9.49,
-    isFavorite: true,
-    discount: 0,
-    stock: 0,
-    size: 1,
-    measurement: "piece",
-    slug: "pitahaya-yellow",
+    id: "bd2a15bc-3161-30bb-baeb-96249b0c63e0",
+    quantity: 1,
+    product: {
+      id: "fd2a15ba-3161-40bc-baeb-96249b0c63e0",
+      name: "Pitahaya yellow",
+      image: "/images/pitahaya-yellow.jpg",
+      category: "cactus",
+      price: 9.49,
+      isFavorite: true,
+      discount: 0,
+      stock: 5,
+      size: 1,
+      measurement: "piece",
+      slug: "pitahaya-yellow",
+      code: 12,
+    },
+  },
+  {
+    id: "5c4c1127-1687-4e09-b398-84895dd84053",
+    quantity: 1,
+    product: {
+      id: "9c4a1127-0687-4e09-a398-84895dc84053",
+      name: "Pineapple premium",
+      image: "/images/pineapple.png",
+      category: "pineapple",
+      price: 5.99,
+      isFavorite: true,
+      discount: 0,
+      stock: 3,
+      measurement: "piece",
+      slug: "pineapple-premium",
+      size: 1,
+      code: 24,
+    },
   },
 ];
 
@@ -186,6 +243,7 @@ export const fruitbox = {
   isFavorite: true,
   discount: 0,
   stock: 5,
+  code: 124,
 };
 
 export const facts = [
@@ -291,3 +349,4 @@ export const sortOptions = [
 ];
 
 export const tastes = ["citrus", "fresh", "sour", "sour-sweet", "sweet"];
+

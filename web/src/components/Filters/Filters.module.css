@@ -96,7 +96,7 @@
 }
 
 .filters-dropdown-btn span {
-  font-size: var(--base-text);
+  font-size: calc(var(--base-text) * 1.1);
   font-weight: 600;
   color: var(--dark);
   font-family: inherit;
@@ -244,67 +244,6 @@
 
 .toggle-list-btn.showing-all > *:last-child {
   transform: rotateX(-180deg);
-}
-
-.taste {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  user-select: none;
-}
-
-.taste .taste-checkbox {
-  height: 1.5rem;
-  width: 1.5rem;
-  border: 1px solid var(--green-300);
-  border-radius: 3px;
-  position: relative;
-}
-
-.taste .taste-checkbox::before,
-.taste .taste-checkbox::after {
-  position: absolute;
-  content: "";
-  display: block;
-  height: 0.15rem;
-  width: 0.5rem;
-  background: var(--light);
-}
-
-.taste .taste-checkbox::before {
-  width: 0.5rem;
-  top: 0.7rem;
-  left: 0.15rem;
-  transform: rotate(45deg);
-}
-
-.taste .taste-checkbox::after {
-  top: 0.6rem;
-  left: 0.5rem;
-  width: 0.65rem;
-  transform: rotate(-45deg);
-}
-
-.taste .taste-label {
-  font-size: var(--base-text);
-  font-weight: 600;
-  color: var(--dark);
-}
-
-.taste .taste-label::first-letter {
-  text-transform: uppercase;
-}
-
-.taste input[type="checkbox"] {
-  display: none;
-}
-
-.taste:hover .taste-checkbox {
-  background: var(--green-100);
-}
-
-.taste input[type="checkbox"]:checked + .taste-checkbox {
-  background: var(--green-300);
 }
 
 @media only screen and (min-width: 375px) {

@@ -8,7 +8,7 @@ interface ButtonProps {
   color?: string;
   hoveredBg?: string;
   hoveredColor?: string;
-  type: "reset" | "button" | "submit";
+  type?: "reset" | "button" | "submit";
   link?: string;
   onClickHandler?: MouseEventHandler<HTMLButtonElement>;
 }

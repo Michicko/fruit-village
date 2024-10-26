@@ -7,7 +7,7 @@ export default function Subscription() {
     <div className={styles.subscription}>
       <h3 className="section-heading">Get a 7% discount</h3>
       <form className={styles["subscription-form"]}>
-        <input type="email" name="email" id="email" placeholder="Email" />
+        <input type="email" name="email" id="email" className="email-input" placeholder="Email" />
         <Button
           bg="#42c84f"
           color="#fcfff9"

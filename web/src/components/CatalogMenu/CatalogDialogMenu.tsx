@@ -1,9 +1,9 @@
-import { useCallback, useEffect, useRef } from "react";
 import styles from "./CatalogDialog.module.css";
 import { catalogue } from "../../data";
 import { Link, useLocation } from "react-router-dom";
 import { v4 as uuid } from "uuid";
 import Grid from "../../assets/icons/grid-4.svg?react";
+import Dialog from "../Dialog/Dialog";
 
 interface CatalogDialogMenuProps {
   showCatalogModal: boolean;
@@ -14,7 +14,6 @@ export default function CatalogDialogMenu({
   showCatalogModal,
   setShowCatalogModal,
 }: CatalogDialogMenuProps) {
-  const dialogRef = useRef<HTMLDialogElement | null>(null);
   const catalogMenu = [
     { id: uuid(), name: "All goods", url: "/sale" },
     ...catalogue,
@@ -23,36 +22,15 @@ export default function CatalogDialogMenu({
   const { pathname: path, search } = useLocation();
   const pathname = path + search;
 
-  const showModal = useCallback(() => {
-    // if (showCatalogModal) return;
-    if (dialogRef.current) {
-      dialogRef.current.showModal();
-      setShowCatalogModal(true);
-    }
-  }, [setShowCatalogModal]);
-
-  const closeModal = useCallback(() => {
-    if (!showCatalogModal) return;
-    if (dialogRef.current) {
-      dialogRef.current.close();
-      setShowCatalogModal(false);
-    }
-  }, [setShowCatalogModal, showCatalogModal]);
-
-  useEffect(() => {
-    if (showCatalogModal) {
-      showModal();
-    }
-  }, [showCatalogModal, showModal]);
+  const closeCatalogModal = () => setShowCatalogModal(false);
 
   return (
-    <dialog
-      id={"catalog-dialog"}
-      className={styles.dialog}
-      ref={dialogRef}
-      onClick={closeModal}
+    <Dialog
+      showModal={showCatalogModal}
+      setShowModal={setShowCatalogModal}
+      id="catalog-dialog"
     >
-      <div className={styles["catalog-menu"]}>
+      <div className={styles["catalog-menu"]} onBlur={closeCatalogModal}>
         {catalogMenu.map((catalog) => {
           return (
             <Link
@@ -61,6 +39,8 @@ export default function CatalogDialogMenu({
               className={`${styles["catalog-link"]} ${
                 catalog.name === "All goods" ? styles["with-icon"] : ""
               } ${pathname === catalog.url ? styles.active : ""}`}
+              onMouseDown={(e) => e.preventDefault()} // prevents onBlur from firing first
+              onClick={closeCatalogModal}
             >
               {catalog.name === "All goods" && (
                 <Grid className={`${styles.icon} icon`} />
@@ -70,6 +50,6 @@ export default function CatalogDialogMenu({
           );
         })}
       </div>
-    </dialog>
+    </Dialog>
   );
 }
