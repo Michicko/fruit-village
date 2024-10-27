@@ -1,9 +1,6 @@
-import React from 'react'
+import Page from "../components/Page/Page";
+import { waitList } from "../data";
 
 export default function Waitlist() {
-  return (
-    <div>
-      <h1>Waitlist</h1>
-    </div>
-  )
+  return <Page list={waitList} title="Waitlist" />;
 }

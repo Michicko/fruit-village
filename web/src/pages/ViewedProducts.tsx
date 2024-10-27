@@ -1,9 +1,6 @@
-import React from 'react'
+import Page from "../components/Page/Page";
+import { viewedProducts } from "../data";
 
 export default function ViewedProducts() {
-  return (
-    <div>
-      <h1>Viewed Products</h1>
-    </div>
-  )
+  return <Page list={viewedProducts} title="Viewed products" />;
 }

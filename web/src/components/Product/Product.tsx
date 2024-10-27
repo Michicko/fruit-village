@@ -6,12 +6,19 @@ import Check from "../../assets/icons/check-circle.svg?react";
 import { CartProducts, wishList } from "../../data";
 import { ProductProps } from "../../constants";
 import Price from "../Price/Price";
+import Bin from "../../assets/icons/bin.svg?react";
 
 interface ProductPropTypes {
   product: ProductProps;
+  showDeleteBtn: boolean;
+  deleteWish?: (id: string) => void;
 }
 
-export default function Product({ product }: ProductPropTypes) {
+export default function Product({
+  product,
+  showDeleteBtn,
+  deleteWish,
+}: ProductPropTypes) {
   const checkRef = useRef<HTMLInputElement | null>(null);
   const [dataWishList, setDataWishList] = useState(wishList);
 
@@ -49,6 +56,14 @@ export default function Product({ product }: ProductPropTypes) {
         <div className={styles["discount-box"]}>
           <p className={styles["discount"]}>-{product.discount}%</p>
         </div>
+      )}
+      {showDeleteBtn && deleteWish && (
+        <button
+          className={styles["del-btn"]}
+          onClick={() => deleteWish(product.id)}
+        >
+          <Bin className="icon md path-filled red" />
+        </button>
       )}
       <img
         src={product.image}

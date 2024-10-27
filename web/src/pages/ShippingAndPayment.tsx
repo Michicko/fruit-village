@@ -26,7 +26,7 @@ export default function ShippingAndPayment() {
       <h1 className="primary-heading">
         Shipping and payment <span className="line"></span>
       </h1>
-      <section className="section section-about">
+      <section className="section section-page">
         <h2 className="sm-heading">Payment</h2>
         <p>
           You can choose from three payment options, if necessary, you can
@@ -51,7 +51,7 @@ export default function ShippingAndPayment() {
           })}
         </div>
       </section>
-      <section className="section section-about">
+      <section className="section section-page">
         <h2 className="sm-heading">Methods of delivery</h2>
         <p>
           The minimum order in our online store is $9.99. We deliver free of
@@ -69,7 +69,7 @@ export default function ShippingAndPayment() {
           and is specified when confirming the order.
         </p>
       </section>
-      <section className="section section-about">
+      <section className="section section-page">
         <h2 className="sm-heading">Price and completion</h2>
         <p>
           In each order we enclose and invoice with the composition and details

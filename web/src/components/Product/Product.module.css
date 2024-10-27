@@ -21,9 +21,15 @@
   padding: 0.15rem 0.5rem;
 }
 
+.del-btn {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+}
+
 .discount {
   font-size: var(--sm-text);
-  font-weight: 400;
+  font-weight: 500;
   color: var(--light);
 }
 

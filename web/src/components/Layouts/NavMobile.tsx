@@ -10,6 +10,7 @@ import CatalogButton from "../CatalogButton/CatalogButton";
 import { links } from "../../data";
 import { useState } from "react";
 import PersonalLinks from "./PersonalLinks";
+import NavLink from "./NavLink";
 
 interface NavMobileProps {
   isMobileNavOpened: boolean;
@@ -89,14 +90,11 @@ export default function NavMobile({
               <div className={styles["mobile-links"]}>
                 {links.map((link) => {
                   return (
-                    <Link
-                      to={link.url}
-                      className={`${styles["mobile-link"]}`}
-                      key={link.id}
+                    <NavLink
+                      link={link}
                       onClick={closeMobileNav}
-                    >
-                      {link.name}
-                    </Link>
+                      key={link.id}
+                    />
                   );
                 })}
               </div>

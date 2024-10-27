@@ -92,6 +92,9 @@ button {
 .icon.path-filled.green path {
   fill: var(--green-300);
 }
+.icon.path-filled.red path {
+  fill: var(--red-400);
+}
 
 .icon.path-filled.dark path {
   fill: var(--dark);
@@ -319,13 +322,9 @@ p {
   line-height: 1.5;
 }
 
-.section-page > *:not(:last-child),
-.section-about > *:not(:last-child) {
-  margin-bottom: 1rem;
-}
-
-.section-page > *:first-child,
-.section-about > *:first-child {
+.main .primary-heading,
+.section-page .section-heading,
+.section-page .sm-heading {
   margin-bottom: 2rem;
 }
 
@@ -347,7 +346,8 @@ p {
   gap: 2rem;
 }
 
-.articles {
+.articles,
+.list {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
   gap: 3rem;
@@ -468,6 +468,7 @@ iframe {
 .map {
   filter: grayscale(1);
   min-height: 30rem;
+  background: #eeee;
 }
 
 .map:hover {
@@ -511,6 +512,26 @@ iframe {
   grid-template-columns: repeat(auto-fill, minmax(20rem, 1fr));
   gap: 1rem;
   margin: 2rem 0;
+}
+
+.page-btns,
+.page-btn {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.page-btn {
+  gap: 1rem;
+  cursor: pointer;
+}
+
+.page-btn.add {
+  color: var(--green-300);
+}
+
+.page-btn.del {
+  color: var(--red-400);
 }
 
 @media only screen and (min-width: 320px) {

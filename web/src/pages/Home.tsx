@@ -50,7 +50,13 @@ export default function Home() {
           <ProductSlider>
             <div className="products">
               {products.map((product) => {
-                return <Product key={product.id} product={product} />;
+                return (
+                  <Product
+                    key={product.id}
+                    product={product}
+                    showDeleteBtn={false}
+                  />
+                );
               })}
             </div>
           </ProductSlider>
@@ -69,7 +75,13 @@ export default function Home() {
               {products
                 .filter((el) => el.discount > 0)
                 .map((product) => {
-                  return <Product key={product.id} product={product} />;
+                  return (
+                    <Product
+                      key={product.id}
+                      product={product}
+                      showDeleteBtn={false}
+                    />
+                  );
                 })}
             </div>
           </ProductSlider>

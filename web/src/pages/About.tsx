@@ -43,7 +43,7 @@ export default function About() {
       <h1 className="primary-heading">
         About <span className="line"></span>
       </h1>
-      <section className="section section-about">
+      <section className="section section-page">
         <h2 className="sm-heading">About our company</h2>
         <p>
           <span className="green">Fruit Village</span> - is the distributor of
@@ -67,7 +67,7 @@ export default function About() {
           become better for you.
         </p>
       </section>
-      <section className="section section-about">
+      <section className="section section-page">
         <h2 className="sm-heading">Our partners</h2>
         <p>
           <span className="green">Fruit Village</span> as been working with
@@ -85,7 +85,7 @@ export default function About() {
           chosen by the best institutions.
         </p>
       </section>
-      <section className="section section-about brands">
+      <section className="section section-page brands">
         {brands.map((brand) => {
           return (
             <img
@@ -97,7 +97,7 @@ export default function About() {
           );
         })}
       </section>
-      <section className="section section-about">
+      <section className="section section-page">
         <h2 className="sm-heading">Our advantages</h2>
         <div className="page-cards">
           {advantages.map((advantage) => {
@@ -112,7 +112,7 @@ export default function About() {
           })}
         </div>
       </section>
-      <section className="section section-about">
+      <section className="section section-page">
         <h2 className="sm-heading">Our story</h2>
         <p>
           <span className="green">Fruit Village</span> started its work in early
