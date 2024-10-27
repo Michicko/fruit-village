@@ -20,7 +20,7 @@
 }
 
 .rounded-info-form.active .round-info-input,
-.info input:disabled {
+.info input:disabled, .round-info-input::placeholder {
   font-size: var(--base-text);
   font-weight: 400;
   color: var(--dark);
@@ -81,6 +81,18 @@
   opacity: 0;
   overflow: hidden;
   outline-color: var(--green-400);
+  border-width: 0;
+}
+
+
+.round-info-input::placeholder{
+  font-size: var(--sm-text);
+  color: var(--gray-400);
+}
+
+
+.rounded-info-form:hover, .rounded-info-form.active  {
+  border-width: 2px;
 }
 
 .rounded-info-form.active .round-info-input {
@@ -89,4 +101,5 @@
   padding: 0 0.5rem;
   overflow: unset;
   margin-right: 2rem;
+  border-width: 1px;
 }

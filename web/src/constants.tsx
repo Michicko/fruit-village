@@ -26,11 +26,17 @@ export interface ProductProps {
   measurement: string;
   slug: string;
   description?: string;
-  code: number
+  code: number;
 }
 
 export interface MultiRangeSliderPropsTypes {
   min: number;
   max: number;
   onChange: ({ min, max }: { min: number; max: number }) => void;
+}
+
+export interface CartItemProps {
+  id: string;
+  quantity: number;
+  product: ProductProps;
 }

@@ -99,7 +99,12 @@ export default function Cart({ showCart, setShowCart }: CartPropsTypes) {
             <div className={styles["cart-items"]}>
               {cartItems.map((item) => {
                 return (
-                  <CartItem item={item} key={item.id} removeItem={removeItem} />
+                  <CartItem
+                    item={item}
+                    key={item.id}
+                    showCounter={true}
+                    removeItem={removeItem}
+                  />
                 );
               })}
             </div>

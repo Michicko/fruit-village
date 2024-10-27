@@ -39,6 +39,7 @@ export default function RoundedInfoForm({ name }: RoundedInfoFormPropsTypes) {
         type="text"
         name={name}
         value={value}
+        placeholder="Enter allergy"
         onChange={onChange}
         onBlur={closeInput}
         className={styles["round-info-input"]}
