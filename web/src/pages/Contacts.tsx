@@ -2,13 +2,12 @@ import Phone from "../assets/icons/phone.svg?react";
 import PhoneFilled from "../assets/icons/phone-filled.svg?react";
 import Whatsapp from "../assets/icons/whatsapp.svg?react";
 import Address from "../assets/icons/address.svg?react";
+import PrimaryHeading from "../components/Typography/PrimaryHeading";
 
 export default function Contacts() {
   return (
     <main className="main">
-      <h1 className="primary-heading">
-        Contacts <span className="line"></span>
-      </h1>
+      <PrimaryHeading text="Contacts" />
       <section className="section section-about contact-cards">
         <div className="contacts-card nums">
           <div className="contact-info-desc">

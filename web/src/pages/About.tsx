@@ -5,6 +5,7 @@ import Stopwatch from "../assets/icons/stopwatch.svg?react";
 import Wallet from "../assets/icons/wallet.svg?react";
 import Userlove from "../assets/icons/user-love.svg?react";
 import PageCard from "../components/PageCard/PageCard";
+import PrimaryHeading from "../components/Typography/PrimaryHeading";
 
 export default function About() {
   const advantages = [
@@ -40,9 +41,7 @@ export default function About() {
 
   return (
     <main className="main">
-      <h1 className="primary-heading">
-        About <span className="line"></span>
-      </h1>
+      <PrimaryHeading text="About" />
       <section className="section section-page">
         <h2 className="sm-heading">About our company</h2>
         <p>

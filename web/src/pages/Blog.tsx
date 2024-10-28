@@ -2,6 +2,7 @@ import { useState } from "react";
 import Article from "../components/Article/Article";
 import { articles } from "../data";
 import Pagination from "../components/Pagination/Pagination";
+import PrimaryHeading from "../components/Typography/PrimaryHeading";
 
 export default function Blog() {
   const [selectedCategory, setSelectedCategory] = useState<string | undefined>(
@@ -33,9 +34,7 @@ export default function Blog() {
 
   return (
     <main className="main">
-      <h1 className="primary-heading">
-        Blog <span className="line"></span>
-      </h1>
+      <PrimaryHeading text="Blog" />
       <section className="section section-about blog">
         <div className="article-categories">
           {categories.map((category, i) => {

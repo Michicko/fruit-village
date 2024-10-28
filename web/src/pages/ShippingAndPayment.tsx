@@ -3,6 +3,7 @@ import { v4 as uuid } from "uuid";
 import Cash from "../assets/icons/cash.svg?react";
 import Creditcard from "../assets/icons/credit-card.svg?react";
 import PageCard from "../components/PageCard/PageCard";
+import PrimaryHeading from "../components/Typography/PrimaryHeading";
 
 export default function ShippingAndPayment() {
   const paymentsOptions = [
@@ -23,9 +24,7 @@ export default function ShippingAndPayment() {
   ];
   return (
     <main className="main">
-      <h1 className="primary-heading">
-        Shipping and payment <span className="line"></span>
-      </h1>
+      <PrimaryHeading text="Shipping and payment" />
       <section className="section section-page">
         <h2 className="sm-heading">Payment</h2>
         <p>
