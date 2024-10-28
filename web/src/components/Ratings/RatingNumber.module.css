@@ -1,0 +1,21 @@
+.rating-number {
+  font-weight: 600;
+  color: var(--dark);
+  font-family: var(--font);
+}
+
+.rating-number.sm {
+  font-size: var(--base-text);
+}
+
+.rating-number.md {
+  font-size: var(--md-text);
+}
+
+.rating-number.lg {
+  font-size: var(--lg-text);
+}
+
+.rating-number.xl {
+  font-size: var(--xl-text);
+}

@@ -16,6 +16,7 @@ import Orders from "./pages/Orders";
 import Waitlist from "./pages/Waitlist";
 import ViewedProducts from "./pages/ViewedProducts";
 import Bonuses from "./pages/Bonuses";
+import Product from "./pages/Product";
 
 function App() {
   return (
@@ -32,6 +33,7 @@ function App() {
               element={<ShippingAndPayment />}
             />
             <Route path="blog" element={<Blog />} />
+            <Route path="sale/:slug" element={<Product />} />
             <Route path="contacts" element={<Contacts />} />
           </Route>
 
