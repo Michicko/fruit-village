@@ -16,7 +16,7 @@ import Orders from "./pages/Orders";
 import Waitlist from "./pages/Waitlist";
 import ViewedProducts from "./pages/ViewedProducts";
 import Bonuses from "./pages/Bonuses";
-import Product from "./pages/Product";
+import Product from "./pages/Product/Product";
 
 function App() {
   return (
@@ -26,24 +26,28 @@ function App() {
           <Route index element={<Home />} />
           <Route path="sale" element={<Sale />} />
 
-          <Route element={<PageLayout />}>
+          <Route element={<PageLayout withRightSidebar={true} />}>
             <Route path="about" element={<About />} />
             <Route
               path="shipping-and-payment"
               element={<ShippingAndPayment />}
             />
             <Route path="blog" element={<Blog />} />
-            <Route path="sale/:slug" element={<Product />} />
+
             <Route path="contacts" element={<Contacts />} />
           </Route>
 
-          <Route element={<PageLayout noRightSidebar={true} />}>
+          <Route element={<PageLayout withLeftSidebar={true} />}>
             <Route path="account" element={<Account />} />
             <Route path="orders" element={<Orders />} />
             <Route path="wishlist" element={<Wishlist />} />
             <Route path="waitlist" element={<Waitlist />} />
             <Route path="bonuses" element={<Bonuses />} />
             <Route path="viewed-products" element={<ViewedProducts />} />
+          </Route>
+
+          <Route element={<PageLayout noSidebars={true} />}>
+            <Route path="sale/:slug" element={<Product />} />
           </Route>
 
           <Route path="login" element={<Login />} />

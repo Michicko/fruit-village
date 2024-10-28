@@ -6,19 +6,27 @@ import PersonalPageLayout from "./PersonalPageLayout";
 import PersonalPageProvider from "../../providers/PersonalPageProvider";
 
 interface PageLayoutPropsTypes {
-  noRightSidebar?: boolean;
+  noSidebars?: boolean;
+  withRightSidebar?: boolean;
+  withLeftSidebar?: boolean;
 }
 
-export default function PageLayout({ noRightSidebar }: PageLayoutPropsTypes) {
+export default function PageLayout({
+  noSidebars,
+  withRightSidebar,
+  withLeftSidebar,
+}: PageLayoutPropsTypes) {
   return (
     <div className={"page-layout"}>
       <PageHistory />
       <div
         className={`${styles.container} ${
-          noRightSidebar && styles["no--right-siderbar"]
-        } ${noRightSidebar && styles["with-ls"]}`}
+          noSidebars ? styles["no-siderbars"] : ""
+        } ${withLeftSidebar ? styles["with-ls"] : ""} ${
+          withRightSidebar ? styles["with-rs"] : ""
+        }`}
       >
-        {noRightSidebar ? (
+        {withLeftSidebar ? (
           <>
             <PersonalPageProvider>
               <PersonalPageLayout>
@@ -26,11 +34,13 @@ export default function PageLayout({ noRightSidebar }: PageLayoutPropsTypes) {
               </PersonalPageLayout>
             </PersonalPageProvider>
           </>
-        ) : (
+        ) : withRightSidebar ? (
           <>
             <Outlet />
             <RightSidebar />
           </>
+        ) : (
+          <Outlet />
         )}
       </div>
     </div>

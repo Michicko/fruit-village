@@ -7,7 +7,7 @@ export default function RightSidebar() {
   const { pathname: path, search } = useLocation();
   const pathname = path + search;
   return (
-    <aside className={styles["page-sidebar"]}>
+    <aside className={styles["right-sidebar"]}>
       {[
         ...links.filter((el) => el.name !== "Sale"),
         { id: uuid(), name: "Contacts", url: "/contacts" },

@@ -1,7 +1,5 @@
-import PersonalLinks from "./PersonalLinks";
-import Logout from "../../assets/icons/logout.svg?react";
-import styles from "./PageLayout.module.css";
 import usePersonalPageContext from "../../hooks/usePersonalPageContext";
+import LeftSidebar from "./LeftSidebar";
 
 interface PersonalPageLayoutPropsTypes {
   children: React.ReactNode;
@@ -17,13 +15,7 @@ export default function PersonalPageLayout({
       <h1 className="primary-heading">
         {pageTitle} <span className="line"></span>
       </h1>
-      <aside className={styles["left-sidebar"]}>
-        <PersonalLinks theme="dark" />
-        <button className={styles["logout-btn"]}>
-          <Logout className="icon green" />
-          Log out
-        </button>
-      </aside>
+      <LeftSidebar />
       <main className="main">{children}</main>
     </>
   );
