@@ -44,7 +44,7 @@ export default function Home() {
         <section className="section section-promo section-with-bg">
           <Promo />
         </section>
-        <section className="section section-popular">
+        <section className="section padded-x">
           <h3 className="section-heading">Popular products</h3>
           <CustomLink text="Show all products" url="/sale" color="dark" />
           <ProductSlider>
@@ -67,7 +67,7 @@ export default function Home() {
           </h2>
           <FruitBox fruitbox={fruitbox} showAll={true} />
         </section>
-        <section className="section section-popular">
+        <section className="section padded-x">
           <h3 className="section-heading">Promotional products</h3>
           <CustomLink text="Show all products" url="/sale" color="dark" />
           <ProductSlider>

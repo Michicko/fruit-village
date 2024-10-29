@@ -145,21 +145,6 @@ button {
   align-items: center;
 }
 
-/* input[type="email"] {
-  height: 3.5rem;
-  border: 1px solid var(--green-300);
-  outline: transparent;
-  border-radius: var(--sm-radius);
-  padding: 0 1rem;
-}
-
-input[type="email"]::placeholder,
-input[type="email"] {
-  font-size: var(--base-text);
-  font-weight: 400;
-  color: var(--dark);
-} */
-
 .email-input,
 .text-input,
 .text-area,
@@ -218,7 +203,7 @@ input[type="email"] {
   padding: 1rem 2rem;
 }
 
-.section.section-popular {
+/* .section.section-popular {
   position: relative;
   width: 100%;
   padding: 0 2rem;
@@ -243,7 +228,7 @@ input[type="email"] {
 
 .section.section-popular > *:nth-child(3) {
   grid-area: s;
-}
+} */
 
 .products {
   display: flex;
@@ -342,6 +327,10 @@ span.green {
 .section-subscription {
   padding: 0 2rem;
   min-height: 15rem;
+}
+
+.padded-x {
+  padding: 0 2rem;
 }
 
 p {
@@ -628,7 +617,7 @@ iframe {
     gap: 4rem;
   }
 
-  .section.section-popular {
+  /* .section.section-popular {
     grid-template-areas:
       "h l"
       "s s";
@@ -637,10 +626,10 @@ iframe {
   .section.section-popular > *:nth-child(2) {
     visibility: visible;
     display: flex;
-  }
+  } */
 
-  .section.section-popular,
-  .section-subscription {
+  /* .section.section-popular, */
+  .section-subscription, .padded-x {
     padding: 0 4rem;
   }
 
@@ -649,7 +638,7 @@ iframe {
   }
 
   .section-heading {
-    font-size: var(--xl-text);
+    font-size: calc(var(--lg-text) * 1.2);
   }
 }
 
@@ -670,8 +659,8 @@ iframe {
     padding: 5rem 10rem;
   }
 
-  .section.section-popular,
-  .section-subscription {
+  /* .section.section-popular, */
+  .section-subscription, .padded-x {
     padding: 0 10rem;
   }
 
@@ -680,7 +669,7 @@ iframe {
   }
 
   .section {
-    margin-bottom: 6rem;
+    margin-bottom: 5rem;
   }
 
   .facts {
@@ -695,17 +684,24 @@ iframe {
   .home-categories {
     padding: 2rem 14rem;
   }
-  .section.section-popular,
-  .section-subscription {
+  /* .section.section-popular, */
+  .section-subscription, .padded-x {
     padding: 0 14rem;
   }
+
   .page-layout {
     padding: 2rem 14rem;
   }
+
   .section.section-with-bg {
     padding: 5rem 14rem;
   }
+
   .secondary-heading {
     font-size: calc(var(--xxl-text) * 1.2);
   }
+}
+
+.section.no-mg {
+  margin-bottom: 0;
 }

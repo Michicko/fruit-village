@@ -1,5 +1,6 @@
 .main {
   display: grid;
+  align-items: flex-start;
   grid-template-columns: 1fr;
   gap: 3rem;
 }
@@ -61,19 +62,22 @@
 }
 
 .icon-box h3,
-.box-3 h3 {
+.box-3 h3,
+.counter-box h3 {
   font-size: calc(var(--base-text) * 1.2);
   font-weight: 600;
   color: var(--green-300);
 }
 
-.box-3 h3 {
+.box-3 h3,
+.counter-box h3 {
   color: var(--dark);
+  margin-bottom: 0.6rem;
 }
 
 .box-4 {
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-columns: 1fr;
   gap: 2rem;
 }
 
@@ -97,6 +101,10 @@
   margin-bottom: 2rem;
 }
 
+.counter-box p {
+  margin-top: 0.5rem;
+}
+
 @media only screen and (min-width: 375px) {
   .box-1 {
     grid-template-columns: repeat(2, 1fr);
@@ -116,5 +124,72 @@
   .box-1 > *:nth-child(3) {
     grid-area: c;
     justify-content: flex-end;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .main {
+
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+    grid-template-areas:
+      "slider name"
+      "slider taste"
+      "slider counter"
+      "slider info"
+      "slider price"
+      "about-rev about-rev"
+      "rec rec"
+      "pro pro";
+  }
+
+  .main > *:nth-child(1) {
+    grid-area: name;
+  }
+  .main > *:nth-child(2) {
+    grid-area: slider;
+  }
+  .main > *:nth-child(3) {
+    grid-area: price;
+  }
+  .main > *:nth-child(4) {
+    grid-area: taste;
+  }
+  .main > *:nth-child(5) {
+    grid-area: counter;
+  }
+  .main > *:nth-child(6) {
+    grid-area: info;
+  }
+  .main > *:nth-child(7) {
+    grid-area: about-rev;
+  }
+  .main > *:nth-child(8) {
+    grid-area: rec;
+  }
+  .main > *:nth-child(9) {
+    grid-area: pro;
+  }
+
+  .box-2 {
+    grid-template-columns: 2fr 1fr;
+    grid-template-areas:
+      "p p"
+      "b f";
+  }
+
+  .main h1 {
+    font-size: var(--lg-text);
+  }
+}
+
+@media only screen and (min-width: 1024px) {
+  .main h1 {
+    font-size: calc(var(--lg-text) * 1.2);
+  }
+
+  .main {
+    column-gap: 4rem;
+    row-gap: 2rem;
   }
 }

@@ -10,9 +10,15 @@ import { useState } from "react";
 import ProductAbout from "../../components/Product/ProductAbout";
 import ProductReviews from "../../components/Product/ProductReviews";
 import ProductSectionSelector from "../../components/ProductSectionSelector/ProductSectionSelector";
+import Counter from "../../components/Counter/Counter";
+import ProductComponent from "../../components/Product/Product";
+import CustomLink from "../../components/CustomLink/CustomLink";
+import ProductSlider from "../../components/Carousel/ProductSlider";
+import { products } from "../../data";
 
 export default function Product() {
   const [currentSectionIndex, setCurrentSectionIndex] = useState(0);
+  const [count, setCount] = useState(1);
 
   const switchSection = (index: number) => {
     setCurrentSectionIndex(index);
@@ -90,6 +96,12 @@ export default function Product() {
         <p>{product.tasteNotes}</p>
       </div>
 
+      <div className={styles["counter-box"]}>
+        <h3>Quantity</h3>
+        <Counter count={count} setCount={setCount} total={product.stock} />
+        <p>1 piece ~ 400 grams</p>
+      </div>
+
       <div className={styles["box-4"]}>
         <div className={styles.info}>
           <div className={styles["icon-box"]}>
@@ -140,9 +152,48 @@ export default function Product() {
         {currentSectionIndex === 0 ? (
           <ProductAbout sections={product.about} />
         ) : (
-          <ProductReviews ratingsAverage={product.ratingsAverage} reviews={12} />
+          <ProductReviews
+            ratingsAverage={product.ratingsAverage}
+            reviews={12}
+          />
         )}
       </div>
+      <section className="section no-mg">
+        <h3 className="section-heading">Recommended products</h3>
+        <CustomLink text="Show all products" url="/sale" color="dark" />
+        <ProductSlider>
+          <div className="products">
+            {products.map((product) => {
+              return (
+                <ProductComponent
+                  key={product.id}
+                  product={product}
+                  showDeleteBtn={false}
+                />
+              );
+            })}
+          </div>
+        </ProductSlider>
+      </section>
+      <section className="section no-mg">
+        <h3 className="section-heading">Promotional products</h3>
+        <CustomLink text="Show all products" url="/sale" color="dark" />
+        <ProductSlider>
+          <div className="products">
+            {products
+              .filter((el) => el.discount > 0)
+              .map((product) => {
+                return (
+                  <ProductComponent
+                    key={product.id}
+                    product={product}
+                    showDeleteBtn={false}
+                  />
+                );
+              })}
+          </div>
+        </ProductSlider>
+      </section>
     </main>
   );
 }
