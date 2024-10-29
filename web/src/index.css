@@ -103,28 +103,8 @@ button {
   fill: var(--light);
 }
 
-.icon.path-filled.green path {
-  fill: var(--green-300);
-}
-.icon.path-filled.red path {
-  fill: var(--red-400);
-}
-
-.icon.path-filled.dark path {
-  fill: var(--dark);
-}
-
 .icon.stroke path {
   stroke: var(--light);
-}
-
-.icon.stroke.dark path {
-  stroke: var(--dark);
-}
-
-.icon.stroke.green path {
-  stroke: var(--green-300);
-  fill: none;
 }
 
 .light {
@@ -133,6 +113,32 @@ button {
 
 .icon.green {
   fill: var(--green-300);
+}
+
+.icon.path-filled.green path {
+  fill: var(--green-300) !important;
+}
+
+.icon.path-filled.red path {
+  fill: var(--red-400) !important;
+}
+
+.icon.path-filled.dark path {
+  fill: var(--dark) !important;
+}
+
+.icon.stroke.dark path {
+  stroke: var(--dark) !important;
+}
+
+.icon.stroke.green path,
+.icon.green.poly polyline {
+  stroke: var(--green-300) !important;
+  fill: none;
+}
+
+.icon.stroke-filled path{
+  stroke: var(--red-400);
 }
 
 .icon-box {
@@ -202,33 +208,6 @@ button {
   gap: 1rem;
   padding: 1rem 2rem;
 }
-
-/* .section.section-popular {
-  position: relative;
-  width: 100%;
-  padding: 0 2rem;
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  grid-template-areas:
-    "h h"
-    "l l"
-    "s s";
-}
-
-.section.section-popular > *:nth-child(1) {
-  grid-area: h;
-}
-
-.section.section-popular > *:nth-child(2) {
-  grid-area: l;
-  justify-self: flex-end;
-  visibility: hidden;
-  display: none;
-}
-
-.section.section-popular > *:nth-child(3) {
-  grid-area: s;
-} */
 
 .products {
   display: flex;
@@ -553,6 +532,18 @@ iframe {
   align-items: center;
 }
 
+.space-between{
+  justify-content: space-between;
+}
+
+.b{
+  font-weight: 500;
+}
+
+.full{
+  width: 100%;
+}
+
 @media only screen and (min-width: 320px) {
   .articles {
     grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
@@ -629,7 +620,8 @@ iframe {
   } */
 
   /* .section.section-popular, */
-  .section-subscription, .padded-x {
+  .section-subscription,
+  .padded-x {
     padding: 0 4rem;
   }
 
@@ -660,7 +652,8 @@ iframe {
   }
 
   /* .section.section-popular, */
-  .section-subscription, .padded-x {
+  .section-subscription,
+  .padded-x {
     padding: 0 10rem;
   }
 
@@ -685,7 +678,8 @@ iframe {
     padding: 2rem 14rem;
   }
   /* .section.section-popular, */
-  .section-subscription, .padded-x {
+  .section-subscription,
+  .padded-x {
     padding: 0 14rem;
   }
 

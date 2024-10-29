@@ -1,0 +1,9 @@
+.likes-counter {
+  display: flex;
+  align-items: center;
+  gap: .2rem;
+}
+
+.likes-counter p{
+    font-weight: 600;
+}

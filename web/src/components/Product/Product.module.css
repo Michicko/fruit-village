@@ -123,11 +123,26 @@
   flex-wrap: wrap;
 }
 
+.more-btn{
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  font-size: calc(var(--base-text) * 1.2);
+  font-weight: 500;
+}
+
 .reviews-form {
   display: grid;
   grid-template-columns: 1fr;
   gap: 1rem;
   max-width: 74rem;
+}
+
+.reviews {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+  margin-bottom: 2rem;
 }
 
 @media only screen and (min-width: 576px) {

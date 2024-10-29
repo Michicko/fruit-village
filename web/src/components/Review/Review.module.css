@@ -1,0 +1,63 @@
+.review {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+}
+
+.answer-btn {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  color: var(--green-300);
+  font-size: var(--sm-text);
+  font-weight: 500;
+  text-transform: capitalize;
+  cursor: pointer;
+}
+
+.counters {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.author {
+  font-size: calc(var(--base-text) * 1.2);
+  font-weight: 600;
+  color: var(--dark);
+}
+
+.btns {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.review-answer-form {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+  max-width: 64rem;
+}
+
+.answer-block {
+  padding: 1rem;
+  background: #f4f4f4;
+  border-radius: var(--md-radius);
+  margin: 1.5rem 0;
+}
+
+.answer-block p {
+  margin-bottom: 1rem;
+}
+
+.answer-block button:nth-child(1) {
+  color: var(--green-300);
+  cursor: pointer;
+}
+
+.answer-block button:nth-child(2) {
+  color: var(--red-400);
+  cursor: pointer;
+}

@@ -586,3 +586,28 @@ export const viewedProducts = [
     code: 104,
   },
 ];
+
+export const reviews = [
+  {
+    id: "hjhjj",
+    author: "Anette Black",
+    date: "2024-05-02",
+    rating: 4.3,
+    review:
+      "Very juicy i can't compare the taste to anything. Ate ate sweetish. Many people say the fruit is tastless. I do not think so.",
+    likes: 0,
+    dislikes: 0,
+    answer: "Thank you for patronising us.",
+  },
+  {
+    id: "hjscc",
+    author: "Anette Black",
+    date: "2024-05-02",
+    rating: 4.3,
+    review:
+      "Very juicy i can't compare the taste to anything. Ate ate sweetish. Many people say the fruit is tastless. I do not think so.",
+    likes: 0,
+    dislikes: 0,
+    answer: "",
+  },
+];
