@@ -3,7 +3,7 @@ import styles from "./Price.module.css";
 interface PricePropsTypes {
   discount?: number;
   price: number;
-  size: string;
+  size: "sm" | "md" | "lg" | "xl";
 }
 
 export default function Price({ discount, price, size }: PricePropsTypes) {

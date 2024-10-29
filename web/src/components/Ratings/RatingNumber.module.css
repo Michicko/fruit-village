@@ -2,6 +2,7 @@
   font-weight: 600;
   color: var(--dark);
   font-family: var(--font);
+  line-height: 1;
 }
 
 .rating-number.sm {
@@ -9,13 +10,13 @@
 }
 
 .rating-number.md {
-  font-size: var(--md-text);
+  font-size: calc(var(--md-text) - 0.4rem);
 }
 
 .rating-number.lg {
-  font-size: var(--lg-text);
+  font-size: calc(var(--lg-text) - 0.4rem);
 }
 
 .rating-number.xl {
-  font-size: var(--xl-text);
+  font-size: calc(var(--xl-text) - 0.4rem);
 }

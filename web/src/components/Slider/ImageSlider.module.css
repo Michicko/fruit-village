@@ -1,0 +1,45 @@
+.slider {
+}
+
+.view {
+  height: auto;
+  max-width: 100%;
+  position: relative;
+  margin-bottom: 1rem;
+}
+
+.view-img {
+  max-width: 100%;
+  height: auto;
+  max-height: 50rem;
+}
+
+.slide {
+  height: 6rem;
+  width: 6rem;
+  flex-shrink: 0;
+  transition: all 0.15s ease;
+}
+
+.slide.current,
+.slide:hover {
+  border: 2px solid var(--green-300);
+  border-radius: var(--sm-radius);
+}
+
+.slides-box {
+  position: relative;
+  width: 100%;
+  overflow-x: scroll;
+  scrollbar-width: thin;
+  height: 8rem;
+}
+
+.slides {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 3rem;
+  position: absolute;
+  left: 0;
+}

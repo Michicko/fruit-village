@@ -40,3 +40,8 @@ export interface CartItemProps {
   quantity: number;
   product: ProductProps;
 }
+
+export interface RatingsPropsTypes {
+  value: number;
+  size: "sm" | "md" | "lg" | "xl";
+}

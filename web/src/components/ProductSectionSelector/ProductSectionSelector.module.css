@@ -1,0 +1,26 @@
+.selector {
+  min-width: 6rem;
+  padding: 0 1rem;
+  font-size: calc(var(--base-text) * 1.2);
+  font-weight: 500;
+  color: var(--dark);
+  cursor: pointer;
+  position: relative;
+}
+
+.selector::before {
+  position: absolute;
+  bottom: -0.3rem;
+  left: 0;
+  width: 100%;
+  content: "";
+  height: 2px;
+  width: 100%;
+  background: var(--green-300);
+  display: none;
+}
+
+.selector:hover::before,
+.selector.current::before {
+  display: block;
+}

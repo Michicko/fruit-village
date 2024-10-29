@@ -6,9 +6,21 @@
   text-transform: capitalize;
 }
 
-/* .price.no-discount{
+.price.sm {
+  font-size: var(--base-text);
+}
 
-} */
+.price.md {
+  font-size: var(--md-text);
+}
+
+.price.lg {
+  font-size: var(--lg-text);
+}
+
+.price.xl {
+  font-size: var(--xl-text);
+}
 
 .discount-prices {
   display: flex;

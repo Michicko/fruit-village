@@ -1,0 +1,27 @@
+.favorite-icon.outline path,
+.favorite-icon.filled path {
+  transition: all 0.3s ease;
+}
+
+.favorite-label {
+  position: relative;
+}
+
+.favorite-label:hover .favorite-icon.filled path,
+.favorite-label:hover .favorite-icon.outline path {
+  fill: var(--red-400);
+}
+
+.favorite-icon.outline path {
+  stroke: var(--red-400);
+}
+
+.favorite-icon.filled path {
+  fill: var(--red-400);
+  stroke: var(--red-400);
+}
+
+.checky {
+    display: none;
+  }
+  
