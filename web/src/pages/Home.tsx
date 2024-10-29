@@ -1,11 +1,11 @@
 import Carousel from "../components/Carousel/Carousel";
 import ProductSlider from "../components/Carousel/ProductSlider";
 import Category from "../components/Category/Category";
-import CustomLink from "../components/CustomLink/CustomLink";
 import Fact from "../components/Fact/Fact";
 import FruitBox from "../components/FruitBox/FruitBox";
 import Product from "../components/Product/Product";
 import Promo from "../components/Promo/Promo";
+import SectionTop from "../components/SectionTop/SectionTop";
 import Subscription from "../components/Subscription/Subscription";
 import { catalogue, facts, fruitbox, products } from "../data";
 import { v4 as uuid } from "uuid";
@@ -45,8 +45,7 @@ export default function Home() {
           <Promo />
         </section>
         <section className="section padded-x">
-          <h3 className="section-heading">Popular products</h3>
-          <CustomLink text="Show all products" url="/sale" color="dark" />
+          <SectionTop title="Popular products" />
           <ProductSlider>
             <div className="products">
               {products.map((product) => {
@@ -68,8 +67,7 @@ export default function Home() {
           <FruitBox fruitbox={fruitbox} showAll={true} />
         </section>
         <section className="section padded-x">
-          <h3 className="section-heading">Promotional products</h3>
-          <CustomLink text="Show all products" url="/sale" color="dark" />
+          <SectionTop title="Promotional products" />
           <ProductSlider>
             <div className="products">
               {products

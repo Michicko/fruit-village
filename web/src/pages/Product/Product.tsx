@@ -12,9 +12,9 @@ import ProductReviews from "../../components/Product/ProductReviews";
 import ProductSectionSelector from "../../components/ProductSectionSelector/ProductSectionSelector";
 import Counter from "../../components/Counter/Counter";
 import ProductComponent from "../../components/Product/Product";
-import CustomLink from "../../components/CustomLink/CustomLink";
 import ProductSlider from "../../components/Carousel/ProductSlider";
 import { products } from "../../data";
+import SectionTop from "../../components/SectionTop/SectionTop";
 
 export default function Product() {
   const [currentSectionIndex, setCurrentSectionIndex] = useState(0);
@@ -159,8 +159,7 @@ export default function Product() {
         )}
       </div>
       <section className="section no-mg">
-        <h3 className="section-heading">Recommended products</h3>
-        <CustomLink text="Show all products" url="/sale" color="dark" />
+        <SectionTop title="Recommended products" />
         <ProductSlider>
           <div className="products">
             {products.map((product) => {
@@ -176,8 +175,7 @@ export default function Product() {
         </ProductSlider>
       </section>
       <section className="section no-mg">
-        <h3 className="section-heading">Promotional products</h3>
-        <CustomLink text="Show all products" url="/sale" color="dark" />
+        <SectionTop title="Promotional products" />
         <ProductSlider>
           <div className="products">
             {products
