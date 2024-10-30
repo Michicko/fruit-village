@@ -1,8 +1,8 @@
 import styles from "./SectionTop.module.css";
 import CustomLink from "../CustomLink/CustomLink";
 
-interface SectionTopPropsTypes{
-    title: string;
+interface SectionTopPropsTypes {
+  title: string;
 }
 
 export default function SectionTop({ title }: SectionTopPropsTypes) {

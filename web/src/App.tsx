@@ -9,7 +9,7 @@ import Account from "./pages/Account";
 import Wishlist from "./pages/Wishlist";
 import PageLayout from "./components/Layouts/PageLayout";
 import Contacts from "./pages/Contacts";
-import NotFound from "./pages/NotFound";
+import NotFound from "./pages/NotFound/NotFound";
 import Login from "./pages/Login";
 import Signup from "./pages/Signup";
 import Orders from "./pages/Orders";

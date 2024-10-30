@@ -3,6 +3,7 @@ import usePersonalPageContext from "../../hooks/usePersonalPageContext";
 import { ProductProps } from "../../constants";
 import CircleDot from "../../assets/icons/circle-dot.svg?react";
 import Product from "../Product/Product";
+import EmptyList from "./EmptyList";
 
 interface PagePropsTypes {
   list: ProductProps[];
@@ -36,26 +37,32 @@ export default function Page({ list, title }: PagePropsTypes) {
   return (
     <>
       <section className="section section-about">
-        <div className="page-btns">
-          <button className="page-btn add" onClick={addItemsToCart}>
-            Add all to Cart
-          </button>
-          <button className="page-btn del" onClick={removeItems}>
-            Remove all <CircleDot className="icon sm path-filled red" />
-          </button>
-        </div>
-        <div className="list">
-          {stateList.map((item) => {
-            return (
-              <Product
-                product={item}
-                showDeleteBtn={true}
-                key={item.id}
-                deleteWish={deleteItemFromList}
-              />
-            );
-          })}
-        </div>
+        {stateList && stateList.length > 0 ? (
+          <>
+            <div className="page-btns">
+              <button className="page-btn add" onClick={addItemsToCart}>
+                Add all to Cart
+              </button>
+              <button className="page-btn del" onClick={removeItems}>
+                Remove all <CircleDot className="icon sm path-filled red" />
+              </button>
+            </div>
+            <div className="list">
+              {stateList.map((item) => {
+                return (
+                  <Product
+                    product={item}
+                    showDeleteBtn={true}
+                    key={item.id}
+                    deleteWish={deleteItemFromList}
+                  />
+                );
+              })}
+            </div>
+          </>
+        ) : (
+          <EmptyList title={title} />
+        )}
       </section>
     </>
   );

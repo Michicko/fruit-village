@@ -512,6 +512,10 @@ iframe {
   gap: 2rem;
 }
 
+.page-btns{
+  margin-bottom: 1.5rem;
+}
+
 .page-btn {
   gap: 1rem;
   cursor: pointer;
