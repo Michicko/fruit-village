@@ -22,7 +22,7 @@
   height: calc(100vh - 7rem);
   overflow-y: scroll;
   width: 100%;
-  padding: 0 2rem;
+  padding: 2rem;
   scrollbar-width: none;
   outline: transparent;
   display: flex;
@@ -33,6 +33,14 @@
 .cart-items {
   display: grid;
   grid-template-columns: 1fr;
+}
+
+.cont-btn{
+  cursor: pointer;
+}
+
+.cont-btn:hover{
+  color: var(--green-300);
 }
 
 .cart-item {
@@ -304,8 +312,8 @@
   }
 
   .main {
-    height: calc(80vh - 7rem);
-    padding: 0 3rem;
+    height: calc(85vh - 5rem);
+    padding: 2rem 3rem;
     padding-bottom: 3rem;
   }
 

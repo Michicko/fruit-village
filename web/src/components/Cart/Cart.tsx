@@ -133,7 +133,10 @@ export default function Cart({ showCart, setShowCart }: CartPropsTypes) {
             </div>
           </div>
           <div className={styles.footer}>
-            <button onClick={() => setShowCart(false)}>
+            <button
+              onClick={() => setShowCart(false)}
+              className={styles["cont-btn"]}
+            >
               Continue shopping
             </button>
             <div className={styles["checkout-box"]}>
@@ -146,6 +149,7 @@ export default function Cart({ showCart, setShowCart }: CartPropsTypes) {
                 hoveredBg={"#4c6fc8"}
                 hoveredColor={"#fcfff9"}
                 link="/checkout"
+                onClickHandler={() => setShowCart(false)}
               />
             </div>
           </div>

@@ -17,6 +17,7 @@ import Waitlist from "./pages/Waitlist";
 import ViewedProducts from "./pages/ViewedProducts";
 import Bonuses from "./pages/Bonuses";
 import Product from "./pages/Product/Product";
+import Checkout from "./pages/Checkout/Checkout";
 
 function App() {
   return (
@@ -49,7 +50,8 @@ function App() {
           <Route element={<PageLayout noSidebars={true} />}>
             <Route path="sale/:slug" element={<Product />} />
           </Route>
-
+          
+          <Route path="checkout" element={<Checkout />} />
           <Route path="login" element={<Login />} />
           <Route path="signup" element={<Signup />} />
           <Route path="*" element={<NotFound />} />

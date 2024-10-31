@@ -1,4 +1,4 @@
-import { MouseEventHandler, useCallback, useEffect, useRef } from "react";
+import { useCallback, useEffect, useRef } from "react";
 import styles from "./Button.module.css";
 import { Link } from "react-router-dom";
 
@@ -10,7 +10,7 @@ interface ButtonProps {
   hoveredColor?: string;
   type?: "reset" | "button" | "submit";
   link?: string;
-  onClickHandler?: MouseEventHandler<HTMLButtonElement>;
+  onClickHandler?: () => void;
 }
 
 export default function Button({
@@ -78,7 +78,13 @@ export default function Button({
 
   if (link) {
     return (
-      <Link to={link} style={buttonStyles} className={styles.btn} ref={linkRef}>
+      <Link
+        to={link}
+        style={buttonStyles}
+        className={styles.btn}
+        ref={linkRef}
+        onClick={onClickHandler}
+      >
         {text}
       </Link>
     );
@@ -88,9 +94,9 @@ export default function Button({
     <button
       style={buttonStyles}
       className={styles.btn}
-      onClick={onClickHandler}
       type={type || "button"}
       ref={btnRef}
+      onClick={onClickHandler}
     >
       {text}
     </button>

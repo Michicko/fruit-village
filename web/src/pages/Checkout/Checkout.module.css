@@ -1,0 +1,19 @@
+.checkout {
+  padding-top: 2rem !important;
+  padding-bottom: 2rem !important;
+}
+
+.checkout h1 {
+  font-size: var(--lg-text);
+  font-weight: 500;
+  color: var(--dark);
+  margin-bottom: 2rem;
+}
+
+@media only screen and (min-width: 768px) {
+  .checkout-content {
+    display: grid;
+    grid-template-columns: 6fr 2fr;
+    gap: 2rem;
+  }
+}
