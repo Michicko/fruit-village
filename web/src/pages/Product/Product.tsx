@@ -9,7 +9,7 @@ import Wallet from "../../assets/icons/wallet.svg?react";
 import { useState } from "react";
 import ProductAbout from "../../components/Product/ProductAbout";
 import ProductReviews from "../../components/Product/ProductReviews";
-import ProductSectionSelector from "../../components/ProductSectionSelector/ProductSectionSelector";
+import ProductSectionSelector from "../../components/SectionSelector/SectionSelector";
 import Counter from "../../components/Counter/Counter";
 import ProductComponent from "../../components/Product/Product";
 import ProductSlider from "../../components/Carousel/ProductSlider";

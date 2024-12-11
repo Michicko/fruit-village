@@ -1,0 +1,88 @@
+.checkout-info {
+}
+
+.user-form {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+}
+
+.selectors {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 3rem;
+}
+
+.checkout-info-top {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 2rem;
+  padding: 0 1rem;
+}
+
+.checkout-info-top h3 {
+  font-size: var(--lg-text);
+  font-weight: 500;
+  color: var(--dark);
+}
+
+.checkout-info-top .icon polyline {
+  stroke: var(--light) !important;
+}
+
+.checkout-info-main {
+  block-size: 0;
+  overflow: hidden;
+}
+
+.checkout-info-main[open] {
+  block-size: auto;
+  padding: 1rem;
+}
+
+.payment {
+  display: grid;
+  grid-template-columns: 4fr auto;
+  gap: 2rem;
+  grid-auto-rows: 1fr;
+}
+
+.merchants {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+}
+
+.merchant {
+  height: 3.5rem;
+  border-radius: var(--sm-radius);
+  background: #000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  min-width: 5rem;
+  padding: 0 3rem;
+  color: var(--light);
+  font-weight: 400;
+  font-size: var(--base-text);
+  gap: 0.5rem;
+  font-style: italic;
+  cursor: pointer;
+}
+
+.card-info-box {
+  height: 100%;
+  width: 100%;
+  box-shadow: 0 0 2px rgba(0, 0, 0, 0.5);
+  background: var(--light);
+  border-radius: var(--sm-radius);
+}
+
+@media only screen and (min-width: 375px) {
+  .selectors {
+    gap: 2rem;
+  }
+}

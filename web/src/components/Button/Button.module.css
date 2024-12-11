@@ -19,3 +19,7 @@
 .btn:hover {
   font-weight: 500;
 }
+
+.btn:disabled {
+  background: var(--gray-400) !important;
+}

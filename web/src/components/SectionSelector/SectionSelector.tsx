@@ -1,4 +1,4 @@
-import styles from "./ProductSectionSelector.module.css";
+import styles from "./SectionSelector.module.css";
 
 interface ProductSectionSelectorPropsTypes {
   text: string;
@@ -7,7 +7,7 @@ interface ProductSectionSelectorPropsTypes {
   handleOnClick: (arg: number) => void;
 }
 
-export default function ProductSectionSelector({
+export default function SectionSelector({
   text,
   currentIndex,
   index,

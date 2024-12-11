@@ -1,0 +1,73 @@
+.fieldset {
+  position: relative;
+  height: 4rem;
+  width: 100%;
+  border-radius: var(--sm-radius);
+  border: 1px solid var(--gray);
+}
+
+.fieldset input {
+  height: 100%;
+  width: 100%;
+  border: none;
+  padding: 0 1rem;
+  position: relative;
+  z-index: 5;
+  background: transparent;
+  outline: transparent;
+  border-radius: var(--sm-radius);
+}
+
+fieldset input:-webkit-autofill,
+fieldset input:-webkit-autofill:hover,
+fieldset input:-webkit-autofill:focus,
+fieldset input:-webkit-autofill:active {
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: var(--dark);
+  transition: background-color 5000s ease-in-out 0s;
+  box-shadow: inset 0 0 20px 20px var(--light);
+}
+
+.fieldset legend {
+  font-size: var(--base-text);
+  font-weight: 400;
+  line-height: 1;
+  color: var(--dark);
+  position: absolute;
+  transform: translateY(1.3rem);
+  left: 1rem;
+  z-index: 3;
+  transition: transform 0.4s ease;
+}
+
+.fieldset:has(input:focus) legend,
+.fieldset:has(input:not(:placeholder-shown)) legend {
+  transform: translateY(-0.75rem);
+  z-index: 6;
+  background: var(--light);
+  padding: 0 0.5rem;
+}
+
+.fieldset:has(input:focus),
+.fieldset:has(input:not(:placeholder-shown)) {
+  border-color: var(--green-300);
+}
+
+.fieldset:has(input:invalid) {
+  border-color: var(--red-400);
+}
+
+.icon {
+  position: absolute;
+  top: 50%;
+  right: 1rem;
+  transform: translateY(-50%);
+}
+
+.icon polyline {
+  stroke: var(--light) !important;
+}
+
+.fieldset.filled:has(input:valid) .icon polyline{
+  stroke: var(--green-300) !important;
+}

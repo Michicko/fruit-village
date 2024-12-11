@@ -1,32 +1,39 @@
-import { getDataSource } from "./config/data-source";
-import { Product } from "./entities/Product";
+import express from "express";
+import "dotenv/config";
+import logger from "morgan";
+import productRouter from "./routes/productRouter.js";
+import globalErrorHandler from "./controllers/errorController.js";
 
-const init = async () => {
-  const AppDataSource = await getDataSource();
+const app = express();
 
-  const productRep = AppDataSource.getRepository(Product);
+// middlewares
+if (process.env.NODE_ENV === "development") {
+  app.use(logger("dev"));
+}
 
-  const product = new Product();
-  product.name = "pineapple";
-  product.price = 5;
-  product.stock = 5;
+app.use((req, res, next) => {
+  res.requestedTime = new Date().toISOString();
+  next();
+});
 
-  await productRep.save(product);
+// parse request bodies (req.body)
+app.use(express.urlencoded({ extended: true }));
+app.use(express.json());
 
-  const products = await productRep.find();
-  const firstProd = await productRep.findOneBy({ id: 1 });
+// Routes
+app.get("/", (req, res) => {
+  console.log("requested time: ", res.requestedTime);
+  res.end("<h1>Welcome to fruit village</h1>");
+});
 
-  console.log(products, firstProd);
+// API Routes
+app.use("/api/v1/products", productRouter);
 
-  const pineapple = await productRep.findOneBy({
-    name: "pineapple",
-  });
+app.use(globalErrorHandler);
 
-  console.log(pineapple);
-
-  // if (pineapple) {
-  //   await productRep.remove(pineapple);
-  // }
-};
-
-init();
+// port
+const PORT = process.env.PORT || 8080;
+// Server
+const server = app.listen(PORT, () => {
+  console.log(`Server listening on port ${PORT}`);
+});

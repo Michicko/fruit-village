@@ -10,6 +10,7 @@ interface ButtonProps {
   hoveredColor?: string;
   type?: "reset" | "button" | "submit";
   link?: string;
+  disabled?: boolean;
   onClickHandler?: () => void;
 }
 
@@ -20,6 +21,7 @@ export default function Button({
   hoveredBg,
   hoveredColor,
   type,
+  disabled,
   onClickHandler,
   link,
 }: ButtonProps) {
@@ -96,6 +98,7 @@ export default function Button({
       className={styles.btn}
       type={type || "button"}
       ref={btnRef}
+      disabled={disabled}
       onClick={onClickHandler}
     >
       {text}
