@@ -1,68 +1,50 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap");
+
+*,
+*::before,
+*::after {
+  padding: 0;
+  margin: 0;
+  box-sizing: inherit;
+}
+
 :root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
-
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
-
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  --light: #fcfff9;
+  --dark: #2c302d;
+  --gray-100: #bbbbbb;
+  --gray-200: #979797;
+  --green-100: #c6eeca;
+  --green-200: #42c84f;
+  --green-300: #37900d;
+  --green-400: #31870b;
+  --green-500: #386d15;
+  --green-600: #043313;
+  --blue-100: #cfebfb;
+  --blue-400: #4c6fc8;
+  --blue-500: #0d6494;
+  --red-100: #f9eae3;
+  --red-300: #d97442;
+  --red-400: #e00000;
+  --yellow-400: #f8fd00;
+  --yellow-600: #d3d700;
+  --xs-text: 1rem;
+  --sm-text: 1.2rem;
+  --base-text: 1.5rem;
+  --md-text: 1.8rem;
+  --lg-text: 2.4rem;
+  --xl-text: 3.6rem;
+  --xxl-text: 4.8rem;
+  --xxxl-text: 6.4rem;
+  --sm-radius: 0.5rem;
+  --md-radius: 0.1rem;
+  --font: "Nunito";
 }
 
-a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
-}
-a:hover {
-  color: #535bf2;
+html {
+  box-sizing: border-box;
+  font-size: 10px;
 }
 
 body {
-  margin: 0;
-  display: flex;
-  place-items: center;
-  min-width: 320px;
   min-height: 100vh;
-}
-
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
-}
-
-button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
-  cursor: pointer;
-  transition: border-color 0.25s;
-}
-button:hover {
-  border-color: #646cff;
-}
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
-}
-
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
-  }
-  a:hover {
-    color: #747bff;
-  }
-  button {
-    background-color: #f9f9f9;
-  }
 }
