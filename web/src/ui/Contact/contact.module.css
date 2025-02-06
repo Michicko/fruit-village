@@ -1,0 +1,16 @@
+.phone {
+  text-decoration: none;
+}
+.phone span {
+  font-size: var(--sm-text);
+  font-weight: 500;
+  color: var(--light);
+  white-space: nowrap;
+  overflow: hidden;
+  transition: var(--icon-transition);
+}
+
+.phone:hover svg {
+  transform: rotate(var(--angle-sm));
+  transform-origin: center;
+}

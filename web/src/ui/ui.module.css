@@ -1,0 +1,96 @@
+/* logo */
+.logo {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  gap: var(--sm-gap);
+}
+
+.logo span {
+  display: block;
+  font-family: var(--font);
+  font-size: var(--sm-text);
+  font-weight: 700;
+  margin-top: calc(var(--xs-gap) / 2);
+  color: var(--green-300);
+}
+
+.logo img {
+  height: auto;
+  width: 2.5rem;
+}
+
+.logo.hide-text-mobile span {
+  display: none;
+}
+
+/* capsule */
+
+.capsule {
+  display: flex;
+  gap: var(--sm-gap);
+  padding: 0.5rem 1.5rem 0.5rem 2.5rem;
+  background: var(--light);
+  border-top-right-radius: 25rem;
+  border-bottom-right-radius: 25rem;
+}
+
+/* hamburger */
+.hamburger {
+  background: transparent;
+  outline: transparent;
+  border: none;
+  height: 3rem;
+  width: 3rem;
+}
+
+/* notif */
+.notif {
+  display: block;
+  position: relative;
+  margin-top: var(--xs-gap);
+}
+
+.notif span {
+  position: absolute;
+  top: -0.5rem;
+  right: -0.5rem;
+  background: var(--red-400);
+  border-radius: 50%;
+  font-size: var(--xs-text);
+  line-height: 1;
+  color: var(--light);
+  height: 1.5rem;
+  width: 1.5rem;
+  font-weight: 500;
+}
+
+.hide-on-mobile {
+  display: none;
+}
+
+@media only screen and (min-width: 36rem) {
+  .capsule {
+    padding: 0.5rem 1.5rem 0.5rem 4rem;
+  }
+}
+
+@media only screen and (min-width: 48rem) {
+  .logo.hide-text-mobile span {
+    display: block;
+  }
+
+  .hide-on-mobile {
+    display: block;
+  }
+
+  .capsule {
+    padding: 0.5rem 2rem 0.5rem 8rem;
+  }
+}
+
+@media only screen and (min-width: 75rem) {
+  .capsule {
+    padding: 0.5rem 2rem 0.5rem 12rem;
+  }
+}

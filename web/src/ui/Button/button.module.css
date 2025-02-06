@@ -1,0 +1,27 @@
+.btn {
+  gap: var(--sm-gap);
+  height: 3.5rem;
+  padding: 0 1rem;
+  min-width: 13rem;
+  border-radius: var(--xs-radius);
+  color: var(--green-400);
+  font-weight: 400;
+  cursor: pointer;
+}
+
+.btn.with-icon:hover svg {
+  transform: rotate(var(--angle-sm));
+  transform-origin: center;
+}
+
+.btn.primary {
+}
+
+.btn.light {
+  background: var(--light);
+}
+
+.btn.with-icon {
+  justify-content: flex-start;
+  transition: var(--icon-transition);
+}
