@@ -6,14 +6,27 @@ import { ILink } from '../../../lib/definitions';
 const NavLinks = ({
   links,
   direction,
+  gap,
+  handleOnClick,
 }: {
   links: ILink[];
   direction: 'row' | 'col';
+  gap: string;
+  handleOnClick?: () => void;
 }) => {
   return (
-    <div className={clsx('flex gap-xl', direction, clsx(styles.nav__links))}>
+    <div
+      className={clsx('flex', `gap-${gap}`, direction, clsx(styles.nav__links))}
+    >
       {links.map((link) => {
-        return <NavLink to={link.to} text={link.text} key={link.id} />;
+        return (
+          <NavLink
+            to={link.to}
+            text={link.text}
+            key={link.id}
+            handleOnClick={handleOnClick}
+          />
+        );
       })}
     </div>
   );

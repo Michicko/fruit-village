@@ -7,7 +7,6 @@
 }
 
 .logo span {
-  display: block;
   font-family: var(--font);
   font-size: var(--sm-text);
   font-weight: 700;

@@ -46,8 +46,8 @@
   --lg-gap: 2.5rem;
   --xl-gap: 3rem;
   --font: 'Nunito';
-  --duration-xs: 2s;
-  --duration-sm: 3s;
+  --duration-xs: 0.2s;
+  --duration-sm: 0.3s;
   --duration-base: 4s;
   --angle-sm: 30deg;
   --icon-transition: transform var(--duration-sm) linear;
@@ -82,6 +82,10 @@ body {
 .icon.green-400 path {
   fill: var(--green-400);
   stroke: var(--green-400);
+}
+
+.icon.stroke-light path {
+  stroke: var(--light);
 }
 
 .icon.light path {
@@ -148,8 +152,15 @@ button {
 }
 
 .hide-on-mobile,
-.show-on-big-mobile {
+.show-on-big-mobile,
+.show-on-small-mobile {
   display: none;
+}
+
+@media only screen and (min-width: 23.5rem) {
+  .show-on-small-mobile {
+    display: block;
+  }
 }
 
 @media only screen and (min-width: 36rem) {

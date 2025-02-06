@@ -16,6 +16,8 @@ import NavLinks from './NavLinks';
 import NavLink from './NavLink';
 import { Link } from 'react-router-dom';
 import User from '../../../assets/icons/user.svg?react';
+import NavMobile from './NavMobile';
+import { generalLinks as navLinks } from '../../../lib/placeholder-data';
 
 const Navbar = () => {
   const [isMobileNavOpened, setIsMobileNavOpened] = useState(false);
@@ -24,29 +26,6 @@ const Navbar = () => {
   const user = {
     name: 'John',
   };
-
-  const navLinks = [
-    {
-      id: 1,
-      to: '/about',
-      text: 'about',
-    },
-    {
-      id: 2,
-      to: '/shopping-and-payments',
-      text: 'shopping and payment',
-    },
-    {
-      id: 3,
-      to: '/blog',
-      text: 'blog',
-    },
-    {
-      id: 4,
-      to: '/sale',
-      text: 'sale',
-    },
-  ];
 
   return (
     <nav className={clsx(styles.nav)}>
@@ -57,7 +36,7 @@ const Navbar = () => {
           styles.nav__small
         )}
       >
-        <NavLinks links={navLinks} direction="row" />
+        <NavLinks links={navLinks} gap="xl" direction="row" />
         {Object.keys(user).length > 0 ? (
           <Link
             to={'/account'}
@@ -89,7 +68,7 @@ const Navbar = () => {
               isMobileNavOpened={isMobileNavOpened}
               setIsMobileNavOpened={setIsMobileNavOpened}
             />
-            <Logo hideTextOnMobile={true} />
+            <Logo showTextOnSmallMobile={true} />
           </Capsule>
           <Button
             withIcon={true}
@@ -121,6 +100,11 @@ const Navbar = () => {
           </Notif>
         </div>
       </div>
+      {/* nav mobile */}
+      <NavMobile
+        isMobileNavOpened={isMobileNavOpened}
+        setIsMobileNavOpened={setIsMobileNavOpened}
+      />
     </nav>
   );
 };
